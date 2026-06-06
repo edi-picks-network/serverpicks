@@ -32,6 +32,7 @@ const BLOG_SLUGS = [
 
   "outreach-vs-salesloft-vs-gong-b2b-sales-engagement-2026",
   "aws-vs-digitalocean-vs-vultr-vs-linode-cloud-hosting-comparison-2026",
+  "bare-metal-cloud-vs-vps-pros-cons-2026",
 ];
 
 const TOOL_SLUGS = [

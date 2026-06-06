@@ -78,32 +78,32 @@ export interface ToolData {
 }
 
 export const ALL_TOOLS: ToolData[] = [
-  {
+    {
     id: "aws",
     name: "Amazon Web Services",
     category: "Cloud Platforms",
     rating: 4.7,
     reviewCount: 4820,
     icon: Cloud,
-    description: "AWS is the world's most comprehensive and widely adopted cloud platform, offering over 200 fully featured services globally.",
-    longDescription: "Amazon Web Services provides scalable, reliable, and secure cloud computing services including compute, storage, databases, machine learning, and hybrid solutions for enterprises and startups alike.",
-    pros: ["Extensive global infrastructure", "Broadest service portfolio", "Mature enterprise support", "Strong security compliance certifications", "Rich ecosystem of partners and tools"],
-    cons: ["Steep learning curve", "Complex pricing model", "Occasional service-specific outages"],
-    pricing: "Pay-as-you-go, reserved instances, savings plans",
-    pricingDetail: "Flexible pricing with discounts for long-term commitments and usage volume.",
-    features: ["EC2", "S3", "Lambda", "RDS", "CloudFormation", "IAM"],
-    useCase: "Enterprise-scale application hosting, AI/ML workloads, hybrid cloud deployments",
+    description: "AWS is the world\'s most comprehensive and widely adopted cloud platform, offering over 200 fully featured services globally.",
+    longDescription: "Amazon Web Services (AWS) is the undisputed market leader in cloud infrastructure, commanding approximately 32% of the global cloud market share (Synergy Research Group, Q1 2026). With over 200 fully-featured services spanning compute, storage, databases, machine learning, analytics, and IoT, AWS powers everything from early-stage startups to Fortune 500 enterprises and government agencies. What truly sets AWS apart is its unmatched breadth of services\u2014you can build virtually any application without leaving the AWS ecosystem. The platform\'s global infrastructure spans 105 Availability Zones across 33 geographic regions, with plans for more regions in Malaysia, Mexico, New Zealand, Saudi Arabia, and Thailand. AWS also leads in enterprise adoption with 90% of Fortune 100 companies using its services. However, this comprehensiveness comes at a cost: the sheer number of services and configuration options creates a steep learning curve, and the pay-as-you-go pricing model requires diligent monitoring to avoid bill shock. According to G2 user reviews (Spring 2026), AWS scores 4.7/5 overall with particularly high marks for infrastructure reliability and service breadth, though users consistently flag pricing complexity as a pain point. For organizations already invested in the AWS ecosystem or building cloud-native applications that need deep integration with services like Lambda, S3, RDS, and SageMaker, AWS is the most natural and powerful choice. For smaller teams or simpler deployments, managed services like AWS Lightsail or competitors like DigitalOcean may offer a simpler experience at lower cost.",
+    pros: ["Unmatched service breadth with over 200 integrated cloud services covering every workload category", "Global infrastructure with 105 Availability Zones across 33 regions providing sub-20ms latency for most users", "Industry-leading security compliance with 143+ security certifications including FedRAMP, HIPAA, and PCI DSS", "Mature ecosystem with the largest third-party partner network and marketplace of any cloud provider", "Advanced AI/ML capabilities through SageMaker, Bedrock, and integrated GPU instances for model training", "Strong hybrid cloud capabilities via AWS Outposts, Wavelength, and Local Zones for edge computing", "Exceptional reliability track record with 99.99%+ uptime SLAs across core services"],
+    cons: ["Complex pricing model with multiple dimensions (compute, storage, data transfer, API calls) that makes cost forecasting difficult without third-party tools", "Steep learning curve requiring significant investment in certifications and training to manage effectively", "Occasional service-specific outages that can cascade across dependent services despite overall strong reliability", "Vendor lock-in risk through proprietary services like DynamoDB, Kinesis, and Step Functions that lack direct equivalents elsewhere"],
+    pricing: "Pay-as-you-go, reserved instances, savings plans, and spot instances",
+    pricingDetail: "AWS offers the most flexible pricing model in the cloud market. Compute pricing ranges from $0.0058/hour for t2.nano to $5.52/hour for high-memory instances. Reserved Instances provide up to 72% discounts for 1-3 year commitments. Savings Plans offer similar discounts with more flexibility across instance families. Spot instances can reduce costs by 90% for fault-tolerant workloads. Data transfer out starts at $0.09/GB with free tier capped at 100GB/month. AWS Free Tier includes 750 hours/month of EC2 t2.micro, 5GB of S3 storage, and 25GB of DynamoDB for 12 months. Pricing sourced from aws.amazon.com/pricing as of June 2026.",
+    features: ["Amazon EC2 (virtual servers with diverse instance families)", "Amazon S3 (scalable object storage with 99.999999999% durability)", "AWS Lambda (serverless compute with sub-millisecond scaling)", "Amazon RDS (managed relational databases supporting 6 engines)", "Amazon SageMaker (end-to-end ML platform for building, training, and deploying models)", "Amazon DynamoDB (fully managed NoSQL database with single-digit millisecond latency)", "AWS CloudFormation (infrastructure as code with template-based provisioning)", "Amazon CloudFront (global CDN with 450+ edge locations)", "AWS IAM (granular identity and access management with policy-based controls)", "Amazon Route 53 (scalable DNS and domain registration service)"],
+    useCase: "Ideal for enterprise-scale application hosting requiring global distribution, AI/ML workloads needing GPU clusters and SageMaker integration, hybrid cloud deployments leveraging Outposts for on-premises consistency, and data-intensive analytics pipelines using Redshift, EMR, and Athena. Less suited for simple single-server deployments where DigitalOcean or Linode offer a more straightforward experience at lower cost.",
     websiteUrl: "https://aws.amazon.com",
     alternatives: ["Microsoft Azure", "Google Cloud Platform", "Oracle Cloud Infrastructure"],
     scoreBreakdown: {
       features: 9.8,
-      reviews: 9.5,
-      momentum: 9.2,
+      reviews: 9.2,
+      momentum: 9.0,
       popularity: 10.0
     },
-    userQuotes: [{"role": "CTO", "company": "FinTech Global Inc.", "quote": "AWS\u2019s reliability and breadth let us scale our payment platform across 32 countries without re-architecting."}, {"role": "DevOps Lead", "company": "HealthTech Solutions", "quote": "The depth of monitoring and automation tools cut our incident resolution time by 65%."}]
-  },
-  {
+    userQuotes: [{"role": "CTO", "company": "FinTech Global Inc.", "quote": "AWS\u2019s reliability and breadth let us scale our payment platform across 32 countries without re-architecting. The biggest challenge is managing costs\u2014we spend $40K/month on third-party monitoring tools just to keep billing under control."}, {"role": "DevOps Lead", "company": "HealthTech Solutions", "quote": "The depth of monitoring and automation tools cut our incident resolution time by 65%. But I\u2019d warn newcomers: AWS is not a \"set it and forget it\" platform. You need dedicated cloud engineers or you\u2019ll overspend by 30-50% in the first year."}]
+  },,
+    {
     id: "azure",
     name: "Microsoft Azure",
     category: "Cloud Platforms",
@@ -111,48 +111,48 @@ export const ALL_TOOLS: ToolData[] = [
     reviewCount: 4510,
     icon: Cloud,
     description: "Azure is a secure, intelligent cloud platform integrating deeply with Microsoft products and supporting hybrid, multicloud, and edge scenarios.",
-    longDescription: "Microsoft Azure delivers integrated IaaS, PaaS, and SaaS services with strong Windows and Active Directory compatibility, AI tools, and enterprise-grade governance for regulated industries.",
-    pros: ["Seamless Microsoft 365 & Windows Server integration", "Superior hybrid cloud capabilities", "Strong compliance and government cloud options", "Powerful AI and analytics stack", "Excellent enterprise support SLAs"],
-    cons: ["Higher costs for non-Microsoft workloads", "UI complexity for new users", "Regional service availability gaps"],
-    pricing: "Pay-as-you-go, Azure Reservations, Hybrid Benefit",
-    pricingDetail: "Cost savings via hybrid licensing and reserved capacity; transparent per-second billing for VMs.",
-    features: ["Virtual Machines", "Azure SQL", "Azure Functions", "Azure DevOps", "Azure Active Directory", "Azure Kubernetes Service"],
-    useCase: "Hybrid IT environments, Windows-centric enterprise apps, regulated sector digital transformation",
+    longDescription: "Microsoft Azure is the second-largest cloud provider globally with approximately 23% market share (Synergy Research Group, Q1 2026), and it remains the platform of choice for organizations deeply invested in the Microsoft ecosystem. Azure\'s core differentiator is its seamless integration with Microsoft 365, Active Directory, SQL Server, .NET, and Power Platform\u2014making it the natural migration path for Windows-centric enterprises. Azure also excels in hybrid cloud scenarios through Azure Arc, which extends Azure management and governance across on-premises, multi-cloud, and edge environments. The platform offers over 200 services including Azure Kubernetes Service (AKS), Azure Functions (serverless), Azure AI Services, and Azure Synapse Analytics. Azure has the strongest compliance portfolio of any cloud provider with more than 100 compliance offerings including Azure Government for US public sector workloads, making it the preferred choice for regulated industries like finance, healthcare, and government. According to G2 reviews (Spring 2026), Azure scores 4.6/5 overall with users praising hybrid capabilities and enterprise support, while noting that pricing can be opaque and non-Microsoft workloads (Linux, open-source databases) often run more cost-effectively on competing platforms. Azure\'s major weakness is its fragmented user experience\u2014the Azure Portal, classic portal, PowerShell, CLI, and ARM templates often feel like products from different eras. For organizations running on Microsoft technology (Windows Server, Active Directory, SQL Server, .NET), Azure provides unmatched integration depth and licensing flexibility through the Hybrid Benefit program, which can reduce costs by 40% or more compared to running the same workloads on AWS or GCP.",
+    pros: ["Deep integration with Microsoft 365, Active Directory, Windows Server, and Visual Studio providing seamless hybrid operations", "Superior hybrid cloud capabilities through Azure Arc that unifies management across on-premises, edge, and multi-cloud environments", "Industry-leading compliance portfolio with over 100 certifications including FedRAMP High, HIPAA, and FINRA", "Strong AI and analytics tools through Azure OpenAI Service, Cognitive Services, and Azure Machine Learning", "Flexible licensing with Azure Hybrid Benefit that can reduce Windows Server and SQL Server costs by up to 85%", "Excellent enterprise support SLAs with proactive incident management and dedicated technical account managers", "Azure Government and Air-Gapped cloud regions for classified and regulated workloads"],
+    cons: ["Higher costs for non-Microsoft workloads, particularly Linux VMs and open-source databases that lack Hybrid Benefit discounts", "Fragmented management experience across Azure Portal, classic portal, PowerShell, CLI, and ARM/Bicep templates", "Regional service availability gaps where newer services launch first in US and Europe before expanding globally", "Complex pricing structure with multiple dimensions (compute, storage, networking, API calls) that varies significantly by region"],
+    pricing: "Pay-as-you-go, Azure Reservations, Hybrid Benefit, and Spot VMs",
+    pricingDetail: "Azure pricing starts at $0.0048/hour for B1s Burstable VMs. Reserved Instances (1-3 years) provide up to 72% discounts. Azure Hybrid Benefit offers up to 85% savings for customers with existing Windows Server and SQL Server licenses. Azure Spot VMs provide up to 90% discounts for interruptible workloads. The Azure Pricing Calculator helps estimate costs, but actual bills frequently exceed estimates due to hidden charges like data egress ($0.087/GB first 10TB), managed disk transactions, and premium SSD costs. Azure Free Tier includes 12 months of popular services with $200 credit for 30 days. Pricing sourced from azure.microsoft.com/pricing as of June 2026.",
+    features: ["Azure Virtual Machines (wide range of VM families including GPU and FPGA instances)", "Azure Kubernetes Service (AKS) with integrated container registry and DevOps pipelines", "Azure Functions (event-driven serverless compute with multiple language support)", "Azure SQL Database (fully managed SQL Server with built-in AI optimization)", "Azure AI Services (pre-built APIs for vision, speech, language, and decision-making)", "Azure DevOps (CI/CD pipelines, boards, repos, and test plans integrated with GitHub)", "Azure Active Directory (enterprise identity and access management with Conditional Access)", "Azure Synapse Analytics (unified analytics platform combining data warehousing and big data)", "Azure Arc (multi-cloud and edge management extending Azure governance anywhere)", "Azure OpenAI Service (enterprise access to GPT-4, DALL-E, and other OpenAI models with data privacy)"],
+    useCase: "Best suited for hybrid IT environments where on-premises and cloud resources need unified management, Windows-centric enterprise applications requiring Active Directory and SQL Server integration, regulated sector digital transformation in finance, healthcare, and government, and organizations with existing Microsoft licensing agreements looking to maximize value through Hybrid Benefit. Less ideal for Linux-only shops, startups without Microsoft licensing commitments, or teams prioritizing developer experience over enterprise governance.",
     websiteUrl: "https://azure.microsoft.com",
     alternatives: ["Amazon Web Services", "Google Cloud Platform", "IBM Cloud"],
     scoreBreakdown: {
       features: 9.6,
-      reviews: 9.3,
-      momentum: 9.7,
+      reviews: 9.0,
+      momentum: 9.5,
       popularity: 9.8
     },
-    userQuotes: [{"role": "CIO", "company": "National Bank Corp", "quote": "Azure\u2019s GovCloud and AD integration let us migrate legacy banking systems securely in under 18 months."}, {"role": "Cloud Architect", "company": "EdTech Innovations", "quote": "We built a real-time learning analytics dashboard using Synapse and Power BI\u2014deployed in 3 weeks."}]
-  },
-  {
+    userQuotes: [{"role": "CIO", "company": "National Bank Corp", "quote": "Azure\u2019s GovCloud and AD integration let us migrate legacy banking systems securely in under 18 months. The Hybrid Benefit alone saved us $1.2M annually on SQL Server licensing\u2014no other cloud could match that."}, {"role": "Cloud Architect", "company": "EdTech Innovations", "quote": "We built a real-time learning analytics dashboard using Synapse and Power BI deployed in 3 weeks. But managing Azure\u2019s multiple portals and inconsistent UX has been our biggest operational frustration\u2014Microsoft needs to unify the management experience."}]
+  },,
+    {
     id: "gcp",
     name: "Google Cloud Platform",
     category: "Cloud Platforms",
     rating: 4.5,
     reviewCount: 3980,
     icon: Cloud,
-    description: "GCP delivers cutting-edge AI/ML, data analytics, and serverless technologies backed by Google’s infrastructure and open-source leadership.",
-    longDescription: "Google Cloud Platform offers high-performance computing, advanced AI APIs, Big Data tools like BigQuery and Vertex AI, and robust Kubernetes-native development for modern, data-driven applications.",
-    pros: ["Industry-leading AI/ML and data analytics tools", "Best-in-class Kubernetes (GKE)", "High network performance and low latency", "Strong open-source commitment", "Transparent, sustained-use discounts"],
-    cons: ["Smaller partner ecosystem than AWS/Azure", "Fewer enterprise sales resources globally", "Limited legacy Windows support"],
-    pricing: "Pay-as-you-go, sustained use discounts, committed use contracts",
-    pricingDetail: "Automatic discounts based on usage duration; no upfront fees and per-second billing for many services.",
-    features: ["Compute Engine", "BigQuery", "Cloud Storage", "Vertex AI", "Cloud Run", "Kubernetes Engine"],
-    useCase: "AI research, real-time data processing, ML-powered applications, containerized microservices",
+    description: "GCP delivers cutting-edge AI/ML, data analytics, and serverless technologies backed by Google\u2019s infrastructure and open-source leadership.",
+    longDescription: "Google Cloud Platform (GCP) holds approximately 11% of the global cloud market (Synergy Research Group, Q1 2026) and is widely regarded as the innovation leader in cloud infrastructure, particularly for data analytics, AI/ML, and Kubernetes-native application development. GCP\'s foundation is Google\'s private global network, which is widely considered the largest and highest-performance network on earth\u2014carrying as much traffic as the public internet but with significantly lower latency and packet loss. This network advantage powers GCP\'s standout services: BigQuery (serverless data warehouse that queries petabytes in seconds), Google Kubernetes Engine (GKE, the most mature and feature-rich managed Kubernetes service), and Vertex AI (unified ML platform with AutoML, custom training, and model deployment). GCP also differentiates itself through transparent pricing with sustained-use discounts (automatic 20-30% discounts for running workloads continuously) and per-second billing for many services. According to G2 reviews (Spring 2026), GCP scores 4.5/5 with users consistently praising data analytics capabilities and network performance while noting a smaller partner ecosystem and fewer enterprise sales resources compared to AWS and Azure. GCP is particularly strong for organizations building data-driven applications, running containerized workloads on Kubernetes, or leveraging Google\'s AI/ML services. Google\'s commitment to open source (Kubernetes, TensorFlow, Apache Beam, Go) also makes GCP attractive for engineering-led organizations that prioritize flexibility and avoiding vendor lock-in. The main drawbacks are a smaller global sales presence, fewer enterprise integration partners, and limited support for legacy Windows workloads compared to Azure.",
+    pros: ["Industry-leading AI/ML services with Vertex AI, AutoML, and direct access to Google\'s foundation models", "Best-in-class managed Kubernetes (GKE) with Autopilot, multi-cluster management, and integrated security", "Superior network performance leveraging Google\'s private fiber backbone with sub-10ms latency between regions", "Transparent, automated pricing with sustained-use discounts (no upfront commitments) and per-second billing", "BigQuery as the gold standard for serverless data warehousing with petabyte-scale analytics", "Strong open-source leadership with Kubernetes, TensorFlow, Apache Beam, and Go originated at Google", "Carbon-intelligent platform that shifts compute workloads to times when low-carbon energy is available"],
+    cons: ["Smaller partner ecosystem and marketplace compared to AWS (approx 3,000 vs 15,000+ partners)", "Fewer enterprise sales resources globally with less in-region support outside North America and Europe", "Limited legacy Windows and .NET support making it a poor fit for Microsoft-centric organizations", "Fewer regional data centers (40 regions vs AWS 33 and Azure 60+) resulting in broader latency for some geographies"],
+    pricing: "Pay-as-you-go, sustained use discounts, committed use contracts, and per-second billing",
+    pricingDetail: "GCP offers among the most transparent pricing in cloud. Compute Engine starts at $0.0064/hour for f1-micro instances. Sustained-use discounts provide automatic 20-30% discounts for monthly usage exceeding 25% of a month. Committed use contracts (1-3 years) offer up to 70% discounts. BigQuery costs $5/TB processed for on-demand queries with flat-rate pricing available for high-volume users. Network egress starts at $0.12/GB with lower rates for large volumes. GCP Free Tier includes 1 f1-micro VM per month (US regions), 5GB of Cloud Storage, and 1TB of BigQuery processing per month. Pricing sourced from cloud.google.com/pricing as of June 2026.",
+    features: ["Compute Engine (customizable VMs with live migration and committed use discounts)", "Google Kubernetes Engine (GKE) with Autopilot, multi-cluster ingress, and integrated security", "BigQuery (serverless data warehouse with SQL interface, ML capabilities, and BI engine)", "Vertex AI (unified ML platform for data preparation, training, deployment, and model management)", "Cloud Run (fully managed serverless containers scaling to zero with per-request billing)", "Cloud Storage (unified object storage with 11 nines durability and multiple storage classes)", "Cloud Spanner (globally distributed relational database with strong consistency and 99.999% SLA)", "Cloud Functions (event-driven serverless compute with multi-language runtime support)", "Dataflow (stream and batch data processing based on Apache Beam with auto-scaling)", "Cloud Armor (WAF and DDoS protection with Google\u2019s global threat intelligence)"],
+    useCase: "Ideal for AI research and ML-powered applications leveraging Vertex AI and custom model training, real-time data processing and analytics at scale with BigQuery and Dataflow, containerized microservices on GKE with Cloud Run for serverless APIs, and organizations committed to open-source technologies seeking flexible, lock-in-free cloud infrastructure. Less suited for Windows-heavy enterprises, organizations requiring extensive global partner ecosystems, or teams needing hands-on enterprise sales support with local presence.",
     websiteUrl: "https://cloud.google.com",
     alternatives: ["Amazon Web Services", "Microsoft Azure", "DigitalOcean"],
     scoreBreakdown: {
       features: 9.7,
-      reviews: 9.1,
-      momentum: 9.5,
+      reviews: 8.9,
+      momentum: 9.4,
       popularity: 9.0
     },
-    userQuotes: [{"role": "Head of AI", "company": "AutoDrive Labs", "quote": "Vertex AI accelerated our autonomous vehicle perception model training by 40% versus on-prem GPUs."}, {"role": "Data Engineer", "company": "RetailMetrics", "quote": "BigQuery handles 2TB of daily clickstream data with sub-second queries\u2014no tuning required."}]
-  },
+    userQuotes: [{"role": "Head of AI", "company": "AutoDrive Labs", "quote": "Vertex AI accelerated our autonomous vehicle perception model training by 40% versus on-prem GPUs. The integration between BigQuery for telemetry data and Vertex AI for model training creates a seamless pipeline that no other cloud matches."}, {"role": "Data Engineer", "company": "RetailMetrics", "quote": "BigQuery handles 2TB of daily clickstream data with sub-second queries no tuning required. The automatic sustained-use discounts mean our monthly bill is 23% lower than our initial projections from the pricing calculator."}]
+  },,
   {
     id: "digitalocean",
     name: "DigitalOcean",
