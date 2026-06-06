@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the new blog post entry for the B2B SaaS Tool Hub."""
+"""Generate the new blog post entry for Server Picks."""
 
 new_blog = """  {
     slug: "enterprise-ai-agent-orchestration-2026",
