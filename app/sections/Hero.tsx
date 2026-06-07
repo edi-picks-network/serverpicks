@@ -25,7 +25,6 @@ export default function Hero() {
   return (
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 px-6">
       <div className="max-w-[1200px] mx-auto flex flex-col items-center text-center">
-        {/* Badge Pill */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -36,7 +35,6 @@ export default function Hero() {
           <span className="text-sm font-medium text-[#60A5FA]">200+ Hosting Providers Reviewed</span>
         </motion.div>
 
-        {/* Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -49,7 +47,6 @@ export default function Hero() {
           </span>
         </motion.h1>
 
-        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -59,7 +56,6 @@ export default function Hero() {
           Compare 200+ cloud hosting and VPS providers. Read verified reviews, analyze pricing, and find the right infrastructure for your project.
         </motion.p>
 
-        {/* Search Bar */}
         <motion.form
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -95,7 +91,6 @@ export default function Hero() {
           </div>
         </motion.form>
 
-        {/* Category Pills */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

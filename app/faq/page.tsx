@@ -104,14 +104,12 @@ export default function FAQPage() {
 
   return (
     <div className="relative pt-32 pb-20 px-6">
-      {/* JSON-LD Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
       />
 
       <div className="max-w-[800px] mx-auto">
-        {/* Header */}
         <div className="text-center mb-12">
           <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[#2563EB] bg-[#162540] px-3 py-1.5 rounded-md mb-4">
             FAQ
@@ -124,7 +122,6 @@ export default function FAQPage() {
           </p>
         </div>
 
-        {/* FAQ Items */}
         <div className="space-y-3">
           {FAQ_ITEMS.map((item, index) => (
             <div

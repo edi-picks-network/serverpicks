@@ -35,7 +35,6 @@ export default function AboutPage() {
   return (
     <div className="relative pt-32 pb-20 px-6">
       <div className="max-w-[800px] mx-auto">
-        {/* Hero */}
         <div className="text-center mb-16">
           <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[#2563EB] bg-[#162540] px-3 py-1.5 rounded-md mb-4">
             About
@@ -52,7 +51,6 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {/* What We Do */}
         <div className="mb-16">
           <h2 className="text-2xl font-bold text-[#F0F2FE] mb-6">What We Do</h2>
           <div className="space-y-4 text-[#839BBE] leading-relaxed">
@@ -80,7 +78,6 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* How We Work */}
         <div className="mb-16">
           <h2 className="text-2xl font-bold text-[#F0F2FE] mb-8 text-center">
             How We Evaluate Providers
@@ -104,7 +101,6 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Data Sources */}
         <div className="mb-16">
           <h2 className="text-2xl font-bold text-[#F0F2FE] mb-6">Data Sources</h2>
           <div className="space-y-4 text-[#839BBE] leading-relaxed">
@@ -148,10 +144,10 @@ export default function AboutPage() {
               Contact Us
             </Link>
             <a
-              href="mailto:longfeixiang7650@gmail.com"
+              href="mailto:info@serverpicks.net"
               className="px-6 py-3 border border-[#1E3A5F] hover:border-[#284880] text-[#839BBE] hover:text-[#F0F2FE] font-medium rounded-lg transition-all"
             >
-              longfeixiang7650@gmail.com
+              info@serverpicks.net
             </a>
           </div>
         </div>

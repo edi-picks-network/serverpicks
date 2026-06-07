@@ -10,8 +10,6 @@ import {
 import Link from "next/link";
 
 // ============================================================
-// 模板B：杂志对比式首页 — Server Picks 适配版
-// 布局：杂志风格大卡片 + VS对比 + 评测文章 + 购买指南
 // ============================================================
 
 import { ALL_TOOLS } from "@/data/tools";
@@ -22,10 +20,9 @@ const ACCENT_COLOR = "#2563EB";
 export default function HomePage() {
   const [searchQuery, setSearchQuery] = useState("");
 
-  // VS对比配对：每个热门分类选评分最高的两个做对比
   const vsComparisons = useMemo(() => {
     const cats = [...new Set(ALL_TOOLS.map((t: any) => t.category))]
-      .filter((_, i) => i < 3); // 取前3个分类
+      .filter((_, i) => i < 3);
     return cats.map((cat: string) => {
       const tools = ALL_TOOLS
         .filter((t: any) => t.category === cat)
@@ -35,7 +32,6 @@ export default function HomePage() {
     });
   }, [ALL_TOOLS]);
 
-  // 分类浏览（带描述）
   const categoryCards = useMemo(() => {
     const descs: Record<string, string> = {
       "CRM": "Streamline customer relationships and boost sales",
@@ -64,7 +60,6 @@ export default function HomePage() {
       .slice(0, 8);
   }, [ALL_TOOLS]);
 
-  // 最新评测文章
   const latestReviews = useMemo(
     () => [...BLOG_POSTS]
       .sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime())
@@ -72,7 +67,6 @@ export default function HomePage() {
     [BLOG_POSTS]
   );
 
-  // 购买指南（模拟）
   const buyingGuides = useMemo(() => {
     const cats = categoryCards.slice(0, 3);
     return cats.map(c => ({
@@ -83,7 +77,6 @@ export default function HomePage() {
     }));
   }, [categoryCards]);
 
-  // 统计数据
   const stats = useMemo(() => ({
     totalTools: ALL_TOOLS.length,
     totalCategories: new Set(ALL_TOOLS.map((t: any) => t.category)).size,
@@ -91,7 +84,6 @@ export default function HomePage() {
     avgRating: (ALL_TOOLS.reduce((sum: number, t: any) => sum + t.rating, 0) / ALL_TOOLS.length).toFixed(1),
   }), [ALL_TOOLS]);
 
-  // 搜索建议
   const searchSuggestions = useMemo(() => {
     if (searchQuery.length < 2) return [];
     return ALL_TOOLS
@@ -125,7 +117,6 @@ export default function HomePage() {
             In-depth comparisons, unbiased reviews, and buying guides — we help you make
             confident hosting decisions backed by real data.
           </p>
-          {/* 搜索 */}
           <div className="max-w-xl mx-auto relative">
             <div className="flex items-center bg-[#1A1F35] border border-[#2A2F45] rounded-xl px-5 py-3.5">
               <Search className="w-5 h-5 text-gray-500 mr-3" />
@@ -202,7 +193,6 @@ export default function HomePage() {
               pair.toolA && pair.toolB ? (
                 <div key={i} className="bg-[#111627] border border-[#1E233B] rounded-xl p-5 hover:border-[#2A2F55] transition-all">
                   <p className="text-xs text-gray-500 uppercase tracking-wider mb-4">{pair.category}</p>
-                  {/* Tool A */}
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-10 h-10 rounded-lg bg-[#1A1F35] flex items-center justify-center text-lg">
                       {pair.toolA.name.charAt(0)}
@@ -226,7 +216,6 @@ export default function HomePage() {
                     <span className="text-xs font-bold text-gray-500">VS</span>
                     <div className="flex-1 h-px bg-[#2A2F45]" />
                   </div>
-                  {/* Tool B */}
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-lg bg-[#1A1F35] flex items-center justify-center text-lg">
                       {pair.toolB.name.charAt(0)}
@@ -304,7 +293,6 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
-            {/* 大卡片 - 第一篇 */}
             {latestReviews[0] && (
               <Link
                 href={`/blog/${latestReviews[0].slug}`}
@@ -339,7 +327,6 @@ export default function HomePage() {
                 </div>
               </Link>
             )}
-            {/* 小卡片 */}
             <div className="flex flex-col gap-4">
               {latestReviews.slice(1, 4).map((post: any, i: number) => (
                 <Link
@@ -390,7 +377,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ======== 推荐工具（CTA底部） ======== */}
       <section className="px-6 py-16">
         <div className="max-w-6xl mx-auto text-center">
           <div className="bg-gradient-to-r from-[#111627] to-[#1A1F35] border border-[#2A2F45] rounded-2xl p-10 md:p-14">
