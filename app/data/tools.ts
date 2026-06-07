@@ -102,7 +102,7 @@ export const ALL_TOOLS: ToolData[] = [
       popularity: 10.0
     },
     userQuotes: [{"role": "CTO", "company": "FinTech Global Inc.", "quote": "AWS\u2019s reliability and breadth let us scale our payment platform across 32 countries without re-architecting. The biggest challenge is managing costs\u2014we spend $40K/month on third-party monitoring tools just to keep billing under control."}, {"role": "DevOps Lead", "company": "HealthTech Solutions", "quote": "The depth of monitoring and automation tools cut our incident resolution time by 65%. But I\u2019d warn newcomers: AWS is not a \"set it and forget it\" platform. You need dedicated cloud engineers or you\u2019ll overspend by 30-50% in the first year."}]
-  },,
+  },
     {
     id: "azure",
     name: "Microsoft Azure",
@@ -127,7 +127,7 @@ export const ALL_TOOLS: ToolData[] = [
       popularity: 9.8
     },
     userQuotes: [{"role": "CIO", "company": "National Bank Corp", "quote": "Azure\u2019s GovCloud and AD integration let us migrate legacy banking systems securely in under 18 months. The Hybrid Benefit alone saved us $1.2M annually on SQL Server licensing\u2014no other cloud could match that."}, {"role": "Cloud Architect", "company": "EdTech Innovations", "quote": "We built a real-time learning analytics dashboard using Synapse and Power BI deployed in 3 weeks. But managing Azure\u2019s multiple portals and inconsistent UX has been our biggest operational frustration\u2014Microsoft needs to unify the management experience."}]
-  },,
+  },
     {
     id: "gcp",
     name: "Google Cloud Platform",
@@ -152,7 +152,7 @@ export const ALL_TOOLS: ToolData[] = [
       popularity: 9.0
     },
     userQuotes: [{"role": "Head of AI", "company": "AutoDrive Labs", "quote": "Vertex AI accelerated our autonomous vehicle perception model training by 40% versus on-prem GPUs. The integration between BigQuery for telemetry data and Vertex AI for model training creates a seamless pipeline that no other cloud matches."}, {"role": "Data Engineer", "company": "RetailMetrics", "quote": "BigQuery handles 2TB of daily clickstream data with sub-second queries no tuning required. The automatic sustained-use discounts mean our monthly bill is 23% lower than our initial projections from the pricing calculator."}]
-  },,
+  },
   {
     id: "digitalocean",
     name: "DigitalOcean",
