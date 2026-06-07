@@ -4,10 +4,10 @@ import { Star, ArrowLeft, ArrowRight, BookOpen, Layers, ChevronRight } from "luc
 import { ALL_TOOLS } from "@/data/tools";
 import { BLOG_POSTS } from "@/data/blog-posts";
 
-const ALL_CATEGORIES = Array.from(new Set(ALL_TOOLS.map((t) => t.category)));
+const ALL_CATEGORIES = Array.from(new Set(ALL_TOOLS.map((t) => t.category))).filter(Boolean) as string[];
 
 function slugify(category: string) {
-  return category.toLowerCase().replace(/\s+/g, "-");
+  return (category || "").toLowerCase().replace(/\s+/g, "-");
 }
 
 function deslugify(slug: string): string | undefined {
