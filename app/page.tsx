@@ -1,277 +1,154 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import {
-  Search, ArrowRight, Star, TrendingUp, BarChart3, BookOpen,
-  CheckCircle2, HelpCircle, ChevronRight, Award, Users, Layers,
-  Zap, Sparkles, Calendar, Quote, ThumbsUp, ArrowUpRight,
-  MessageSquare, Clock, Eye, Filter
-} from "lucide-react";
-import Link from "next/link";
-
-// ============================================================
-// ============================================================
-
 import { ALL_TOOLS } from "@/data/tools";
 import { BLOG_POSTS } from "@/data/blog-posts";
-
-const ACCENT_COLOR = "#2563EB";
+import Link from "next/link";
 
 export default function HomePage() {
   const [searchQuery, setSearchQuery] = useState("");
 
-  const vsComparisons = useMemo(() => {
-    const cats = [...new Set(ALL_TOOLS.map((t: any) => t.category))]
-      .filter((_, i) => i < 3);
-    return cats.map((cat: string) => {
-      const tools = ALL_TOOLS
-        .filter((t: any) => t.category === cat)
-        .sort((a: any, b: any) => b.rating - a.rating)
-        .slice(0, 2);
-      return { category: cat, toolA: tools[0], toolB: tools[1] };
-    });
-  }, [ALL_TOOLS]);
-
-  const categoryCards = useMemo(() => {
-    const descs: Record<string, string> = {
-      "CRM": "Streamline customer relationships and boost sales",
-      "Marketing": "Automate campaigns and grow your audience",
-      "Communication": "Keep your team connected and aligned",
-      "DevOps": "Ship faster with continuous delivery pipelines",
-      "HR": "Manage talent from hiring to retirement",
-      "Analytics": "Turn data into actionable insights",
-      "Security": "Protect your business from evolving threats",
-    };
-    const stats = new Map<string, { count: number; avgRating: number }>();
-    for (const t of ALL_TOOLS) {
-      if (!stats.has(t.category)) stats.set(t.category, { count: 0, avgRating: 0 });
-      const s = stats.get(t.category)!;
-      s.count++;
-      s.avgRating += t.rating;
+  const categories = useMemo(() => {
+    const map = new Map<string, { count: number }>();
+    for (const tool of ALL_TOOLS) {
+      const cat = tool.category || "Other";
+      if (!map.has(cat)) map.set(cat, { count: 0 });
+      map.get(cat)!.count++;
     }
-    return [...stats.entries()]
-      .map(([name, data]) => ({
-        name,
-        count: data.count,
-        avgRating: Math.round((data.avgRating / data.count) * 10) / 10,
-        description: descs[name] || `Explore top ${name.toLowerCase()} tools`,
-      }))
-      .sort((a, b) => b.count - a.count)
-      .slice(0, 8);
-  }, [ALL_TOOLS]);
+    return Array.from(map.entries())
+      .map(([name, data]) => ({ name, count: data.count }))
+      .sort((a, b) => b.count - a.count);
+  }, []);
 
-  const latestReviews = useMemo(
-    () => [...BLOG_POSTS]
-      .sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime())
-      .slice(0, 4),
-    [BLOG_POSTS]
+  const filteredTools = useMemo(() => {
+    if (!searchQuery.trim()) return ALL_TOOLS;
+    const q = searchQuery.toLowerCase();
+    return ALL_TOOLS.filter(
+      (t) =>
+        t.name.toLowerCase().includes(q) ||
+        t.description.toLowerCase().includes(q) ||
+        (t.category && t.category.toLowerCase().includes(q))
+    );
+  }, [searchQuery]);
+
+  const latestPosts = useMemo(
+    () =>
+      [...BLOG_POSTS]
+        .sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime())
+        .slice(0, 3),
+    []
   );
 
-  const buyingGuides = useMemo(() => {
-    const cats = categoryCards.slice(0, 3);
-    return cats.map(c => ({
-      title: `How to Choose ${c.name} Software in 2026`,
-      excerpt: `A practical guide to evaluating ${c.name.toLowerCase()} tools for your team size, budget, and use case.`,
-      readTime: "8 min read",
-      icon: c.name === "CRM" ? TrendingUp : c.name === "Marketing" ? Zap : Layers,
-    }));
-  }, [categoryCards]);
-
-  const stats = useMemo(() => ({
-    totalTools: ALL_TOOLS.length,
-    totalCategories: new Set(ALL_TOOLS.map((t: any) => t.category)).size,
-    totalReviews: ALL_TOOLS.reduce((sum: number, t: any) => sum + (t.reviewCount || 0), 0),
-    avgRating: (ALL_TOOLS.reduce((sum: number, t: any) => sum + t.rating, 0) / ALL_TOOLS.length).toFixed(1),
-  }), [ALL_TOOLS]);
-
-  const searchSuggestions = useMemo(() => {
-    if (searchQuery.length < 2) return [];
-    return ALL_TOOLS
-      .filter((t: any) =>
-        t.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        t.category.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-      .slice(0, 5);
-  }, [searchQuery, ALL_TOOLS]);
-
   return (
-    <div className="min-h-screen bg-[#0A0E1A]">
-      {/* ======== HERO 区 ======== */}
-      <section className="relative pt-32 pb-16 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0E1A] via-[#0F1525] to-[#0A0E1A]" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full opacity-[0.08] blur-[100px]"
-          style={{ background: `radial-gradient(circle, ${ACCENT_COLOR}, transparent)` }} />
-        <div className="relative max-w-6xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm bg-[#1A1F35] border border-[#2A2F45] mb-6">
-            <Sparkles className="w-4 h-4" style={{ color: ACCENT_COLOR }} />
-            <span className="text-gray-300">Expert reviews &amp; hosting comparisons</span>
-          </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
-            Find the Perfect{" "}
-            <span className="text-transparent bg-clip-text"
-              style={{ backgroundImage: `linear-gradient(135deg, ${ACCENT_COLOR}, #3B82F6)` }}>
-               Cloud Hosting & VPS
+    <div>
+      {/* HERO — Deep blue gradient */}
+      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white overflow-hidden">
+        <div className="max-w-6xl mx-auto px-6 pt-24 pb-16 md:pt-32 md:pb-24">
+          <div className="max-w-3xl">
+            <span className="inline-block text-sm font-semibold text-blue-200 bg-blue-800/50 px-4 py-1.5 rounded-full mb-6">
+              Trusted by 10,000+ developers
             </span>
-          </h1>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-10">
-            In-depth comparisons, unbiased reviews, and buying guides — we help you make
-            confident hosting decisions backed by real data.
-          </p>
-          <div className="max-w-xl mx-auto relative">
-            <div className="flex items-center bg-[#1A1F35] border border-[#2A2F45] rounded-xl px-5 py-3.5">
-              <Search className="w-5 h-5 text-gray-500 mr-3" />
-              <input
-                type="text"
-                placeholder={`Search ${stats.totalTools}+ tools across ${stats.totalCategories} categories...`}
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="bg-transparent text-white placeholder-gray-500 outline-none flex-1 text-base"
-              />
-            </div>
-            {searchSuggestions.length > 0 && (
-              <div className="absolute top-full mt-2 left-0 right-0 bg-[#1A1F35] border border-[#2A2F45] rounded-xl z-50 overflow-hidden">
-                {searchSuggestions.map((tool: any) => (
-                  <Link
-                    key={tool.id}
-                    href={`/tools/${tool.id}`}
-                    className="flex items-center gap-3 px-5 py-3 hover:bg-[#252A45] transition-colors text-left"
-                  >
-                    <div className="w-8 h-8 rounded-lg bg-[#252A45] flex items-center justify-center">
-                      <Layers className="w-4 h-4" style={{ color: ACCENT_COLOR }} />
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-white text-sm font-medium">{tool.name}</p>
-                      <p className="text-gray-500 text-xs">{tool.category}</p>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Star className="w-3.5 h-3.5 text-yellow-500 fill-yellow-500" />
-                      <span className="text-gray-300 text-sm">{tool.rating}</span>
-                    </div>
-                  </Link>
-                ))}
+            <h1 className="text-5xl md:text-7xl font-black tracking-tight leading-[1.05] mb-6">
+              Find Your{" "}
+              <span className="text-blue-300">Perfect Host</span>
+            </h1>
+            <p className="text-xl text-blue-200 max-w-2xl mb-10 leading-relaxed">
+              Side-by-side comparisons of cloud providers, VPS hosts, and
+              dedicated server companies. No sponsored rankings — just honest
+              benchmarks.
+            </p>
+            <div className="w-full max-w-lg">
+              <div className="flex items-center bg-white rounded-xl shadow-sm overflow-hidden">
+                <svg className="ml-5 w-5 h-5 text-gray-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" />
+                </svg>
+                <input
+                  type="search"
+                  placeholder="Search providers by name or category…"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="flex-1 py-4 px-3 bg-transparent text-gray-900 placeholder-gray-400 outline-none text-base"
+                />
+                <Link
+                  href={filteredTools.length > 0 ? `/tools/${filteredTools[0].id}` : "/"}
+                  className="mr-2 px-5 py-2.5 bg-blue-700 hover:bg-blue-800 text-white text-sm font-semibold rounded-lg transition-colors"
+                >
+                  Search
+                </Link>
               </div>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* ======== 数据面板区 ======== */}
-      <section className="px-6 py-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { icon: BarChart3, label: "Tools Reviewed", value: stats.totalTools },
-              { icon: Layers, label: "Categories", value: stats.totalCategories },
-              { icon: Users, label: "User Reviews", value: stats.totalReviews > 10000 ? `${(stats.totalReviews / 1000).toFixed(0)}K+` : stats.totalReviews },
-              { icon: Award, label: "Avg Rating", value: `★ ${stats.avgRating}` },
-            ].map((item, i) => (
-              <div key={i} className="bg-[#111627] border border-[#1E233B] rounded-xl p-5 text-center">
-                <item.icon className="w-5 h-5 mx-auto mb-2" style={{ color: ACCENT_COLOR }} />
-                <p className="text-2xl font-bold text-white">{item.value}</p>
-                <p className="text-xs text-gray-500 mt-1">{item.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ======== VS对比区 ======== */}
-      <section className="px-6 py-12">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-center justify-between mb-8">
-            <div>
-              <h2 className="text-2xl font-bold text-white">Head-to-Head Comparisons</h2>
-              <p className="text-gray-500 text-sm mt-1">We pit the top tools against each other so you don&apos;t have to</p>
             </div>
-            <Link href="/comparisons" className="text-sm flex items-center gap-1 hover:underline"
-              style={{ color: ACCENT_COLOR }}>
-              View all comparisons <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {vsComparisons.map((pair, i) => (
-              pair.toolA && pair.toolB ? (
-                <div key={i} className="bg-[#111627] border border-[#1E233B] rounded-xl p-5 hover:border-[#2A2F55] transition-all">
-                  <p className="text-xs text-gray-500 uppercase tracking-wider mb-4">{pair.category}</p>
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-lg bg-[#1A1F35] flex items-center justify-center text-lg">
-                      {pair.toolA.name.charAt(0)}
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-white font-semibold text-sm">{pair.toolA.name}</p>
-                      <div className="flex items-center gap-1">
-                        <Star className="w-3 h-3 text-yellow-500 fill-yellow-500" />
-                        <span className="text-gray-300 text-xs">{pair.toolA.rating}</span>
-                      </div>
-                    </div>
-                    <Link href={`/tools/${pair.toolA.id}`}
-                      className="text-xs px-3 py-1.5 rounded-lg border transition-colors"
-                      style={{ borderColor: ACCENT_COLOR, color: ACCENT_COLOR }}>
-                      Review
-                    </Link>
-                  </div>
-                  {/* VS */}
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="flex-1 h-px bg-[#2A2F45]" />
-                    <span className="text-xs font-bold text-gray-500">VS</span>
-                    <div className="flex-1 h-px bg-[#2A2F45]" />
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-[#1A1F35] flex items-center justify-center text-lg">
-                      {pair.toolB.name.charAt(0)}
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-white font-semibold text-sm">{pair.toolB.name}</p>
-                      <div className="flex items-center gap-1">
-                        <Star className="w-3 h-3 text-yellow-500 fill-yellow-500" />
-                        <span className="text-gray-300 text-xs">{pair.toolB.rating}</span>
-                      </div>
-                    </div>
-                    <Link href={`/tools/${pair.toolB.id}`}
-                      className="text-xs px-3 py-1.5 rounded-lg border transition-colors"
-                      style={{ borderColor: ACCENT_COLOR, color: ACCENT_COLOR }}>
-                      Review
-                    </Link>
-                  </div>
-                  <Link
-                    href={`/comparison/${pair.toolA.id}-vs-${pair.toolB.id}`}
-                    className="mt-4 w-full text-xs py-2 rounded-lg flex items-center justify-center gap-1 transition-colors"
-                    style={{ backgroundColor: `${ACCENT_COLOR}15`, color: ACCENT_COLOR }}>
-                    Which is right for you? <HelpCircle className="w-3 h-3" />
-                  </Link>
-                </div>
-              ) : null
-            ))}
+        </div>
+        <div className="absolute -top-20 -right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
+      </section>
+
+      {/* Stats bar */}
+      <section className="bg-white border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-6 py-6 grid grid-cols-3 gap-8">
+          <div className="text-center">
+            <p className="text-3xl font-black text-blue-700">{ALL_TOOLS.length}</p>
+            <p className="text-sm text-gray-500">Providers Reviewed</p>
+          </div>
+          <div className="text-center">
+            <p className="text-3xl font-black text-blue-700">{categories.length}</p>
+            <p className="text-sm text-gray-500">Categories</p>
+          </div>
+          <div className="text-center">
+            <p className="text-3xl font-black text-blue-700">{BLOG_POSTS.length}</p>
+            <p className="text-sm text-gray-500">Articles</p>
           </div>
         </div>
       </section>
 
-      {/* ======== 分类浏览区 ======== */}
-      <section className="px-6 py-12">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-bold text-white mb-2">Browse by Category</h2>
-          <p className="text-gray-500 text-sm mb-8">Explore hosting categories and compare top providers</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {categoryCards.map((cat, i) => (
+      {/* Categories */}
+      <section className="py-12">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">Categories</h2>
+          <p className="text-gray-500 mb-8">Browse by provider type</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {categories.slice(0, 8).map((cat) => (
               <Link
                 key={cat.name}
-                href={`/category/${cat.name.toLowerCase().replace(/ & /g, "-").replace(/ /g, "-")}`}
-                className="group bg-[#111627] border border-[#1E233B] rounded-xl p-5 hover:border-[#2A2F55] transition-all"
+                href={`/category/${cat.name.toLowerCase().replace(/\s+/g, "-")}`}
+                className="group bg-white border border-gray-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all"
               >
-                <div className="flex items-center justify-between mb-3">
-                  <div className="w-9 h-9 rounded-lg flex items-center justify-center"
-                    style={{ backgroundColor: `${ACCENT_COLOR}15` }}>
-                    <Layers className="w-4 h-4" style={{ color: ACCENT_COLOR }} />
+                <h3 className="font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">{cat.name}</h3>
+                <p className="text-sm text-gray-400 mt-1">{cat.count} providers</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* All Providers */}
+      <section className="py-12 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">
+            {searchQuery ? `Results for "${searchQuery}"` : "All Providers"}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {filteredTools.slice(0, 30).map((tool) => (
+              <Link
+                key={tool.id}
+                href={`/tools/${tool.id}`}
+                className="group bg-white border border-gray-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-lg hover:-translate-y-0.5 transition-all"
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-100 to-indigo-100 flex items-center justify-center text-blue-700 font-bold text-sm">
+                    {tool.name.charAt(0)}
                   </div>
-                  <span className="text-xs px-2 py-0.5 rounded-full bg-[#1A1F35] text-gray-400">
-                    {cat.count} tools
-                  </span>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-semibold text-gray-900 group-hover:text-blue-700 transition-colors truncate">{tool.name}</h3>
+                    <span className="text-xs text-gray-400 uppercase tracking-wide">{tool.category}</span>
+                  </div>
+                  <div className="flex items-center gap-1 bg-blue-50 px-2 py-1 rounded-md">
+                    <span className="text-yellow-500 text-xs">★</span>
+                    <span className="text-xs font-bold text-gray-700">{tool.rating}</span>
+                  </div>
                 </div>
-                <h3 className="text-white font-semibold text-sm mb-1">{cat.name}</h3>
-                <p className="text-gray-500 text-xs leading-relaxed">{cat.description}</p>
-                <div className="flex items-center gap-1 mt-2">
-                  <Star className="w-3 h-3 text-yellow-500 fill-yellow-500" />
-                  <span className="text-gray-400 text-xs">{cat.avgRating} avg rating</span>
+                <p className="text-sm text-gray-500 leading-relaxed line-clamp-2 mb-3">{tool.description}</p>
+                <div className="pt-3 border-t border-gray-100 text-xs font-medium text-blue-700 group-hover:text-blue-800">
+                  View Details →
                 </div>
               </Link>
             ))}
@@ -279,123 +156,64 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ======== 最新评测文章 ======== */}
-      <section className="px-6 py-12">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-center justify-between mb-8">
-            <div>
-              <h2 className="text-2xl font-bold text-white">Latest Reviews &amp; Analysis</h2>
-              <p className="text-gray-500 text-sm mt-1">In-depth, unbiased, and up-to-date</p>
-            </div>
-            <Link href="/blog" className="text-sm flex items-center gap-1 hover:underline"
-              style={{ color: ACCENT_COLOR }}>
-              View all articles <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6">
-            {latestReviews[0] && (
+      {/* Top Rated */}
+      <section className="py-12">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">★ Top Rated</h2>
+          <p className="text-gray-500 mb-8">Highest-rated providers by user reviews</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {ALL_TOOLS.filter((t) => t.rating >= 4.7).slice(0, 3).map((tool) => (
               <Link
-                href={`/blog/${latestReviews[0].slug}`}
-                className="md:col-span-1 bg-[#111627] border border-[#1E233B] rounded-xl p-6 hover:border-[#2A2F55] transition-all group"
+                key={tool.id}
+                href={`/tools/${tool.id}`}
+                className="group bg-white border-2 border-blue-100 rounded-xl p-6 hover:border-blue-300 hover:shadow-lg transition-all"
               >
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="text-xs px-2.5 py-1 rounded-full"
-                    style={{ backgroundColor: `${ACCENT_COLOR}15`, color: ACCENT_COLOR }}>
-                    {latestReviews[0].category || "Featured"}
-                  </span>
-                  <span className="text-xs text-gray-500 flex items-center gap-1">
-                    <Clock className="w-3 h-3" /> {latestReviews[0].readTime || "5 min read"}
-                  </span>
+                <div className="flex items-center gap-1 text-amber-400 mb-2">
+                  {Array.from({ length: 5 }).map((_, i) => <span key={i}>★</span>)}
                 </div>
-                <h3 className="text-lg font-bold text-white mb-3 group-hover:underline">
-                  {latestReviews[0].title}
-                </h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-3">
-                  {latestReviews[0].excerpt}
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <div className="w-7 h-7 rounded-full bg-[#1A1F35] flex items-center justify-center text-xs text-gray-300">
-                      {latestReviews[0].author?.charAt(0) || "A"}
-                    </div>
-                    <span className="text-xs text-gray-500">{latestReviews[0].author || "Editor"} · {latestReviews[0].date}</span>
-                  </div>
-                  <span className="text-xs flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity"
-                    style={{ color: ACCENT_COLOR }}>
-                    Read more <ArrowUpRight className="w-3 h-3" />
-                  </span>
-                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-1">{tool.name}</h3>
+                <p className="text-sm text-gray-500 line-clamp-2">{tool.description}</p>
               </Link>
-            )}
-            <div className="flex flex-col gap-4">
-              {latestReviews.slice(1, 4).map((post: any, i: number) => (
-                <Link
-                  key={post.slug || i}
-                  href={`/blog/${post.slug}`}
-                  className="flex gap-4 bg-[#111627] border border-[#1E233B] rounded-xl p-4 hover:border-[#2A2F55] transition-all group"
-                >
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#1A1F35] text-gray-400">
-                        {post.category || "Article"}
-                      </span>
-                      <span className="text-[10px] text-gray-600">{post.readTime || "5 min"}</span>
-                    </div>
-                    <h4 className="text-sm font-semibold text-white group-hover:underline line-clamp-2">
-                      {post.title}
-                    </h4>
-                    <p className="text-xs text-gray-500 mt-1">{post.date}</p>
-                  </div>
-                  <ArrowRight className="w-4 h-4 text-gray-600 self-center flex-shrink-0" />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Blog */}
+      {latestPosts.length > 0 && (
+        <section className="py-12 bg-gray-50">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="text-2xl font-bold text-gray-900">Latest Articles</h2>
+              <Link href="/blog" className="text-sm font-medium text-blue-700 hover:text-blue-800">View all →</Link>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {latestPosts.map((post: any) => (
+                <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
+                  <article className="bg-white border border-gray-200 rounded-xl p-6 hover:border-blue-200 hover:shadow-md transition-all h-full flex flex-col">
+                    <span className="text-xs font-semibold text-blue-700 uppercase tracking-wider mb-2">{post.category || "Article"}</span>
+                    <h3 className="font-bold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors leading-snug">{post.title}</h3>
+                    <p className="text-sm text-gray-500 flex-grow line-clamp-3">{post.excerpt}</p>
+                    <div className="mt-4 pt-3 border-t border-gray-100 text-xs text-gray-400">{post.date} · {post.readTime} min read</div>
+                  </article>
                 </Link>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
-      {/* ======== 购买指南区 ======== */}
-      <section className="px-6 py-12">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-bold text-white mb-2">Buying Guides</h2>
-          <p className="text-gray-500 text-sm mb-8">Step-by-step guides to choosing the right software</p>
-          <div className="grid md:grid-cols-3 gap-6">
-            {buyingGuides.map((guide, i) => (
-              <div key={i} className="bg-[#111627] border border-[#1E233B] rounded-xl p-6 hover:border-[#2A2F55] transition-all group cursor-pointer">
-                <guide.icon className="w-8 h-8 mb-4" style={{ color: ACCENT_COLOR }} />
-                <h3 className="text-white font-semibold mb-2 group-hover:underline">{guide.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-4">{guide.excerpt}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-gray-500">{guide.readTime}</span>
-                  <span className="text-xs flex items-center gap-1" style={{ color: ACCENT_COLOR }}>
-                    Read guide <ChevronRight className="w-3 h-3" />
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="px-6 py-16">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="bg-gradient-to-r from-[#111627] to-[#1A1F35] border border-[#2A2F45] rounded-2xl p-10 md:p-14">
-            <CheckCircle2 className="w-10 h-10 mx-auto mb-4" style={{ color: ACCENT_COLOR }} />
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
-              Ready to find your perfect hosting provider?
-            </h2>
-            <p className="text-gray-400 max-w-xl mx-auto mb-8">
-              Browse our curated collection of {stats.totalTools}+ tools across {stats.totalCategories} categories.
-              All reviews are data-driven and unbiased.
-            </p>
-            <Link
-              href="/all-tools"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl text-white font-semibold transition-all hover:scale-105"
-              style={{ backgroundColor: ACCENT_COLOR }}
-            >
-              Browse All Tools <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
+      {/* CTA */}
+      <section className="py-16 bg-gradient-to-r from-blue-800 to-indigo-900 text-white">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold mb-4">Compare Before You Commit</h2>
+          <p className="text-blue-200 mb-8">See how {ALL_TOOLS.length} hosting providers stack up — real benchmarks, real reviews.</p>
+          <Link
+            href="/all-tools"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-blue-800 font-bold rounded-xl hover:bg-blue-50 transition-colors shadow-lg"
+          >
+            Browse All Providers →
+          </Link>
         </div>
       </section>
     </div>
