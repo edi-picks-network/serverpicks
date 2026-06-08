@@ -3,6 +3,7 @@ import { MetadataRoute } from "next";
 const BLOG_SLUGS = [
   "digitalocean-vs-linode-vs-vultr-2026",
     "aws-vs-azure-vs-google-cloud-2026",
+    "aws-vs-azure-vs-gcp-vs-digitalocean-2026",
 ] as const;
 
 const TOOL_SLUGS = [
