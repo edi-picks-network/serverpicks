@@ -4,6 +4,7 @@ const BLOG_SLUGS = [
   "digitalocean-vs-linode-vs-vultr-2026",
     "aws-vs-azure-vs-google-cloud-2026",
     "aws-vs-azure-vs-gcp-vs-digitalocean-2026",
+    "european-vps-showdown-2026-hetzner-ovhcloud-contabo-scaleway",
 ] as const;
 
 const TOOL_SLUGS = [
