@@ -24,12 +24,11 @@ export default function BlogPage() {
             Blog
           </span>
           <h1 className="text-3xl md:text-5xl font-extrabold text-[#F0F2FE] tracking-tight mb-3">
-            Insights &{" "}
-            <span className="text-gradient">Expert Analysis</span>
+            Hosting & Server{" "}
+            <span className="text-gradient">Reviews</span>
           </h1>
           <p className="text-lg text-[#839BBE] max-w-2xl mx-auto">
-            In-depth comparisons, buying guides, and strategies to help you make
-            smarter hosting and server decisions.
+            In-depth comparisons of cloud platforms, VPS hosting, and dedicated servers. Expert reviews to help you choose the right infrastructure.
           </p>
         </div>
 

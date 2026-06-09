@@ -256,7 +256,7 @@ export default async function BlogPostPage({
                     <p className="font-bold text-[#F0F2FE]">{post.author}</p>
                     <p className="text-sm text-[#839BBE]">{post.authorRole}</p>
                     <p className="text-xs text-[#4A6080] mt-2">
-                      All reviews and comparisons are based on verified data from G2, Capterra, TrustRadius, and other trusted sources.
+                      Serverpicks independently researches and verifies all product data. Ratings sourced from G2, Capterra, and other trusted review platforms.
                     </p>
                   </div>
                 </div>
