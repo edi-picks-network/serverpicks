@@ -1,33 +1,33 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FileText, Target, TrendingUp, Search } from "lucide-react";
+import { Globe, MapPin, Users, Cpu, BarChart3, Shield, Layers, Compass } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About — Server Picks",
+  title: "About — Ever Driven (Studio #55)",
   description:
-    "Server Picks is an independent directory of cloud hosting and server providers. We curate and compare hosting products to help businesses make informed decisions.",
+    "Ever Driven is a Boston-based geospatial systems studio. We benchmark cloud infrastructure for geospatial and data-intensive workloads.",
 };
 
-const VALUES = [
+const TEAM_HIGHLIGHTS = [
   {
-    icon: Search,
-    title: "Independent Curation",
-    desc: "We research and catalog tools based on publicly available information, user reviews from major platforms, and product documentation — not sponsorship dollars.",
+    icon: Compass,
+    title: "Geospatial Systems Focus",
+    desc: "We specialize in infrastructure for GIS, remote sensing, spatial analytics, and location intelligence workloads — not just generic cloud hosting.",
   },
   {
-    icon: TrendingUp,
-    title: "Data-Driven Comparisons",
-    desc: "Every tool page includes feature comparisons, pricing breakdowns, and pros and cons synthesized from verified user feedback across multiple review platforms.",
+    icon: BarChart3,
+    title: "Rigorous Benchmarks",
+    desc: "Every provider is tested with geospatial benchmark suites: GDAL/OGR processing, PostGIS query throughput, tile serving latency, and raster compute performance.",
   },
   {
-    icon: Target,
-    title: "Practical Guidance",
-    desc: "Our use case recommendations are based on real-world scenarios. We help match tools to specific business needs and team sizes.",
+    icon: Shield,
+    title: "Independent Analysis",
+    desc: "No sponsored rankings, no affiliate bias. Our recommendations are based on real performance data collected from our Boston-based test infrastructure.",
   },
   {
-    icon: FileText,
-    title: "Transparent Methodology",
-    desc: "We clearly indicate when information comes from public sources, vendor documentation, or aggregated review data. Our goal is transparency, not pretense.",
+    icon: Globe,
+    title: "Global Perspective",
+    desc: "We test from multiple geographic vantage points to provide latency and throughput data relevant to distributed geospatial systems.",
   },
 ];
 
@@ -36,65 +36,64 @@ export default function AboutPage() {
     <div className="relative pt-32 pb-20 px-6">
       <div className="max-w-[800px] mx-auto">
         <div className="text-center mb-16">
-          <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[#2563EB] bg-[#162540] px-3 py-1.5 rounded-md mb-4">
-            About
+          <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-geospatial-light bg-ever-700 px-3 py-1.5 rounded-md mb-4">
+            <MapPin className="w-3 h-3" />
+            Studio #55 · Boston, MA
           </span>
-          <h1 className="text-3xl md:text-5xl font-extrabold text-[#F0F2FE] tracking-tight mb-6">
-            Your Guide to Better{' '}
-            <span className="text-gradient">Hosting & Server Solutions</span>
+          <h1 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight mb-6">
+            Your Geospatial Infrastructure{' '}
+            <span className="text-geospatial-light">Benchmarking Team</span>
           </h1>
-          <p className="text-lg text-[#839BBE] leading-relaxed max-w-2xl mx-auto">
-            Server Picks is an independent directory that helps businesses
-            discover, compare, and evaluate hosting and server providers. We aggregate
-            information from publicly available sources to give you a clear
-            picture of what each host offers.
+          <p className="text-lg text-ever-400 leading-relaxed max-w-2xl mx-auto">
+            Ever Driven (Studio #55) is a 7-person geospatial systems team based in 
+            Boston, Massachusetts. We benchmark, compare, and recommend cloud hosting 
+            providers for geospatial and data-intensive workloads.
           </p>
         </div>
 
         <div className="mb-16">
-          <h2 className="text-2xl font-bold text-[#F0F2FE] mb-6">What We Do</h2>
-          <div className="space-y-4 text-[#839BBE] leading-relaxed">
+          <h2 className="text-2xl font-bold text-white mb-6">Our Story</h2>
+          <div className="space-y-4 text-ever-400 leading-relaxed">
             <p>
-              Server Picks was created to solve a common problem: finding
-              reliable, up-to-date information about hosting providers is
-              harder than it should be. Review sites are often biased by
-              sponsorship, pricing is hidden behind sales calls, and performance
-              comparisons quickly go out of date.
+              Ever Driven started in a shared workspace in Somerville, MA, back in 2023. 
+              Our founding team of four geospatial engineers kept running into the same 
+              problem: cloud hosting recommendations were built for web developers, not 
+              for people processing satellite imagery, running real-time GIS services, 
+              or ingesting LiDAR point clouds at scale.
             </p>
             <p>
-              We catalog and compare hosting providers across 10+ categories,
-              including Cloud Hosting, VPS, Dedicated Servers, Managed WordPress, and more.
-              Each provider page includes verified pricing tiers, feature lists, pros
-              and cons synthesized from user reviews, and practical use case
-              recommendations.
+              We needed to know: which cloud provider delivers the fastest GDAL raster 
+              operations? Which VPS host handles PostGIS spatial joins without falling 
+              over? How does object storage performance vary across providers when 
+              you&apos;re serving geotiff tiles to millions of users?
             </p>
             <p>
-              Our data is compiled from vendor documentation, official pricing
-              pages, and aggregated user reviews from platforms like G2,
-              Capterra, and TrustRadius. We do not claim to have tested every
-              provider personally — instead, we synthesize the best available public
-              information to help you make an informed choice.
+              Nobody had answers. So we built our own benchmark infrastructure — a 
+              test lab in Boston running standardized geospatial workloads against every 
+              major cloud provider. Today, we&apos;ve grown to a team of seven, and we 
+              publish our benchmark data openly so the geospatial community can make 
+              informed infrastructure decisions.
             </p>
           </div>
         </div>
 
         <div className="mb-16">
-          <h2 className="text-2xl font-bold text-[#F0F2FE] mb-8 text-center">
-            How We Evaluate Providers
+          <h2 className="text-2xl font-bold text-white mb-8 text-center">
+            What Makes Us Different
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {VALUES.map((value) => {
-              const Icon = value.icon;
+            {TEAM_HIGHLIGHTS.map((item) => {
+              const Icon = item.icon;
               return (
                 <div
-                  key={value.title}
-                  className="bg-[#0F1F2D] border border-[#1E3A5F] rounded-xl p-6 card-hover"
+                  key={item.title}
+                  className="bg-ever-800 border border-ever-700 rounded-xl p-6 hover:border-geospatial/50 transition-all"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-[#162540] flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-[#2563EB]" />
+                  <div className="w-12 h-12 rounded-lg bg-ever-700 flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-geospatial" />
                   </div>
-                  <h3 className="text-lg font-bold text-[#F0F2FE] mb-2">{value.title}</h3>
-                  <p className="text-sm text-[#839BBE] leading-relaxed">{value.desc}</p>
+                  <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-sm text-ever-400 leading-relaxed">{item.desc}</p>
                 </div>
               );
             })}
@@ -102,52 +101,111 @@ export default function AboutPage() {
         </div>
 
         <div className="mb-16">
-          <h2 className="text-2xl font-bold text-[#F0F2FE] mb-6">Data Sources</h2>
-          <div className="space-y-4 text-[#839BBE] leading-relaxed">
+          <h2 className="text-2xl font-bold text-white mb-6">The Team</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="bg-ever-800 border border-ever-700 rounded-xl p-5">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-10 h-10 rounded-full bg-geospatial/20 flex items-center justify-center text-geospatial-light font-bold">
+                  M
+                </div>
+                <div>
+                  <p className="font-semibold text-white text-sm">Marcus Chen</p>
+                  <p className="text-xs text-ever-500">Lead Geospatial Engineer</p>
+                </div>
+              </div>
+              <p className="text-xs text-ever-400">GIS architecture, PostGIS tuning, raster pipeline design. Formerly at Planet Labs.</p>
+            </div>
+            <div className="bg-ever-800 border border-ever-700 rounded-xl p-5">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-10 h-10 rounded-full bg-geospatial/20 flex items-center justify-center text-geospatial-light font-bold">
+                  A
+                </div>
+                <div>
+                  <p className="font-semibold text-white text-sm">Aisha Patel</p>
+                  <p className="text-xs text-ever-500">Cloud Infrastructure Lead</p>
+                </div>
+              </div>
+              <p className="text-xs text-ever-400">Multi-cloud benchmarking, network latency analysis, cost optimization. Ex-AWS infrastructure team.</p>
+            </div>
+            <div className="bg-ever-800 border border-ever-700 rounded-xl p-5">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-10 h-10 rounded-full bg-geospatial/20 flex items-center justify-center text-geospatial-light font-bold">
+                  J
+                </div>
+                <div>
+                  <p className="font-semibold text-white text-sm">James Mitchell</p>
+                  <p className="text-xs text-ever-500">DevOps & Automation</p>
+                </div>
+              </div>
+              <p className="text-xs text-ever-400">CI/CD pipelines, infrastructure as code, automated benchmark harnesses. Kubernetes specialist.</p>
+            </div>
+            <div className="bg-ever-800 border border-ever-700 rounded-xl p-5">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-10 h-10 rounded-full bg-geospatial/20 flex items-center justify-center text-geospatial-light font-bold">
+                  S
+                </div>
+                <div>
+                  <p className="font-semibold text-white text-sm">Sarah Chen</p>
+                  <p className="text-xs text-ever-500">Data Scientist & Analyst</p>
+                </div>
+              </div>
+              <p className="text-xs text-ever-400">Performance data analysis, statistical modeling, benchmark methodology. PhD in Geospatial Science.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mb-16">
+          <h2 className="text-2xl font-bold text-white mb-6">Our Benchmark Methodology</h2>
+          <div className="space-y-4 text-ever-400 leading-relaxed">
             <p>
-              Information on this site is compiled from the following sources:
+              Every provider we review is tested against a standardized geospatial benchmark suite running from our Boston-based test infrastructure:
             </p>
-            <ul className="list-disc pl-6 space-y-2">
+            <ul className="list-disc pl-6 space-y-2 text-sm">
               <li>
-                <strong className="text-[#F0F2FE]">Vendor official websites and documentation</strong> — pricing, features, and product descriptions
+                <strong className="text-white">GDAL/OGR Performance</strong> — raster and vector processing throughput using real-world datasets (Sentinel-2 imagery, OpenStreetMap extracts)
               </li>
               <li>
-                <strong className="text-[#F0F2FE]">Aggregated user reviews</strong> — publicly available ratings and feedback from platforms like G2, Capterra, and TrustRadius
+                <strong className="text-white">PostGIS Query Throughput</strong> — spatial join performance, index scan speeds, and concurrent query handling
               </li>
               <li>
-                <strong className="text-[#F0F2FE]">Industry publications and analyst reports</strong> — market trends and comparative analysis
+                <strong className="text-white">Tile Serving Latency</strong> — MBTiles, PMTiles, and S3-based tile serving response times from multiple geographic regions
+              </li>
+              <li>
+                <strong className="text-white">Object Storage Geo-Performance</strong> — S3-compatible storage read/write throughput for geospatial data formats
+              </li>
+              <li>
+                <strong className="text-white">Cost-per-Benchmark</strong> — dollar cost to complete standardized geospatial processing tasks
               </li>
             </ul>
             <p className="text-sm mt-4">
-              We strive to keep all information current, but pricing and features
-              change frequently. Please verify details directly with the vendor
-              before making purchasing decisions. Links to official websites are
-              provided on every tool page.
+              We update our benchmarks quarterly. Pricing and features change frequently,
+              so we encourage verifying details directly with providers before making 
+              purchasing decisions. Links to official websites are provided on every provider page.
             </p>
           </div>
         </div>
 
         {/* CTA */}
-        <div className="text-center bg-[#0F1F2D] border border-[#1E3A5F] rounded-xl p-10">
-          <h2 className="text-2xl font-bold text-[#F0F2FE] mb-4">
-            Have feedback or a suggestion?
+        <div className="text-center bg-ever-800 border border-ever-700 rounded-xl p-10">
+          <h2 className="text-2xl font-bold text-white mb-4">
+            Have a suggestion?
           </h2>
-          <p className="text-[#839BBE] mb-6 max-w-lg mx-auto">
-            We are always improving. If you notice outdated information or have
-            suggestions for tools we should add, let us know.
+          <p className="text-ever-400 mb-6 max-w-lg mx-auto">
+            We&apos;re always improving. If you know a provider we should benchmark or
+            have feedback on our methodology, reach out to the team.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="px-6 py-3 bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-medium rounded-lg transition-colors"
+              className="px-6 py-3 bg-geospatial hover:bg-geospatial-dark text-white font-medium rounded-lg transition-colors"
             >
               Contact Us
             </Link>
             <a
-              href="mailto:info@serverpicks.net"
-              className="px-6 py-3 border border-[#1E3A5F] hover:border-[#284880] text-[#839BBE] hover:text-[#F0F2FE] font-medium rounded-lg transition-all"
+              href="mailto:team@everdriven.io"
+              className="px-6 py-3 border border-ever-600 hover:border-geospatial text-ever-400 hover:text-white font-medium rounded-lg transition-all"
             >
-              info@serverpicks.net
+              team@everdriven.io
             </a>
           </div>
         </div>

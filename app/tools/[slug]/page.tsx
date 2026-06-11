@@ -64,9 +64,9 @@ export default function ToolDetailPage() {
     scripts.push(s1);
 
     const org = organizationSchema(
-      'Server Picks',
-      'https://serverpicks.net',
-      'Honest hosting reviews and comparisons for modern businesses.'
+      'Ever Driven',
+      'https://everdriven.io',
+      'Geospatial infrastructure benchmarks and cloud hosting comparisons from Studio #55 in Boston.'
     );
     const s2 = document.createElement('script');
     s2.type = 'application/ld+json';

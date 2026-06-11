@@ -8,9 +8,9 @@ interface JsonLdProps {
 }
 
 export default function JsonLd({
-  siteName = 'Server Picks',
-  siteUrl = 'https://serverpicks.net',
-  description = 'Honest hosting reviews and comparisons for modern businesses.',
+  siteName = 'Ever Driven',
+  siteUrl = 'https://everdriven.io',
+  description = 'Geospatial infrastructure benchmarks and cloud hosting comparisons from Studio #55 in Boston.',
 }: JsonLdProps) {
   useEffect(() => {
     const script = document.createElement('script');

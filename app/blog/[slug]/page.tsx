@@ -20,7 +20,7 @@ export async function generateMetadata({
   const post = BLOG_POSTS.find((p) => p.slug === slug);
   if (!post) return { title: "Post Not Found" };
   return {
-    title: `${post.title} — Server Picks`,
+    title: `${post.title} — Ever Driven`,
     description: post.excerpt,
   };
 }
@@ -166,12 +166,12 @@ export default async function BlogPostPage({
     post.title,
     post.author,
     post.date,
-    'Server Picks',
+    'Ever Driven',
     post.excerpt
   );
   const orgJsonLd = organizationSchema(
-    'Server Picks',
-    'https://serverpicks.net',
+    'Ever Driven',
+    'https://everdriven.io',
     'Honest hosting reviews and comparisons for modern businesses.'
   );
 

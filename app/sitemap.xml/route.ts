@@ -80,7 +80,7 @@ const CATEGORY_SLUGS = [
 ] as const;
 
 export async function GET() {
-  const baseUrl = "https://serverpicks.net";
+  const baseUrl = "https://everdriven.io";
 
   const urls: string[] = [];
 

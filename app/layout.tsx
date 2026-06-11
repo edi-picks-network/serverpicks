@@ -4,15 +4,16 @@ import CookieBanner from "./components/CookieBanner";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Server Picks — Honest Hosting Reviews & Comparisons",
+  title: "Ever Driven — Geospatial Infrastructure & Hosting Benchmarks",
   description:
-    "Compare top cloud hosting and VPS providers with verified reviews, pricing breakdowns, and expert comparisons. Find the perfect hosting platform for your business needs. Trusted by developers worldwide.",
+    "Ever Driven is a Boston-based geospatial systems studio. We benchmark, compare, and recommend cloud hosting providers for geospatial and data-intensive workloads.",
   keywords: [
     "cloud hosting",
     "VPS hosting",
-    "dedicated servers",
-    "web hosting comparison",
+    "geospatial systems",
+    "server comparison",
     "cloud providers",
+    "Ever Driven",
   ],
   verification: {
     google: "T5bb4mZivi0CfaYYRiKZLSNIWmhvAX6_RVgDEyonTGo",
@@ -26,54 +27,61 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="font-sans bg-white text-gray-900 antialiased min-h-screen flex flex-col">
-        <header className="border-b border-gray-100 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+      <body className="font-sans bg-ever-900 text-gray-100 antialiased min-h-screen flex flex-col">
+        <header className="border-b border-ever-700 bg-ever-800/80 backdrop-blur-sm sticky top-0 z-50">
           <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
-            <Link href="/" className="font-bold text-gray-900 text-lg">
-              Server Picks
+            <Link href="/" className="font-bold text-white text-lg tracking-tight">
+              <span className="text-geospatial">Ever</span> Driven
             </Link>
-            <nav className="flex items-center gap-6 text-sm text-gray-500">
-              <Link href="/all-tools" className="hover:text-blue-700 transition-colors">Providers</Link>
-              <Link href="/blog" className="hover:text-blue-700 transition-colors">Articles</Link>
-              <Link href="/about" className="hover:text-blue-700 transition-colors">About</Link>
+            <nav className="flex items-center gap-6 text-sm text-ever-300">
+              <Link href="/all-tools" className="hover:text-geospatial-light transition-colors">Providers</Link>
+              <Link href="/blog" className="hover:text-geospatial-light transition-colors">Articles</Link>
+              <Link href="/about" className="hover:text-geospatial-light transition-colors">About</Link>
+              <Link href="/contact" className="hover:text-geospatial-light transition-colors">Contact</Link>
             </nav>
           </div>
         </header>
 
         <main className="flex-1">{children}</main>
 
-        <footer className="bg-gray-900 text-gray-400 py-10">
+        <footer className="bg-ever-950 text-ever-400 py-12 border-t border-ever-800">
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
               <div>
-                <h4 className="text-white font-semibold mb-3">Server Picks</h4>
-                <p className="text-sm leading-relaxed">Independent hosting comparisons for developers and businesses.</p>
+                <h4 className="text-white font-semibold mb-3">
+                  <span className="text-geospatial">Ever</span> Driven
+                </h4>
+                <p className="text-sm leading-relaxed text-ever-400">
+                  Studio #55 — Geospatial systems benchmarking and cloud infrastructure analysis from Boston, MA.
+                </p>
               </div>
               <div>
                 <h4 className="text-white font-semibold mb-3">Explore</h4>
                 <ul className="space-y-2 text-sm">
-                  <li><Link href="/all-tools" className="hover:text-white transition-colors">All Providers</Link></li>
-                  <li><Link href="/blog" className="hover:text-white transition-colors">Articles</Link></li>
-                  <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
+                  <li><Link href="/all-tools" className="hover:text-geospatial-light transition-colors">All Providers</Link></li>
+                  <li><Link href="/blog" className="hover:text-geospatial-light transition-colors">Articles</Link></li>
+                  <li><Link href="/about" className="hover:text-geospatial-light transition-colors">About</Link></li>
                 </ul>
               </div>
               <div>
-                <h4 className="text-white font-semibold mb-3">Categories</h4>
+                <h4 className="text-white font-semibold mb-3">Resources</h4>
                 <ul className="space-y-2 text-sm">
-                  <li><Link href="/faq" className="hover:text-white transition-colors">FAQ</Link></li>
+                  <li><Link href="/faq" className="hover:text-geospatial-light transition-colors">FAQ</Link></li>
+                  <li><Link href="/category/cloud-platforms" className="hover:text-geospatial-light transition-colors">Cloud Platforms</Link></li>
+                  <li><Link href="/category/vps" className="hover:text-geospatial-light transition-colors">VPS Hosting</Link></li>
                 </ul>
               </div>
               <div>
                 <h4 className="text-white font-semibold mb-3">Legal</h4>
                 <ul className="space-y-2 text-sm">
-                  <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link></li>
-                  <li><Link href="/terms" className="hover:text-white transition-colors">Terms</Link></li>
-                  <li><Link href="/disclosure" className="hover:text-white transition-colors">Disclosure</Link></li>
+                  <li><Link href="/privacy" className="hover:text-geospatial-light transition-colors">Privacy</Link></li>
+                  <li><Link href="/terms" className="hover:text-geospatial-light transition-colors">Terms</Link></li>
+                  <li><Link href="/disclosure" className="hover:text-geospatial-light transition-colors">Disclosure</Link></li>
                 </ul>
               </div>
             </div>
-            <div className="pt-8 border-t border-gray-800 text-center text-sm">
-              © {new Date().getFullYear()} Server Picks. All rights reserved.
+            <div className="pt-8 border-t border-ever-800 text-center text-sm text-ever-500">
+              &copy; {new Date().getFullYear()} Ever Driven (Studio #55). All rights reserved. Boston, MA.
             </div>
           </div>
         </footer>

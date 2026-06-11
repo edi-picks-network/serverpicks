@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Server Picks",
+  title: "Privacy Policy — Ever Driven",
   description:
-    "Learn how Server Picks collects, uses, and protects your personal data. Our privacy policy outlines our commitment to your privacy and data security.",
+    "Learn how Ever Driven collects, uses, and protects your personal data. Our privacy policy outlines our commitment to your privacy and data security.",
 };
 
 export default function PrivacyPage() {
@@ -26,9 +26,9 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-xl font-bold text-[#F0F2FE] mb-3">1. Introduction</h2>
             <p>
-              Server Picks ("we," "our," or "us") is committed to protecting your privacy.
+              Ever Driven ("we," "our," or "us") is committed to protecting your privacy.
               This Privacy Policy explains how we collect, use, disclose, and safeguard your
-              information when you visit our website serverpicks.net (the "Site"). Please read this
+              information when you visit our website everdriven.io (the "Site"). Please read this
               policy carefully. If you do not agree with the terms, do not access the Site.
             </p>
           </section>
@@ -148,7 +148,7 @@ export default function PrivacyPage() {
               <li><strong>Right to Opt Out (CCPA):</strong> California residents may opt out of the sale of their personal information. We do not sell personal information.</li>
             </ul>
             <p className="mt-3">
-              To exercise any of these rights, please contact us at privacy@serverpicks.net. We
+              To exercise any of these rights, please contact us at team@everdriven.io. We
               will respond to your request within 30 days.
             </p>
           </section>
@@ -181,7 +181,7 @@ export default function PrivacyPage() {
               knowingly collect personal information from children. If we become aware that a
               child has provided us with personal data, we will delete it immediately. Parents
               or guardians who believe their child has submitted information to us should contact
-              us at privacy@serverpicks.net.
+              us at team@everdriven.io.
             </p>
           </section>
 
@@ -211,8 +211,8 @@ export default function PrivacyPage() {
               contact us:
             </p>
             <div className="mt-4 p-5 bg-[#0F1F2D] border border-[#1E3A5F] rounded-xl">
-              <p className="mb-2"><strong className="text-[#F0F2FE]">Email:</strong> privacy@serverpicks.net</p>
-              <p className="mb-2"><strong className="text-[#F0F2FE]">Support:</strong> support@serverpicks.net</p>
+              <p className="mb-2"><strong className="text-[#F0F2FE]">Email:</strong> team@everdriven.io</p>
+              <p className="mb-2"><strong className="text-[#F0F2FE]">Support:</strong> team@everdriven.io</p>
               <p><strong className="text-[#F0F2FE]">Address:</strong> 1200 Independence Way, Ashburn, VA 20147</p>
             </div>
           </section>
