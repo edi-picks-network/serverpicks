@@ -6,6 +6,7 @@ const BLOG_SLUGS = [
     "aws-vs-azure-vs-gcp-vs-digitalocean-2026",
     "european-vps-showdown-2026-hetzner-ovhcloud-contabo-scaleway",
     "european-budget-vps-contabo-scaleway-ionos-2026",
+    "managed-vs-unmanaged-vps-2026",
 ] as const;
 
 const TOOL_SLUGS = [
@@ -80,7 +81,7 @@ const CATEGORY_SLUGS = [
 ] as const;
 
 export async function GET() {
-  const baseUrl = "https://everdriven.io";
+  const baseUrl = "https://serverpicks.net";
 
   const urls: string[] = [];
 

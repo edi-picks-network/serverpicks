@@ -1,0 +1,17 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/api/proposal/route": "/api/proposal",
+  "/sitemap.xml/route": "/sitemap.xml",
+  "/contact/page": "/contact",
+  "/faq/page": "/faq",
+  "/page": "/",
+  "/tools/[slug]/page": "/tools/[slug]",
+  "/blog/page": "/blog",
+  "/disclosure/page": "/disclosure",
+  "/about/page": "/about",
+  "/blog/[slug]/page": "/blog/[slug]",
+  "/category/[slug]/page": "/category/[slug]",
+  "/best/[slug]/page": "/best/[slug]",
+  "/privacy/page": "/privacy",
+  "/terms/page": "/terms"
+}
