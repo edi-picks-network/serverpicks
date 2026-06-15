@@ -159,7 +159,6 @@ export const ALL_TOOLS: ToolData[] = [
     category: "Cloud Platforms",
     rating: 4.4,
     reviewCount: 2487,
-    icon: Droplet,
     description: "A developer-centric cloud platform known for simplicity, predictable flat-rate pricing, and intuitive tools tailored for startups and SMBs.",
     longDescription: "As of June 2026, DigitalOcean serves over 2.1 million active developers across 150+ countries and operates 18 global data center regions—including new facilities in São Paulo (BR-3), Nairobi (KE-1), and Osaka (JP-3)—significantly improving latency for African, South American, and East Asian users. The platform has evolved beyond its early Droplet roots into a cohesive, opinionated stack: App Platform now supports multi-stage Docker builds, native WebAssembly modules, and integrated DDoS protection; Managed Databases offer PostgreSQL 17 with vector search extensions and MySQL 8.4 with native JSON Schema validation; and Spaces added S3 Batch Operations and immutable object lock compliance for GDPR/CCPA use cases.\n\nDigitalOcean’s 2025–2026 product roadmap focused on developer velocity and operational safety—not feature sprawl. The introduction of \'DevOps Guardrails\' (released Q1 2026) enforces infrastructure-as-code policies, automated drift detection, and pre-deployment security scanning across all resource types. Its CLI and Terraform provider now support full lifecycle management of App Platform services, including preview environments and canary rollouts. G2’s Spring 2026 Enterprise Cloud Report ranks DigitalOcean #1 for \'Time-to-Production Velocity\' among SMB clouds, citing median app deployment time of 4.2 minutes from GitHub push to live HTTPS endpoint.\n\nDespite this growth, DigitalOcean remains intentionally constrained: no proprietary AI runtime, no bare-metal offerings, and no legacy Windows Server images. Instead, it doubled down on interoperability—its Kubernetes clusters now ship with certified OpenTelemetry collectors, Prometheus Operator, and Argo CD pre-installed. For teams prioritizing reliability, clarity, and rapid iteration over enterprise-grade abstraction layers, DigitalOcean delivers unmatched execution. Per TrustRadius’ June 2026 benchmark, 92% of surveyed customers reported \'no unplanned downtime in the last 12 months\', and 87% cited \'predictable billing\' as their top retention driver.",
     pros: [
@@ -209,7 +208,6 @@ export const ALL_TOOLS: ToolData[] = [
     category: "Cloud Platforms",
     rating: 4.3,
     reviewCount: 2143,
-    icon: Server,
     description: "Linode offers high-performance Linux-based cloud infrastructure with NVMe storage, exceptional networking, and developer-focused tooling at competitive prices.",
     longDescription: "Since its acquisition by Akamai in early 2023, Linode has undergone a sustained, strategic modernization—expanding into 19 global data centers (including new facilities in São Paulo, Johannesburg, and Riyadh), launching managed Windows Server support in Q4 2025, and deeply integrating Akamai’s edge security stack. As of June 2026, Linode serves over 1.1 million active developers and SMBs, with 37% YoY growth in enterprise-tier adoption driven by enhanced compliance certifications (SOC 2 Type II, ISO 27001:2022, HIPAA BAA available) and expanded SLA guarantees (99.99% uptime for Dedicated CPU plans). The platform now supports hybrid edge deployments via Linode Edge Nodes—a lightweight runtime that integrates seamlessly with Akamai’s Ion platform for real-time cache invalidation and WAF rule propagation.\n\nPerformance remains Linode’s defining differentiator: every instance ships with PCIe Gen4 NVMe storage (up to 2.8GB/s sequential read), 100Gbps network uplinks on premium tiers, and consistent sub-5ms intra-region latency. The CLI and Terraform provider have been rewritten in Rust for zero-latency provisioning, and the Cloud Manager dashboard now includes AI-assisted cost optimization recommendations powered by Akamai’s observability engine. Linode Kubernetes Engine (LKE) has evolved into a full CNCF-conformant distribution with integrated service mesh (Istio v1.22), GPU-accelerated node pools (NVIDIA L4 and A10), and native GitOps sync via Argo CD.\n\nAccording to G2’s Summer 2026 Enterprise Infrastructure Report, Linode ranks #2 among mid-market cloud providers for ‘Developer Experience’ (4.5/5) and #1 for ‘Value Transparency’. Its support team now offers 24/7 enterprise SLA response times (<15 min for P1 tickets), backed by a dedicated customer success engineering team for accounts over $5K/month. While still leaner than hyperscalers, Linode’s service breadth has meaningfully expanded—adding managed Redis, serverless functions (Linode Functions, built on Knative), and native Windows Server 2022/2025 instances—all without compromising its core ethos of simplicity and predictable pricing.",
     pros: [
@@ -259,7 +257,6 @@ export const ALL_TOOLS: ToolData[] = [
     category: "Cloud Platforms",
     rating: 4.3,
     reviewCount: 2187,
-    icon: Server,
     description: "Vultr delivers high-speed cloud infrastructure with 36+ global data centers, bare metal servers, simple pricing, and one-click app deployments for developers and SMBs.",
     longDescription: "As of June 2026, Vultr operates 36 strategically distributed data centers across 6 continents—including newly launched facilities in Bogotá (Colombia), Warsaw (Poland), and Auckland (New Zealand)—making it the most geographically expansive SMB-focused cloud provider globally. Serving over 2.1 million active customers in 192 countries, Vultr has solidified its position as the go-to platform for latency-sensitive, globally distributed workloads. Its 2025 acquisition of a Tier-3-certified edge network in Southeast Asia further enhanced inter-regional routing efficiency and reduced cross-continental p95 latency by up to 32%.\n\nVultr’s bare metal offering now supports AMD EPYC 9654 and Intel Xeon Platinum 8490H processors, with sub-45-second provisioning SLA across all regions. The platform introduced Vultr Cloud Native (VCN) in Q1 2026—a lightweight Kubernetes distribution optimized for bare metal and high-frequency instances—delivering 40% faster cluster boot times than standard managed K8s offerings. Additionally, Vultr launched native Windows Server 2022/2025 support on both High Frequency Compute and Bare Metal tiers, closing a longstanding gap cited in user feedback.\n\nIndependent benchmarking from CloudHarmony (Q2 2026) confirms Vultr leads the SMB cloud segment in single-threaded CPU performance (avg. 4.12 GHz sustained turbo across HF instances) and NVMe I/O consistency (99.999% <1ms read latency at 99th percentile). G2’s Spring 2026 Enterprise Cloud Report ranks Vultr #1 for \'Global Deployment Flexibility\' and #3 for \'Developer Experience\', citing improved documentation depth, expanded API coverage (now including Terraform-native modules and GitHub Actions integrations), and tighter observability via native Prometheus + Grafana stack preconfigurations.",
     pros: [
@@ -1103,16 +1100,43 @@ export const ALL_TOOLS: ToolData[] = [
     rating: 4.0,
     reviewCount: 457,
     icon: Shield,
-    description: "",
-    longDescription: "",
-    pros: [],
-    cons: [],
-    pricing: "",
-    pricingDetail: "",
-    features: [],
-    useCase: "",
-    websiteUrl: "",
-    alternatives: [""],
+    description: "Cloudflare Registrar is a domain registration service offering free WHOIS privacy, seamless DNS integration, and competitive pricing for domains."
+    longDescription: "Cloudflare Registrar is a domain name registration service launched by Cloudflare in 2019 to provide developers and businesses with a secure, transparent, and integrated alternative to traditional registrars. Unlike most registrars that mark up domain prices and charge separately for privacy protection, Cloudflare Registrar offers free WHOIS privacy on all domains and passes through ICANN-mandated fees at cost—meaning no hidden margins or upsells. It tightly integrates with Cloudflare’s global DNS, CDN, and security infrastructure, enabling one-click DNS setup, automatic TLS certificate provisioning via Universal SSL, and instant propagation across Cloudflare’s network. Key benefits include enhanced security (e.g., mandatory two-step verification, registrar lock by default), simplified domain management within the Cloudflare dashboard, and zero markup on standard TLDs like .com, .org, and .net. The service targets technically proficient users—developers, DevOps teams, startups, and privacy-conscious site owners—who prioritize security, automation, and cost transparency over legacy registrar features like email hosting or website builders. Its value proposition centers on eliminating friction: no separate accounts, no privacy add-ons, no surprise renewals, and no vendor lock-in—domains remain fully portable while benefiting from Cloudflare’s performance and DDoS mitigation out of the box."
+    pros: [
+      "Free WHOIS privacy on all domains",
+      "No markup pricing—charges only ICANN and registry fees",
+      "Native integration with Cloudflare DNS, CDN, and SSL",
+      "Strong security defaults (2FA required, registrar lock enabled)",
+      "Simple, API-driven domain management",
+      "No upsells for email, hosting, or builder tools"
+    ]
+    cons: [
+      "Limited TLD selection compared to major registrars (e.g., no .io, .dev, or country-code TLDs at launch)",
+      "No built-in email forwarding or domain parking",
+      "No phone or live chat support—support is community and ticket-based only",
+      "Cannot register domains directly if your current registrar blocks transfers (e.g., some enterprise contracts)"
+    ]
+    pricing: "From $8.49/year for .com domains"
+    pricingDetail: "Pricing reflects actual registry fees plus a small operational fee—e.g., .com domains cost $8.49/year (ICANN fee + Cloudflare's $0.15 margin). There are no setup fees, renewal price locks, or privacy add-on charges. Premium TLDs (e.g., .app, .dev) are priced at cost with no markup, but availability is limited."
+    features: [
+      "Free WHOIS privacy",
+      "One-click DNS integration with Cloudflare",
+      "Automatic TLS certificate provisioning",
+      "Registrar lock enabled by default",
+      "Two-step verification enforcement",
+      "Domain transfer-in support",
+      "API access for automation",
+      "Bulk domain management",
+      "Auto-renewal with email notifications",
+      "Full EPP code access for portability"
+    ]
+    useCase: "Cloudflare Registrar is ideal for developers and infrastructure teams managing multiple websites who want streamlined, secure domain registration tightly coupled with DNS and security services. It’s especially valuable for those already using Cloudflare for DNS or WAF and seeking to eliminate third-party registrar complexity. Not recommended for users needing email hosting, website builders, or niche TLDs."
+    websiteUrl: "https://www.cloudflare.com/products/registrar/"
+    alternatives: [
+      "namecheap",
+      "google-domains",
+      "gandi"
+    ]
     scoreBreakdown: {
       features: 85,
       reviews: 80,
@@ -1128,16 +1152,43 @@ export const ALL_TOOLS: ToolData[] = [
     rating: 4.0,
     reviewCount: 563,
     icon: Navigation,
-    description: "",
-    longDescription: "",
-    pros: [],
-    cons: [],
-    pricing: "",
-    pricingDetail: "",
-    features: [],
-    useCase: "",
-    websiteUrl: "",
-    alternatives: [""],
+    description: "Amazon Route 53 is a highly available, scalable DNS web service that routes end users to internet applications by translating domain names into IP addresses."
+    longDescription: "Amazon Route 53 is Amazon Web Services' managed Domain Name System (DNS) service, designed to provide reliable and low-latency domain name resolution for websites, APIs, and cloud applications. It integrates natively with other AWS services like EC2, S3, CloudFront, and Elastic Load Balancing, enabling automated, policy-driven routing decisions. Key features include latency-based, geolocation, weighted, failover, and multivalue routing—allowing administrators to optimize performance, improve availability, and implement global traffic management strategies. Route 53 also supports health checks that monitor endpoints and automatically reroute traffic away from unhealthy resources, enhancing application resilience. Its DNSSEC signing capability helps protect against cache poisoning attacks, while seamless integration with AWS Certificate Manager (ACM) simplifies SSL/TLS certificate provisioning and renewal for domains hosted on Route 53. The service is built on AWS’s globally distributed infrastructure, offering high availability (99.99% SLA) and automatic scaling without operational overhead. Target users include DevOps engineers, cloud architects, SaaS providers, and enterprises running multi-region or hybrid-cloud deployments who require enterprise-grade DNS control, observability, and automation. Its value proposition lies in combining robust DNS functionality with deep AWS ecosystem integration, eliminating the need for third-party DNS management tools while reducing complexity and improving security posture."
+    pros: [
+      "Highly available and globally distributed DNS infrastructure",
+      "Native integration with AWS services (e.g., ACM, CloudFront, ELB)",
+      "Advanced routing policies (latency, geolocation, failover, weighted)",
+      "Automated health checks with real-time traffic failover",
+      "DNSSEC support for enhanced security",
+      "Detailed query logging and monitoring via CloudWatch"
+    ]
+    cons: [
+      "Pricing can become complex and costly at scale due to per-query and hosted zone charges",
+      "Limited UI functionality compared to dedicated DNS platforms; advanced configurations often require CLI or API",
+      "No built-in email hosting or domain privacy protection (requires separate purchase)",
+      "Learning curve for advanced routing policies and health check configuration"
+    ]
+    pricing: "From $0.50/month (hosted zone) + $0.40/million queries"
+    pricingDetail: "Route 53 uses a pay-as-you-go model: $0.50 per hosted zone per month, plus $0.40 per million DNS queries for standard record types. Health checks cost $1.00 per month per endpoint monitored. DNSSEC signing incurs an additional $0.40 per million queries. There are no upfront fees or minimum commitments."
+    features: [
+      "Public and private hosted zones",
+      "Latency-based routing",
+      "Geolocation routing",
+      "Weighted routing",
+      "Failover routing",
+      "Multivalue answer routing",
+      "Health checks with configurable thresholds",
+      "DNSSEC signing and key management",
+      "Query logging to CloudWatch Logs",
+      "API and CLI-driven automation"
+    ]
+    useCase: "Ideal for AWS-centric organizations needing reliable, programmable DNS with tight integration into their cloud infrastructure. Best suited for teams managing high-traffic web applications, global SaaS platforms, or disaster recovery setups requiring automated failover. Developers and SREs who prioritize infrastructure-as-code and observability will benefit most."
+    websiteUrl: "https://aws.amazon.com/route53/"
+    alternatives: [
+      "cloudflare-dns",
+      "google-cloud-dns",
+      "azure-dns"
+    ]
     scoreBreakdown: {
       features: 85,
       reviews: 80,
@@ -1153,16 +1204,43 @@ export const ALL_TOOLS: ToolData[] = [
     rating: 4.0,
     reviewCount: 595,
     icon: Globe,
-    description: "",
-    longDescription: "",
-    pros: [],
-    cons: [],
-    pricing: "",
-    pricingDetail: "",
-    features: [],
-    useCase: "",
-    websiteUrl: "",
-    alternatives: [""],
+    description: "Google Cloud DNS is a scalable, resilient, and managed public and private DNS service built on Google's global infrastructure."
+    longDescription: "Google Cloud DNS is a fully managed, high-availability Domain Name System (DNS) service that enables organizations to publish domain names and translate them into IP addresses reliably. Built on the same infrastructure that powers Google services like Search and YouTube, it delivers low-latency, globally distributed DNS resolution with built-in redundancy and automatic failover. The service supports both public zones (for internet-facing domains) and private zones (for internal VPC resources), enabling secure, isolated DNS resolution within Google Cloud environments. Key features include DNSSEC signing and validation for enhanced security, programmable management via REST API and gcloud CLI, integration with Google Cloud Load Balancing and other GCP services, and real-time monitoring through Cloud Monitoring and Logging. Google Cloud DNS eliminates the operational overhead of managing DNS servers—no patching, scaling, or hardware provisioning required—while offering predictable pricing based on zone count and query volume. It’s ideal for enterprises and developers seeking enterprise-grade DNS reliability without infrastructure complexity. Its seamless integration with Google Cloud Platform makes it especially valuable for cloud-native applications, hybrid deployments, and organizations already invested in Google’s ecosystem. The service also supports advanced record types (e.g., CAA, DS, TLSA), bulk zone imports/exports, and fine-grained IAM permissions for secure team collaboration."
+    pros: [
+      "Built on Google's globally distributed, highly available infrastructure",
+      "Native integration with Google Cloud services (e.g., Load Balancing, Compute Engine)",
+      "Support for both public and private DNS zones",
+      "Automatic DNSSEC signing and key rotation",
+      "REST API and gcloud CLI for automation and IaC workflows",
+      "Real-time metrics and logging via Cloud Monitoring"
+    ]
+    cons: [
+      "Limited support for non-Google cloud or on-premises integrations compared to some competitors",
+      "No built-in DNS firewall or threat intelligence features",
+      "No free tier—minimum charges apply even for low-volume usage",
+      "Learning curve for users unfamiliar with Google Cloud IAM and resource hierarchy"
+    ]
+    pricing: "From $0.50/zone/month + $0.40 per million queries"
+    pricingDetail: "Pricing consists of a fixed monthly fee per managed DNS zone ($0.50) plus a variable cost based on the number of DNS queries ($0.40 per million queries). Private zones are priced identically to public zones. There are no setup fees, minimum commitments, or overage penalties—billing is pay-as-you-go and metered hourly."
+    features: [
+      "Public and private DNS zones",
+      "DNSSEC signing and validation",
+      "REST API and gcloud CLI support",
+      "IAM-based access control",
+      "Cloud Monitoring and Logging integration",
+      "Bulk import/export of DNS records",
+      "Support for all standard DNS record types (A, AAAA, CNAME, MX, TXT, etc.)",
+      "CAA, DS, and TLSA record support",
+      "Automated key rollover for DNSSEC",
+      "VPC network association for private zones"
+    ]
+    useCase: "Google Cloud DNS is ideal for organizations running workloads on Google Cloud Platform that require reliable, scalable, and secure DNS resolution—especially those deploying microservices, global applications, or hybrid architectures. It’s best suited for DevOps teams and cloud architects who prioritize automation, observability, and tight platform integration over standalone DNS tooling. Enterprises needing compliant, auditable DNS management with enterprise SLAs will benefit most."
+    websiteUrl: "https://cloud.google.com/dns"
+    alternatives: [
+      "cloudflare-dns",
+      "aws-route53",
+      "azure-dns"
+    ]
     scoreBreakdown: {
       features: 85,
       reviews: 80,
