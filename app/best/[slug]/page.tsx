@@ -51,11 +51,11 @@ const FAQS: Record<string, { q: string; a: string }[]> = {
   Marketing: [
     {
       q: "Is HubSpot worth the price for marketing automation?",
-      a: "HubSpot Marketing Hub provides exceptional value for mid-market B2B teams that need an all-in-one solution. The free CRM integration, smart content engine, and AI content strategy tools justify the cost for teams that will use the full suite. However, the jump from Starter ($15/mo) to Pro ($890/mo) is steep.",
+      a: "HubSpot Marketing Hub provides exceptional value for mid-market enterprise teams that need an all-in-one solution. The free CRM integration, smart content engine, and AI content strategy tools justify the cost for teams that will use the full suite. However, the jump from Starter ($15/mo) to Pro ($890/mo) is steep.",
     },
     {
-      q: "What's the best email marketing platform for B2B?",
-      a: "For B2B email marketing, HubSpot is the gold standard for integrated CRM+email. Mailchimp is best for simplicity and ease of use. Marketo Engage leads enterprise-level email automation. Consider your contact list size, automation complexity, and CRM integration needs.",
+      q: "What's the best email marketing platform for business?",
+      a: "For business email marketing, HubSpot is the gold standard for integrated CRM+email. Mailchimp is best for simplicity and ease of use. Marketo Engage leads enterprise-level email automation. Consider your contact list size, automation complexity, and CRM integration needs.",
     },
     {
       q: "What are the must-have marketing automation features?",

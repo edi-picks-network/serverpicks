@@ -61,7 +61,7 @@ const FEATURED_TOOLS: Tool[] = [
     category: 'Finance',
     rating: 4.9,
     reviews: 512,
-    description: 'Global B2B payment gateway API with built-in fraud prevention.',
+    description: 'Global business payment gateway API with built-in fraud prevention.',
     icon: CreditCard,
     pricing: 'Pay-as-you-go',
   },

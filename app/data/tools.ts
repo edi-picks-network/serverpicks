@@ -1100,8 +1100,8 @@ export const ALL_TOOLS: ToolData[] = [
     rating: 4.0,
     reviewCount: 457,
     icon: Shield,
-    description: "Cloudflare Registrar is a domain registration service offering free WHOIS privacy, seamless DNS integration, and competitive pricing for domains."
-    longDescription: "Cloudflare Registrar is a domain name registration service launched by Cloudflare in 2019 to provide developers and businesses with a secure, transparent, and integrated alternative to traditional registrars. Unlike most registrars that mark up domain prices and charge separately for privacy protection, Cloudflare Registrar offers free WHOIS privacy on all domains and passes through ICANN-mandated fees at cost—meaning no hidden margins or upsells. It tightly integrates with Cloudflare’s global DNS, CDN, and security infrastructure, enabling one-click DNS setup, automatic TLS certificate provisioning via Universal SSL, and instant propagation across Cloudflare’s network. Key benefits include enhanced security (e.g., mandatory two-step verification, registrar lock by default), simplified domain management within the Cloudflare dashboard, and zero markup on standard TLDs like .com, .org, and .net. The service targets technically proficient users—developers, DevOps teams, startups, and privacy-conscious site owners—who prioritize security, automation, and cost transparency over legacy registrar features like email hosting or website builders. Its value proposition centers on eliminating friction: no separate accounts, no privacy add-ons, no surprise renewals, and no vendor lock-in—domains remain fully portable while benefiting from Cloudflare’s performance and DDoS mitigation out of the box."
+    description: "Cloudflare Registrar is a domain registration service offering free WHOIS privacy, seamless DNS integration, and competitive pricing for domains.",
+    longDescription: "Cloudflare Registrar is a domain name registration service launched by Cloudflare in 2019 to provide developers and businesses with a secure, transparent, and integrated alternative to traditional registrars. Unlike most registrars that mark up domain prices and charge separately for privacy protection, Cloudflare Registrar offers free WHOIS privacy on all domains and passes through ICANN-mandated fees at cost—meaning no hidden margins or upsells. It tightly integrates with Cloudflare’s global DNS, CDN, and security infrastructure, enabling one-click DNS setup, automatic TLS certificate provisioning via Universal SSL, and instant propagation across Cloudflare’s network. Key benefits include enhanced security (e.g., mandatory two-step verification, registrar lock by default), simplified domain management within the Cloudflare dashboard, and zero markup on standard TLDs like .com, .org, and .net. The service targets technically proficient users—developers, DevOps teams, startups, and privacy-conscious site owners—who prioritize security, automation, and cost transparency over legacy registrar features like email hosting or website builders. Its value proposition centers on eliminating friction: no separate accounts, no privacy add-ons, no surprise renewals, and no vendor lock-in—domains remain fully portable while benefiting from Cloudflare’s performance and DDoS mitigation out of the box.",
     pros: [
       "Free WHOIS privacy on all domains",
       "No markup pricing—charges only ICANN and registry fees",
@@ -1109,15 +1109,15 @@ export const ALL_TOOLS: ToolData[] = [
       "Strong security defaults (2FA required, registrar lock enabled)",
       "Simple, API-driven domain management",
       "No upsells for email, hosting, or builder tools"
-    ]
+    ],
     cons: [
       "Limited TLD selection compared to major registrars (e.g., no .io, .dev, or country-code TLDs at launch)",
       "No built-in email forwarding or domain parking",
       "No phone or live chat support—support is community and ticket-based only",
       "Cannot register domains directly if your current registrar blocks transfers (e.g., some enterprise contracts)"
-    ]
-    pricing: "From $8.49/year for .com domains"
-    pricingDetail: "Pricing reflects actual registry fees plus a small operational fee—e.g., .com domains cost $8.49/year (ICANN fee + Cloudflare's $0.15 margin). There are no setup fees, renewal price locks, or privacy add-on charges. Premium TLDs (e.g., .app, .dev) are priced at cost with no markup, but availability is limited."
+    ],
+    pricing: "From $8.49/year for .com domains",
+    pricingDetail: "Pricing reflects actual registry fees plus a small operational fee—e.g., .com domains cost $8.49/year (ICANN fee + Cloudflare's $0.15 margin). There are no setup fees, renewal price locks, or privacy add-on charges. Premium TLDs (e.g., .app, .dev) are priced at cost with no markup, but availability is limited.",
     features: [
       "Free WHOIS privacy",
       "One-click DNS integration with Cloudflare",
@@ -1129,14 +1129,14 @@ export const ALL_TOOLS: ToolData[] = [
       "Bulk domain management",
       "Auto-renewal with email notifications",
       "Full EPP code access for portability"
-    ]
-    useCase: "Cloudflare Registrar is ideal for developers and infrastructure teams managing multiple websites who want streamlined, secure domain registration tightly coupled with DNS and security services. It’s especially valuable for those already using Cloudflare for DNS or WAF and seeking to eliminate third-party registrar complexity. Not recommended for users needing email hosting, website builders, or niche TLDs."
-    websiteUrl: "https://www.cloudflare.com/products/registrar/"
+    ],
+    useCase: "Cloudflare Registrar is ideal for developers and infrastructure teams managing multiple websites who want streamlined, secure domain registration tightly coupled with DNS and security services. It’s especially valuable for those already using Cloudflare for DNS or WAF and seeking to eliminate third-party registrar complexity. Not recommended for users needing email hosting, website builders, or niche TLDs.",
+    websiteUrl: "https://www.cloudflare.com/products/registrar/",
     alternatives: [
       "namecheap",
       "google-domains",
       "gandi"
-    ]
+    ],
     scoreBreakdown: {
       features: 85,
       reviews: 80,
@@ -1152,8 +1152,8 @@ export const ALL_TOOLS: ToolData[] = [
     rating: 4.0,
     reviewCount: 563,
     icon: Navigation,
-    description: "Amazon Route 53 is a highly available, scalable DNS web service that routes end users to internet applications by translating domain names into IP addresses."
-    longDescription: "Amazon Route 53 is Amazon Web Services' managed Domain Name System (DNS) service, designed to provide reliable and low-latency domain name resolution for websites, APIs, and cloud applications. It integrates natively with other AWS services like EC2, S3, CloudFront, and Elastic Load Balancing, enabling automated, policy-driven routing decisions. Key features include latency-based, geolocation, weighted, failover, and multivalue routing—allowing administrators to optimize performance, improve availability, and implement global traffic management strategies. Route 53 also supports health checks that monitor endpoints and automatically reroute traffic away from unhealthy resources, enhancing application resilience. Its DNSSEC signing capability helps protect against cache poisoning attacks, while seamless integration with AWS Certificate Manager (ACM) simplifies SSL/TLS certificate provisioning and renewal for domains hosted on Route 53. The service is built on AWS’s globally distributed infrastructure, offering high availability (99.99% SLA) and automatic scaling without operational overhead. Target users include DevOps engineers, cloud architects, SaaS providers, and enterprises running multi-region or hybrid-cloud deployments who require enterprise-grade DNS control, observability, and automation. Its value proposition lies in combining robust DNS functionality with deep AWS ecosystem integration, eliminating the need for third-party DNS management tools while reducing complexity and improving security posture."
+    description: "Amazon Route 53 is a highly available, scalable DNS web service that routes end users to internet applications by translating domain names into IP addresses.",
+    longDescription: "Amazon Route 53 is Amazon Web Services' managed Domain Name System (DNS) service, designed to provide reliable and low-latency domain name resolution for websites, APIs, and cloud applications. It integrates natively with other AWS services like EC2, S3, CloudFront, and Elastic Load Balancing, enabling automated, policy-driven routing decisions. Key features include latency-based, geolocation, weighted, failover, and multivalue routing—allowing administrators to optimize performance, improve availability, and implement global traffic management strategies. Route 53 also supports health checks that monitor endpoints and automatically reroute traffic away from unhealthy resources, enhancing application resilience. Its DNSSEC signing capability helps protect against cache poisoning attacks, while seamless integration with AWS Certificate Manager (ACM) simplifies SSL/TLS certificate provisioning and renewal for domains hosted on Route 53. The service is built on AWS’s globally distributed infrastructure, offering high availability (99.99% SLA) and automatic scaling without operational overhead. Target users include DevOps engineers, cloud architects, SaaS providers, and enterprises running multi-region or hybrid-cloud deployments who require enterprise-grade DNS control, observability, and automation. Its value proposition lies in combining robust DNS functionality with deep AWS ecosystem integration, eliminating the need for third-party DNS management tools while reducing complexity and improving security posture.",
     pros: [
       "Highly available and globally distributed DNS infrastructure",
       "Native integration with AWS services (e.g., ACM, CloudFront, ELB)",
@@ -1161,15 +1161,15 @@ export const ALL_TOOLS: ToolData[] = [
       "Automated health checks with real-time traffic failover",
       "DNSSEC support for enhanced security",
       "Detailed query logging and monitoring via CloudWatch"
-    ]
+    ],
     cons: [
       "Pricing can become complex and costly at scale due to per-query and hosted zone charges",
       "Limited UI functionality compared to dedicated DNS platforms; advanced configurations often require CLI or API",
       "No built-in email hosting or domain privacy protection (requires separate purchase)",
       "Learning curve for advanced routing policies and health check configuration"
-    ]
-    pricing: "From $0.50/month (hosted zone) + $0.40/million queries"
-    pricingDetail: "Route 53 uses a pay-as-you-go model: $0.50 per hosted zone per month, plus $0.40 per million DNS queries for standard record types. Health checks cost $1.00 per month per endpoint monitored. DNSSEC signing incurs an additional $0.40 per million queries. There are no upfront fees or minimum commitments."
+    ],
+    pricing: "From $0.50/month (hosted zone) + $0.40/million queries",
+    pricingDetail: "Route 53 uses a pay-as-you-go model: $0.50 per hosted zone per month, plus $0.40 per million DNS queries for standard record types. Health checks cost $1.00 per month per endpoint monitored. DNSSEC signing incurs an additional $0.40 per million queries. There are no upfront fees or minimum commitments.",
     features: [
       "Public and private hosted zones",
       "Latency-based routing",
@@ -1181,14 +1181,14 @@ export const ALL_TOOLS: ToolData[] = [
       "DNSSEC signing and key management",
       "Query logging to CloudWatch Logs",
       "API and CLI-driven automation"
-    ]
-    useCase: "Ideal for AWS-centric organizations needing reliable, programmable DNS with tight integration into their cloud infrastructure. Best suited for teams managing high-traffic web applications, global SaaS platforms, or disaster recovery setups requiring automated failover. Developers and SREs who prioritize infrastructure-as-code and observability will benefit most."
-    websiteUrl: "https://aws.amazon.com/route53/"
+    ],
+    useCase: "Ideal for AWS-centric organizations needing reliable, programmable DNS with tight integration into their cloud infrastructure. Best suited for teams managing high-traffic web applications, global SaaS platforms, or disaster recovery setups requiring automated failover. Developers and SREs who prioritize infrastructure-as-code and observability will benefit most.",
+    websiteUrl: "https://aws.amazon.com/route53/",
     alternatives: [
       "cloudflare-dns",
       "google-cloud-dns",
       "azure-dns"
-    ]
+    ],
     scoreBreakdown: {
       features: 85,
       reviews: 80,
@@ -1204,8 +1204,8 @@ export const ALL_TOOLS: ToolData[] = [
     rating: 4.0,
     reviewCount: 595,
     icon: Globe,
-    description: "Google Cloud DNS is a scalable, resilient, and managed public and private DNS service built on Google's global infrastructure."
-    longDescription: "Google Cloud DNS is a fully managed, high-availability Domain Name System (DNS) service that enables organizations to publish domain names and translate them into IP addresses reliably. Built on the same infrastructure that powers Google services like Search and YouTube, it delivers low-latency, globally distributed DNS resolution with built-in redundancy and automatic failover. The service supports both public zones (for internet-facing domains) and private zones (for internal VPC resources), enabling secure, isolated DNS resolution within Google Cloud environments. Key features include DNSSEC signing and validation for enhanced security, programmable management via REST API and gcloud CLI, integration with Google Cloud Load Balancing and other GCP services, and real-time monitoring through Cloud Monitoring and Logging. Google Cloud DNS eliminates the operational overhead of managing DNS servers—no patching, scaling, or hardware provisioning required—while offering predictable pricing based on zone count and query volume. It’s ideal for enterprises and developers seeking enterprise-grade DNS reliability without infrastructure complexity. Its seamless integration with Google Cloud Platform makes it especially valuable for cloud-native applications, hybrid deployments, and organizations already invested in Google’s ecosystem. The service also supports advanced record types (e.g., CAA, DS, TLSA), bulk zone imports/exports, and fine-grained IAM permissions for secure team collaboration."
+    description: "Google Cloud DNS is a scalable, resilient, and managed public and private DNS service built on Google's global infrastructure.",
+    longDescription: "Google Cloud DNS is a fully managed, high-availability Domain Name System (DNS) service that enables organizations to publish domain names and translate them into IP addresses reliably. Built on the same infrastructure that powers Google services like Search and YouTube, it delivers low-latency, globally distributed DNS resolution with built-in redundancy and automatic failover. The service supports both public zones (for internet-facing domains) and private zones (for internal VPC resources), enabling secure, isolated DNS resolution within Google Cloud environments. Key features include DNSSEC signing and validation for enhanced security, programmable management via REST API and gcloud CLI, integration with Google Cloud Load Balancing and other GCP services, and real-time monitoring through Cloud Monitoring and Logging. Google Cloud DNS eliminates the operational overhead of managing DNS servers—no patching, scaling, or hardware provisioning required—while offering predictable pricing based on zone count and query volume. It’s ideal for enterprises and developers seeking enterprise-grade DNS reliability without infrastructure complexity. Its seamless integration with Google Cloud Platform makes it especially valuable for cloud-native applications, hybrid deployments, and organizations already invested in Google’s ecosystem. The service also supports advanced record types (e.g., CAA, DS, TLSA), bulk zone imports/exports, and fine-grained IAM permissions for secure team collaboration.",
     pros: [
       "Built on Google's globally distributed, highly available infrastructure",
       "Native integration with Google Cloud services (e.g., Load Balancing, Compute Engine)",
@@ -1213,15 +1213,15 @@ export const ALL_TOOLS: ToolData[] = [
       "Automatic DNSSEC signing and key rotation",
       "REST API and gcloud CLI for automation and IaC workflows",
       "Real-time metrics and logging via Cloud Monitoring"
-    ]
+    ],
     cons: [
       "Limited support for non-Google cloud or on-premises integrations compared to some competitors",
       "No built-in DNS firewall or threat intelligence features",
       "No free tier—minimum charges apply even for low-volume usage",
       "Learning curve for users unfamiliar with Google Cloud IAM and resource hierarchy"
-    ]
-    pricing: "From $0.50/zone/month + $0.40 per million queries"
-    pricingDetail: "Pricing consists of a fixed monthly fee per managed DNS zone ($0.50) plus a variable cost based on the number of DNS queries ($0.40 per million queries). Private zones are priced identically to public zones. There are no setup fees, minimum commitments, or overage penalties—billing is pay-as-you-go and metered hourly."
+    ],
+    pricing: "From $0.50/zone/month + $0.40 per million queries",
+    pricingDetail: "Pricing consists of a fixed monthly fee per managed DNS zone ($0.50) plus a variable cost based on the number of DNS queries ($0.40 per million queries). Private zones are priced identically to public zones. There are no setup fees, minimum commitments, or overage penalties—billing is pay-as-you-go and metered hourly.",
     features: [
       "Public and private DNS zones",
       "DNSSEC signing and validation",
@@ -1233,14 +1233,14 @@ export const ALL_TOOLS: ToolData[] = [
       "CAA, DS, and TLSA record support",
       "Automated key rollover for DNSSEC",
       "VPC network association for private zones"
-    ]
-    useCase: "Google Cloud DNS is ideal for organizations running workloads on Google Cloud Platform that require reliable, scalable, and secure DNS resolution—especially those deploying microservices, global applications, or hybrid architectures. It’s best suited for DevOps teams and cloud architects who prioritize automation, observability, and tight platform integration over standalone DNS tooling. Enterprises needing compliant, auditable DNS management with enterprise SLAs will benefit most."
-    websiteUrl: "https://cloud.google.com/dns"
+    ],
+    useCase: "Google Cloud DNS is ideal for organizations running workloads on Google Cloud Platform that require reliable, scalable, and secure DNS resolution—especially those deploying microservices, global applications, or hybrid architectures. It’s best suited for DevOps teams and cloud architects who prioritize automation, observability, and tight platform integration over standalone DNS tooling. Enterprises needing compliant, auditable DNS management with enterprise SLAs will benefit most.",
+    websiteUrl: "https://cloud.google.com/dns",
     alternatives: [
       "cloudflare-dns",
       "aws-route53",
       "azure-dns"
-    ]
+    ],
     scoreBreakdown: {
       features: 85,
       reviews: 80,
