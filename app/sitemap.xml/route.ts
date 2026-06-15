@@ -7,6 +7,10 @@ const BLOG_SLUGS = [
     "european-vps-showdown-2026-hetzner-ovhcloud-contabo-scaleway",
     "european-budget-vps-contabo-scaleway-ionos-2026",
     "managed-vs-unmanaged-vps-2026",
+    "dedicated-server-vs-vps-vs-cloud-2026",
+    "aws-vs-azure-vs-gcp-2026",
+    "vps-security-hardening-2026",
+    "from-shared-hosting-to-vps-migration-guide",
 ] as const;
 
 const TOOL_SLUGS = [
