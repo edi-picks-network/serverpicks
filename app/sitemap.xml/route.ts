@@ -11,6 +11,8 @@ const BLOG_SLUGS = [
     "aws-vs-azure-vs-gcp-2026",
     "vps-security-hardening-2026",
     "from-shared-hosting-to-vps-migration-guide",
+    "vps-vpn-guide-2026-deep-dive",
+    "cloud-server-pricing-2026-cost-optimization",
 ] as const;
 
 const TOOL_SLUGS = [
