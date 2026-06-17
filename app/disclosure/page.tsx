@@ -77,8 +77,8 @@ export default function DisclosurePage() {
             <p>
               If you have any questions about our affiliate relationships or this
               disclosure, please contact us at{" "}
-              <a href="mailto:team@everdriven.io" className="text-[#2563EB] hover:underline">
-                team@everdriven.io
+              <a href="mailto:info@serverpicks.net" className="text-[#2563EB] hover:underline">
+                info@serverpicks.net
               </a>
               .
             </p>
