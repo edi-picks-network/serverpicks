@@ -13,6 +13,7 @@ const BLOG_SLUGS = [
     "from-shared-hosting-to-vps-migration-guide",
     "vps-vpn-guide-2026-deep-dive",
     "cloud-server-pricing-2026-cost-optimization",
+    "vps-backup-disaster-recovery-2026",
 ] as const;
 
 const TOOL_SLUGS = [
