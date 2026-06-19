@@ -31,3 +31,9 @@ newtools.js
 new-tools-batch.ts
 .vercel
 .next_old/
+__pycache__/
+refine_tools.py
+refined_*.json
+gen_blog.py
+blog_content.md
+append_blog.py
