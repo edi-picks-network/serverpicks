@@ -28,7 +28,7 @@ export default function PrivacyPage() {
             <p>
               Ever Driven ("we," "our," or "us") is committed to protecting your privacy.
               This Privacy Policy explains how we collect, use, disclose, and safeguard your
-              information when you visit our website everdriven.io (the "Site"). Please read this
+              information when you visit our website serverpicks.net (the "Site"). Please read this
               policy carefully. If you do not agree with the terms, do not access the Site.
             </p>
           </section>

@@ -65,7 +65,7 @@ export default function ToolDetailPage() {
 
     const org = organizationSchema(
       'Ever Driven',
-      'https://everdriven.io',
+      'https://serverpicks.net',
       'Geospatial infrastructure benchmarks and cloud hosting comparisons from Studio #55 in Boston.'
     );
     const s2 = document.createElement('script');

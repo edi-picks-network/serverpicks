@@ -9,7 +9,7 @@ interface JsonLdProps {
 
 export default function JsonLd({
   siteName = 'Ever Driven',
-  siteUrl = 'https://everdriven.io',
+  siteUrl = 'https://serverpicks.net',
   description = 'Geospatial infrastructure benchmarks and cloud hosting comparisons from Studio #55 in Boston.',
 }: JsonLdProps) {
   useEffect(() => {

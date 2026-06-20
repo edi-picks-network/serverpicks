@@ -171,7 +171,7 @@ export default async function BlogPostPage({
   );
   const orgJsonLd = organizationSchema(
     'Ever Driven',
-    'https://everdriven.io',
+    'https://serverpicks.net',
     'Honest hosting reviews and comparisons for modern businesses.'
   );
 
