@@ -37,3 +37,7 @@ refined_*.json
 gen_blog.py
 blog_content.md
 append_blog.py
+append_blog_monitoring.py
+check_dollar.py
+gen_blog_monitoring.py
+refine_tools_batch.py
