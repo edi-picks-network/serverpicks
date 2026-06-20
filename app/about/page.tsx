@@ -202,10 +202,10 @@ export default function AboutPage() {
               Contact Us
             </Link>
             <a
-              href="mailto:team@everdriven.io"
+              href="mailto:host@serverpicks.net"
               className="px-6 py-3 border border-ever-600 hover:border-geospatial text-ever-400 hover:text-white font-medium rounded-lg transition-all"
             >
-              team@everdriven.io
+              host@serverpicks.net
             </a>
           </div>
         </div>

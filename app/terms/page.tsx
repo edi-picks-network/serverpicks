@@ -194,8 +194,8 @@ export default function TermsPage() {
           <section>
             <h2 className="text-xl font-bold text-[#F0F2FE] mb-3">14. Contact Information</h2>
             <div className="mt-4 p-5 bg-[#0F1F2D] border border-[#1E3A5F] rounded-xl">
-              <p className="mb-2"><strong className="text-[#F0F2FE]">Email:</strong> team@everdriven.io</p>
-              <p className="mb-2"><strong className="text-[#F0F2FE]">Support:</strong> team@everdriven.io</p>
+              <p className="mb-2"><strong className="text-[#F0F2FE]">Email:</strong> host@serverpicks.net</p>
+              <p className="mb-2"><strong className="text-[#F0F2FE]">Support:</strong> host@serverpicks.net</p>
               <p><strong className="text-[#F0F2FE]">Address:</strong> 201 Mission Street, 25th Floor, San Francisco, CA 94105</p>
             </div>
           </section>
