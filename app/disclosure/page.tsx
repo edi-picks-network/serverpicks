@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Affiliate Disclosure — Ever Driven",
+  title: "Affiliate Disclosure — ServerPicks",
   description:
-    "Ever Driven's affiliate disclosure policy. Learn how we may earn commissions through partner links on our site.",
+    "ServerPicks's affiliate disclosure policy. Learn how we may earn commissions through partner links on our site.",
 };
 
 export default function DisclosurePage() {
@@ -26,7 +26,7 @@ export default function DisclosurePage() {
           <section>
             <h2 className="text-xl font-bold text-[#F0F2FE] mb-3">Transparency First</h2>
             <p>
-              Ever Driven is committed to transparency. This Affiliate Disclosure
+              ServerPicks is committed to transparency. This Affiliate Disclosure
               explains how we may earn compensation through links on our website.
             </p>
           </section>
@@ -34,7 +34,7 @@ export default function DisclosurePage() {
           <section>
             <h2 className="text-xl font-bold text-[#F0F2FE] mb-3">Affiliate Links</h2>
             <p>
-              Some of the links on Ever Driven are affiliate links. This means that
+              Some of the links on ServerPicks are affiliate links. This means that
               if you click on a link and make a purchase or sign up for a service, we may
               receive a commission at no additional cost to you.
             </p>

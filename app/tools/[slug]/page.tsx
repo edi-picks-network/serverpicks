@@ -64,9 +64,9 @@ export default function ToolDetailPage() {
     scripts.push(s1);
 
     const org = organizationSchema(
-      'Ever Driven',
+      'ServerPicks',
       'https://serverpicks.net',
-      'Geospatial infrastructure benchmarks and cloud hosting comparisons from Studio #55 in Boston.'
+      'Cloud infrastructure benchmarking and hosting comparison guides from Boston, MA.'
     );
     const s2 = document.createElement('script');
     s2.type = 'application/ld+json';

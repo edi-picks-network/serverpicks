@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Ever Driven",
+  title: "Privacy Policy — ServerPicks",
   description:
-    "Learn how Ever Driven collects, uses, and protects your personal data. Our privacy policy outlines our commitment to your privacy and data security.",
+    "Learn how ServerPicks collects, uses, and protects your personal data. Our privacy policy outlines our commitment to your privacy and data security.",
 };
 
 export default function PrivacyPage() {
@@ -26,7 +26,7 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-xl font-bold text-[#F0F2FE] mb-3">1. Introduction</h2>
             <p>
-              Ever Driven ("we," "our," or "us") is committed to protecting your privacy.
+              ServerPicks ("we," "our," or "us") is committed to protecting your privacy.
               This Privacy Policy explains how we collect, use, disclose, and safeguard your
               information when you visit our website serverpicks.net (the "Site"). Please read this
               policy carefully. If you do not agree with the terms, do not access the Site.

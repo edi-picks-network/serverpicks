@@ -4,16 +4,15 @@ import CookieBanner from "./components/CookieBanner";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Ever Driven — Geospatial Infrastructure & Hosting Benchmarks",
+  title: "ServerPicks — Hosting & Infrastructure Comparison Guides",
   description:
-    "Ever Driven is a Boston-based geospatial systems studio. We benchmark, compare, and recommend cloud hosting providers for geospatial and data-intensive workloads.",
+    "Server comparison and cloud hosting provider reviews. Benchmark, compare, and recommend cloud hosting providers.",
   keywords: [
     "cloud hosting",
     "VPS hosting",
     "geospatial systems",
     "server comparison",
     "cloud providers",
-    "Ever Driven",
   ],
   verification: {
     google: "T5bb4mZivi0CfaYYRiKZLSNIWmhvAX6_RVgDEyonTGo",
@@ -31,7 +30,7 @@ export default function RootLayout({
         <header className="border-b border-ever-700 bg-ever-800/80 backdrop-blur-sm sticky top-0 z-50">
           <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
             <Link href="/" className="font-bold text-white text-lg tracking-tight">
-              <span className="text-geospatial">Ever</span> Driven
+              ServerPicks
             </Link>
             <nav className="flex items-center gap-6 text-sm text-ever-300">
               <Link href="/all-tools" className="hover:text-geospatial-light transition-colors">Providers</Link>
@@ -49,10 +48,10 @@ export default function RootLayout({
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
               <div>
                 <h4 className="text-white font-semibold mb-3">
-                  <span className="text-geospatial">Ever</span> Driven
+                  ServerPicks
                 </h4>
                 <p className="text-sm leading-relaxed text-ever-400">
-                  Studio #55 — Geospatial systems benchmarking and cloud infrastructure analysis from Boston, MA.
+                  Cloud infrastructure benchmarking and hosting comparison guides from Boston, MA.
                 </p>
               </div>
               <div>
@@ -81,7 +80,7 @@ export default function RootLayout({
               </div>
             </div>
             <div className="pt-8 border-t border-ever-800 text-center text-sm text-ever-500">
-              &copy; {new Date().getFullYear()} Ever Driven (Studio #55). All rights reserved. Boston, MA.
+              &copy; {new Date().getFullYear()} ServerPicks. All rights reserved. Boston, MA.
             </div>
           </div>
         </footer>

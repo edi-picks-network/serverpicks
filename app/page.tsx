@@ -65,7 +65,7 @@ export default function HomePage() {
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-2 text-sm font-semibold text-geospatial-light bg-ever-700/60 px-4 py-1.5 rounded-full mb-6">
               <MapPin className="w-3.5 h-3.5" />
-              Studio #55 · Boston, MA · Geospatial Systems
+              Boston, MA · Cloud Infrastructure
             </span>
             <h1 className="text-5xl md:text-7xl font-black tracking-tight leading-[1.05] mb-6 text-white">
               Cloud Hosting{" "}
@@ -305,7 +305,7 @@ export default function HomePage() {
       <section className="py-16 bg-gradient-to-r from-ever-900 via-ever-800 to-ever-900 border-t border-ever-700">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Benchmark Before You Commit</h2>
-          <p className="text-ever-400 mb-8">See how {ALL_TOOLS.length} hosting providers stack up — real benchmarks from Studio #55.</p>
+          <p className="text-ever-400 mb-8">See how {ALL_TOOLS.length} hosting providers stack up — real benchmarks from ServerPicks.</p>
           <Link
             href="/all-tools"
             className="inline-flex items-center gap-2 px-8 py-3.5 bg-geospatial hover:bg-geospatial-dark text-white font-bold rounded-xl transition-colors shadow-lg"

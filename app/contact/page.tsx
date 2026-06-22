@@ -24,7 +24,7 @@ export default function ContactPage() {
         <div className="text-center mb-12">
           <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-geospatial-light bg-ever-700 px-3 py-1.5 rounded-md mb-4">
             <Compass className="w-3 h-3" />
-            Contact Studio #55
+            Contact ServerPicks
           </span>
           <h1 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-3">
             Get in Touch
@@ -164,7 +164,7 @@ export default function ContactPage() {
                 Studio
               </h3>
               <p className="text-sm text-ever-400 leading-relaxed">
-                Ever Driven Studio #55
+                ServerPicks
                 <br />
                 100 Cambridge Innovation Center
                 <br />

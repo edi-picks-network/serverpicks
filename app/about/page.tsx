@@ -3,9 +3,9 @@ import Link from "next/link";
 import { Globe, MapPin, Users, Cpu, BarChart3, Shield, Layers, Compass } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About — Ever Driven (Studio #55)",
+  title: "About — ServerPicks",
   description:
-    "Ever Driven is a Boston-based geospatial systems studio. We benchmark cloud infrastructure for geospatial and data-intensive workloads.",
+    "ServerPicks is a cloud infrastructure benchmarking platform. We compare and review hosting providers for modern workloads.",
 };
 
 const TEAM_HIGHLIGHTS = [
@@ -36,27 +36,27 @@ export default function AboutPage() {
     <div className="relative pt-32 pb-20 px-6">
       <div className="max-w-[800px] mx-auto">
         <div className="text-center mb-16">
-          <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-geospatial-light bg-ever-700 px-3 py-1.5 rounded-md mb-4">
-            <MapPin className="w-3 h-3" />
-            Studio #55 · Boston, MA
-          </span>
-          <h1 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight mb-6">
-            Your Geospatial Infrastructure{' '}
-            <span className="text-geospatial-light">Benchmarking Team</span>
-          </h1>
-          <p className="text-lg text-ever-400 leading-relaxed max-w-2xl mx-auto">
-            Ever Driven (Studio #55) is a 7-person geospatial systems team based in 
-            Boston, Massachusetts. We benchmark, compare, and recommend cloud hosting 
-            providers for geospatial and data-intensive workloads.
-          </p>
+            <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-geospatial-light bg-ever-700 px-3 py-1.5 rounded-md mb-4">
+              <MapPin className="w-3 h-3" />
+              Boston, MA
+            </span>
+            <h1 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight mb-6">
+              Your Infrastructure{' '}
+              <span className="text-geospatial-light">Benchmarking Team</span>
+            </h1>
+            <p className="text-lg text-ever-400 leading-relaxed max-w-2xl mx-auto">
+              ServerPicks is a 7-person cloud infrastructure team based in 
+              Boston, Massachusetts. We benchmark, compare, and recommend cloud hosting 
+              providers for data-intensive workloads.
+            </p>
         </div>
 
         <div className="mb-16">
           <h2 className="text-2xl font-bold text-white mb-6">Our Story</h2>
           <div className="space-y-4 text-ever-400 leading-relaxed">
             <p>
-              Ever Driven started in a shared workspace in Somerville, MA, back in 2023. 
-              Our founding team of four geospatial engineers kept running into the same 
+              ServerPicks started in a shared workspace in Somerville, MA, back in 2023. 
+              Our founding team of four infrastructure engineers kept running into the same 
               problem: cloud hosting recommendations were built for web developers, not 
               for people processing satellite imagery, running real-time GIS services, 
               or ingesting LiDAR point clouds at scale.
