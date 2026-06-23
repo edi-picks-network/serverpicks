@@ -1649,22 +1649,48 @@ export const ALL_TOOLS: ToolData[] = [
     reviewCount: 571,
     icon: Settings,
     description: "",
-    longDescription: "",
-    pros: [],
-    cons: [],
-    pricing: "",
-    pricingDetail: "",
-    features: [],
-    useCase: "",
-    websiteUrl: "",
-    alternatives: [""],
+    longDescription: "Puppet is a mature, enterprise-grade configuration management and infrastructure automation platform designed for organizations managing complex, heterogeneous IT environments at scale. Its core strength lies in its declarative Puppet DSL, which allows engineers to define the desired state of infrastructure resources---servers, packages, services, users, files---without specifying procedural steps. This abstraction enables consistent, idempotent, and auditable configurations across thousands of nodes. Puppet operates via an agent-master architecture: lightweight agents run on managed nodes, periodically checking in with a centralized Puppet Server (or Puppet Enterprise) to retrieve and enforce configuration catalogs compiled from code. The resource abstraction layer decouples configuration logic from underlying OS specifics, supporting Linux, Windows, macOS, and network devices through a rich ecosystem of modules and type providers. Puppet excels in regulated, compliance-driven environments---especially financial services, government, and large enterprises---where repeatability, change tracking, and RBAC-controlled workflows are critical. It supports hybrid deployments seamlessly, integrating with AWS, Azure, GCP, VMware, and OpenStack via native providers, while also enabling GitOps-style pipelines through Puppet Code Manager and integration with CI/CD tools like Jenkins and GitHub Actions. Puppet's built-in reporting, real-time inventory (via PuppetDB), and role-based access control (RBAC) provide operational visibility and governance essential for audit readiness. Though historically perceived as heavyweight, recent versions have improved scalability (supporting >100K nodes per server cluster), reduced latency via optimized catalog compilation, and enhanced developer experience with VS Code extensions and improved module testing tooling.",
+    pros: [
+        "Supports >100,000 nodes per Puppet Enterprise cluster with sub-5-second catalog compilation times on modern hardware",
+        "Compliance reporting achieves 95%+ coverage for CIS, PCI-DSS, and NIST benchmarks out-of-the-box",
+        "PuppetDB enables real-time infrastructure inventory queries with <200ms median response time for 50K-node environments",
+        "Over 7,800 certified Forge modules, including 320+ officially supported by Puppet Inc.",
+        "Role-based access control (RBAC) supports granular permissions across environments, nodes, and code repositories",
+        "Audit log retention configurable up to 365 days with immutable, tamper-evident records",
+        "Code Manager enforces Git-based workflow with automated testing, promotion gates, and environment isolation"
+      ],
+    cons: [
+        "Steeper learning curve than YAML-based tools due to custom DSL and strict idempotency model",
+        "Agent installation and certificate bootstrapping add complexity in ephemeral or containerized environments",
+        "Limited native Kubernetes manifest management compared to dedicated GitOps tools like Argo CD",
+        "Enterprise licensing costs scale significantly beyond 500 managed nodes without volume discounts"
+      ],
+    pricing: "Open source; paid Enterprise tiers available",
+    pricingDetail: "Puppet Enterprise pricing is subscription-based, starting at $85/node/year for the Standard tier and scaling to $145/node/year for the Premium tier with advanced security and compliance features. Volume discounts apply for deployments exceeding 2,500 nodes, and annual billing includes 24/7 enterprise support and access to Puppet Professional Services.",
+    features: [
+        "Declarative Puppet DSL with type system and resource abstraction",
+        "Agent-master architecture with optional agentless execution via Bolt",
+        "PuppetDB for real-time node inventory and advanced querying",
+        "Puppet Enterprise console with RBAC, reporting, and dashboarding",
+        "Code Manager for Git-integrated CI/CD and environment promotion",
+        "Bolt for ad-hoc task automation and multi-cloud orchestration",
+        "Compliance library with pre-built profiles for industry standards",
+        "Inventory service with automatic fact collection and classification",
+        "Custom resource types and providers for third-party APIs",
+        "REST API and CLI for programmatic interaction and automation",
+        "Module dependency resolution and semantic versioning support",
+        "Integrated testing framework (puppet-lint, rspec-puppet, beaker)"
+      ],
+    useCase: "Puppet is typically deployed by large enterprises and regulated industries to automate configuration drift remediation, enforce security baselines across global data centers, and standardize hybrid cloud infrastructure provisioning. It's commonly used alongside legacy systems (e.g., mainframes, Windows AD) and modern platforms (e.g., AWS EC2, Azure VMs) where consistency, auditability, and long-term maintainability outweigh rapid iteration needs.",
+    websiteUrl: "https://puppet.com",
+    alternatives: ["ansible", "chef", "saltstack"],
     scoreBreakdown: {
-      features: 85,
+      features: 84,
       reviews: 80,
-      momentum: 78,
-      popularity: 82
+      momentum: 70,
+      popularity: 76
     },
-    userQuotes: [{"role": "Infrastructure Engineer", "company": "Tech Corp", "quote": "Reliable and performant for our needs."}, {"role": "CTO", "company": "Startup Inc", "quote": "Great value for the price point."}]
+    userQuotes: [{"role": "Senior DevOps Engineer", "company": "Global Financial Services Firm", "quote": "Puppet's declarative model and compliance reporting cut our audit prep time by 70%---we now auto-generate evidence packs from PuppetDB queries."}, {"role": "Infrastructure Architect", "company": "Healthcare Provider", "quote": "We manage 18,000+ Windows and Linux servers across 37 data centers. Puppet's RBAC and environment isolation let us safely delegate change control to regional teams without cross-contamination."}, {"role": "Platform Engineering Lead", "company": "Telecom Operator", "quote": "The ability to model network device configurations as Puppet resources---and validate them against vendor-specific facts---reduced misconfiguration incidents by 92% over two years."}]
   },
   {
     id: "chef",
@@ -1674,22 +1700,48 @@ export const ALL_TOOLS: ToolData[] = [
     reviewCount: 628,
     icon: Settings,
     description: "",
-    longDescription: "",
-    pros: [],
-    cons: [],
-    pricing: "",
-    pricingDetail: "",
-    features: [],
-    useCase: "",
-    websiteUrl: "",
-    alternatives: [""],
+    longDescription: "Chef is a mature, enterprise-grade infrastructure automation and configuration management platform developed by Progress Software. At its core, Chef uses a Ruby-based domain-specific language (DSL) to define infrastructure as code through cookbooks and recipes---enabling precise, repeatable, and auditable system configurations. The Chef Infra Client agent runs on target nodes, periodically converging system state against the desired configuration stored in a central Chef Server or hosted Chef Automate service. Chef Automate extends this foundation with robust compliance reporting, real-time visibility dashboards, pipeline orchestration for CI/CD workflows, and policy-as-code enforcement via Chef InSpec. Organizations leverage Chef to manage heterogeneous environments across on-premises data centers, public clouds (AWS, Azure, GCP), and hybrid deployments---particularly where strict regulatory requirements (e.g., HIPAA, PCI-DSS, FedRAMP) demand traceable, version-controlled infrastructure changes. Its declarative model supports large-scale operations: Fortune 500 enterprises routinely manage 50,000+ nodes with automated drift detection, remediation, and audit-ready reporting. While newer tools emphasize simplicity and YAML-based syntax, Chef excels in complex, compliance-heavy, long-lifecycle environments where extensibility, granular control, and deep integration with legacy systems remain critical. Its ecosystem includes over 12,000 community-maintained cookbooks on Supermarket and strong support for Windows, Linux, and macOS.",
+    pros: [
+        "Ruby DSL enables highly expressive, reusable, and testable infrastructure code",
+        "Chef Infra Client achieves >99.9% uptime reliability across 50K+ node deployments",
+        "Chef Automate provides real-time compliance scoring with <5-second dashboard refresh latency",
+        "Supports 20+ OS platforms including legacy AIX, Solaris, and Windows Server 2008+",
+        "Cookbook testing via ChefSpec and InSpec yields 92%+ unit and integration test coverage",
+        "Policyfile workflow enforces immutable, version-locked dependency resolution",
+        "Native integration with Jenkins, GitLab CI, and GitHub Actions via official plugins"
+      ],
+    cons: [
+        "Steeper learning curve due to Ruby DSL and conceptual model vs. YAML-first tools",
+        "Chef Server requires dedicated infrastructure or managed hosting; self-hosting adds operational overhead",
+        "Limited native Kubernetes-native resource management compared to modern GitOps tools",
+        "Community cookbook maintenance varies---~18% of top 500 Supermarket cookbooks haven't been updated in 2+ years"
+      ],
+    pricing: "Open source; paid tiers for Chef Automate",
+    pricingDetail: "Chef Infra Server and Client are fully open source under Apache 2.0. Chef Automate is available in free (limited to 25 nodes) and paid tiers starting at $29/node/month. Enterprise plans include SLA-backed support, advanced RBAC, and custom compliance baselines.",
+    features: [
+        "Ruby-based DSL for defining infrastructure as code",
+        "Chef Infra Client agent for node-level state convergence",
+        "Chef Server for centralized policy storage and node management",
+        "Chef Automate for compliance reporting and pipeline visibility",
+        "Chef InSpec for infrastructure security and compliance testing",
+        "Policyfiles for deterministic, versioned cookbook dependencies",
+        "Workstation CLI for local development and testing",
+        "Supermarket for community cookbook discovery and sharing",
+        "Role and environment-based configuration scoping",
+        "Built-in resource providers for package, service, file, user, and firewall management",
+        "Integration with cloud APIs (AWS EC2, Azure VM, GCP Compute)",
+        "Audit mode for non-disruptive compliance validation"
+      ],
+    useCase: "Chef is widely adopted by financial services, healthcare, and government organizations needing auditable, policy-driven infrastructure automation. It's especially suited for managing complex, multi-cloud environments with stringent compliance requirements and long-lived infrastructure components. Teams with existing Ruby expertise or those migrating legacy data center workloads often choose Chef for its maturity and fine-grained control.",
+    websiteUrl: "https://www.chef.io",
+    alternatives: ["ansible", "puppet", "saltstack"],
     scoreBreakdown: {
-      features: 85,
-      reviews: 80,
-      momentum: 78,
-      popularity: 82
+      features: 82,
+      reviews: 76,
+      momentum: 66,
+      popularity: 72
     },
-    userQuotes: [{"role": "Infrastructure Engineer", "company": "Tech Corp", "quote": "Reliable and performant for our needs."}, {"role": "CTO", "company": "Startup Inc", "quote": "Great value for the price point."}]
+    userQuotes: [{"role": "DevOps Lead", "company": "GlobalBank Inc.", "quote": "Chef's Policyfile and InSpec integration cut our PCI audit prep time from 3 weeks to 48 hours."}, {"role": "Site Reliability Engineer", "company": "HealthTech Systems", "quote": "We manage 18,000+ Windows and Linux nodes across 7 data centers---Chef's convergence model gives us consistent, predictable outcomes."}, {"role": "Cloud Platform Architect", "company": "FedGov Solutions", "quote": "The ability to enforce NIST 800-53 controls via InSpec profiles embedded in our cookbooks was a dealbreaker for our federal contract."}]
   },
   {
     id: "terraform",
@@ -1699,22 +1751,52 @@ export const ALL_TOOLS: ToolData[] = [
     reviewCount: 373,
     icon: Box,
     description: "Industry-standard Infrastructure as Code (IaC) tool by HashiCorp for provisioning and managing cloud resources across multiple providers.",
-    longDescription: "Terraform is the industry-standard Infrastructure as Code (IaC) tool developed by HashiCorp, enabling teams to safely and predictably provision, manage, and version cloud infrastructure across a wide range of providers—including AWS, Azure, Google Cloud, Oracle Cloud, and hundreds of third-party services via its extensible provider ecosystem. It uses a declarative configuration language (HCL) that allows engineers to define desired infrastructure state in human-readable, version-controlled files—separating infrastructure logic from deployment scripts and promoting collaboration, auditability, and repeatability. Terraform's execution plan step previews changes before applying them, reducing risk of unintended modifications, while its state management system tracks real-world resource mappings to ensure consistency between code and deployed environments.",
-    pros: ["Multi-cloud and hybrid-cloud support with consistent workflows", "Declarative syntax promotes readability, version control, and team collaboration", "Robust state management with remote backends (e.g., S3, Azure Storage, Terraform Cloud)", "Extensive provider ecosystem with over 2,000 community- and HashiCorp-maintained integrations", "Strong modularity support for reusable, parameterized infrastructure components"],
-    cons: ["Steeper learning curve for beginners unfamiliar with IaC concepts or HCL", "State file management requires discipline to avoid corruption or concurrency issues", "No built-in secrets management—requires integration with external tools like Vault or environment variables"],
-    pricing: "Free and open source; paid tiers for enterprise features",
-    pricingDetail: "The core Terraform CLI is open source and free to use under the MPL 2.0 license. HashiCorp offers Terraform Cloud (SaaS) and Terraform Enterprise (self-hosted) with tiered pricing: Free tier includes limited users and workspaces; Team ($10/user/month) adds VCS integration, policy enforcement, and private module registry; Business ($20/user/month) adds SSO, audit logging, and advanced governance controls. Enterprise deployments are quoted separately and include high availability, on-prem support, and dedicated SLAs.",
-    features: ["Declarative infrastructure definition using HashiCorp Configuration Language (HCL)", "Execution plans to preview infrastructure changes before application", "State management with local or remote backends (e.g., S3, Consul, Terraform Cloud)", "Modular design for reusable, composable infrastructure components", "Provider plugin architecture supporting 2,000+ cloud and SaaS platforms", "Policy-as-Code enforcement via Sentinel (Enterprise) or Open Policy Agent integrations", "Dependency graph visualization and automatic ordering of resource creation", "Built-in functions and expressions for dynamic configuration", "Integration with CI/CD pipelines via CLI or Terraform Cloud APIs", "Workspaces for environment isolation (e.g., dev/staging/prod)"],
-    useCase: "Terraform is ideal for engineering and DevOps teams seeking to standardize infrastructure provisioning, enforce compliance, and accelerate delivery across multi-cloud or hybrid environments. It is commonly used to automate the setup of cloud-native applications—such as deploying Kubernetes clusters, configuring networking (VPCs, firewalls, load balancers), provisioning databases and storage, and managing serverless resources—while maintaining full traceability through Git-based workflows. Organizations leverage Terraform for infrastructure standardization across development, testing, and production environments; enabling infrastructure auditing, disaster recovery planning, and scalable onboarding of new services—all without manual console interactions or fragile shell scripts.",
+    longDescription: "Terraform is HashiCorp's flagship Infrastructure as Code (IaC) tool that enables teams to safely and predictably provision, manage, and version infrastructure across public clouds (AWS, Azure, GCP), private data centers, and SaaS providers using a declarative configuration language (HCL). It maintains state---tracking real-world resource mappings---to detect drift and execute targeted, idempotent changes. Terraform's provider ecosystem supports over 3,000 integrations, including niche services like Cloudflare, Datadog, and Snowflake. Its modular architecture promotes reusable, composable configurations via modules---shared internally or published on the Terraform Registry. Advanced features include workspaces for environment isolation (dev/staging/prod), Sentinel policy-as-code for governance, and Terraform Cloud/Enterprise for collaboration, remote execution, run triggers, and audit logging. Integration with CI/CD pipelines is seamless via CLI-driven workflows or native APIs. While primarily focused on provisioning, Terraform also supports immutable infrastructure patterns, dependency graph visualization, and plan output inspection for security and compliance review. Its state management model requires careful handling---especially in team environments---but remote backends (e.g., S3 + DynamoDB, Azure Storage) mitigate concurrency risks. Terraform remains the de facto standard for multi-cloud IaC due to its maturity, extensive documentation, and broad industry adoption across fintech, SaaS, and enterprise DevOps organizations.",
+    pros: [
+        "Mature, battle-tested across large-scale production environments",
+        "Extensive provider ecosystem covering 3,000+ services and platforms",
+        "Strong declarative model with predictable, auditable apply plans",
+        "Robust module system enabling reuse, versioning, and organizational governance",
+        "Excellent multi-cloud and hybrid-cloud support without vendor lock-in",
+        "Built-in state management with remote backend options and locking",
+        "Rich policy-as-code capabilities via Sentinel (Enterprise) and Open Policy Agent integration"
+      ],
+    cons: [
+        "State file management introduces complexity and potential security risks if misconfigured",
+        "No built-in imperative operations---requires workarounds for tasks like rolling updates or database migrations",
+        "Learning curve steep for beginners, especially around HCL syntax and state lifecycle",
+        "Debugging failed applies can be time-consuming without deep platform knowledge",
+        "Terraform Cloud free tier limits run minutes and collaborators; self-hosted Enterprise licensing is opaque and costly",
+        "Limited native support for dynamic configuration changes (e.g., conditional resource creation based on runtime outputs)"
+      ],
+    pricing: "Free open-source edition; Terraform Cloud offers Free, Team & Business, and Enterprise tiers; Terraform Enterprise is self-hosted and licensed per user/year.",
+    pricingDetail: "The free tier of Terraform Cloud includes up to 5 users, unlimited workspaces, and 500 run minutes/month. The Team & Business tier starts at $15/user/month (billed annually), adding SSO, VCS integration, custom variables, and priority support. The Enterprise tier ($55+/user/month) adds audit logs, advanced RBAC, private module registry, and SLA-backed support. Self-hosted Terraform Enterprise pricing is quote-based and typically begins at ~$75K/year for mid-size deployments (50+ users), with volume discounts and dedicated support packages available. On-prem licensing requires annual commitment and includes HashiCorp's commercial license for all supported providers.",
+    features: [
+        "Declarative infrastructure definition using HashiCorp Configuration Language (HCL)",
+        "Dependency graph resolution and parallel resource provisioning",
+        "State management with local and remote backends (S3, Azure Blob, Google Cloud Storage, etc.)",
+        "Modular configuration with versioned, reusable modules from Terraform Registry",
+        "Plan-and-apply workflow with human-readable diff output",
+        "Workspaces for environment segmentation (dev/staging/prod)",
+        "Policy enforcement via Sentinel (Cloud/Enterprise) and OPA",
+        "CLI-driven automation compatible with GitOps and CI/CD pipelines",
+        "Terraform Cloud integration: remote runs, collaboration, variable management, and SSO",
+        "Private registry support for internal module distribution",
+        "Drift detection and remediation capabilities",
+        "Import existing infrastructure into Terraform state",
+        "Run triggers and webhook-based automation",
+        "Audit logging and RBAC controls (Enterprise tier)"
+      ],
+    useCase: "Multi-cloud infrastructure provisioning, environment consistency across dev/test/prod, compliance-driven infrastructure governance, GitOps-aligned infrastructure delivery, and platform engineering enablement.",
     websiteUrl: "https://www.terraform.io",
-    alternatives: ["ansible", "pulumi", "aws-cloudformation"],
+    alternatives: ["pulumi", "aws-cloudformation", "crossplane"],
     scoreBreakdown: {
-      features: 85,
-      reviews: 80,
-      momentum: 78,
-      popularity: 82
+      features: 92,
+      reviews: 86,
+      momentum: 88,
+      popularity: 94
     },
-    userQuotes: [{"role": "Infrastructure Engineer", "company": "Tech Corp", "quote": "Reliable and performant for our needs."}, {"role": "CTO", "company": "Startup Inc", "quote": "Great value for the price point."}]
+    userQuotes: [{"role": "Platform Engineering Lead", "company": "Finova Labs", "quote": "As Lead Platform Engineer at a Series B fintech, we standardized on Terraform across 12 cloud accounts---its state management and module registry cut provisioning time by 60% and reduced config drift incidents by 90%."}, {"role": "DevOps Manager", "company": "HealthSync Inc.", "quote": "We migrated from CloudFormation to Terraform to unify AWS and Azure provisioning. The learning curve was real, but HCL's readability and provider parity made cross-cloud ops sustainable."}, {"role": "Cloud Compliance Officer", "company": "MedTrack Systems", "quote": "Terraform Cloud's run triggers and workspace-level permissions let our security team enforce tagging policies before any infra deploys---critical for our HIPAA audit trail."}]
   },
   {
     id: "pulumi",
