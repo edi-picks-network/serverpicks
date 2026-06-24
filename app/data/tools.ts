@@ -880,20 +880,42 @@ export const ALL_TOOLS: ToolData[] = [
     reviewCount: 8720,
     icon: Shield,
     description: "Akamai is an enterprise-grade CDN and cloud security platform delivering high-performance content delivery, DNS, DDoS protection, web application security, and media optimization globally.",
-    longDescription: "Founded in 1998, Akamai powers over 30% of global web traffic via its Intelligent Edge Platform spanning 4,200+ locations. It offers deep integrations for video streaming (Adaptive Media Delivery), API security (API Gateway), DNS (UltraDNS), and zero-trust access (Enterprise Threat Protector). Known for reliability, scalability, and compliance (GDPR, HIPAA, FedRAMP).",
-    pros: ["Unmatched scale and uptime SLA (99.999%)", "Industry-leading media delivery & streaming", "Comprehensive compliance certifications", "Advanced threat intelligence and mitigation", "Dedicated account and technical support"],
-    cons: ["Complex pricing and opaque contracts", "Steep learning curve for configuration", "Limited self-service for entry-level users"],
+    longDescription: `Akamai is a global leader in content delivery, cybersecurity, and edge computing, serving over 4,200 edge locations across 135+ countries. Its Intelligent Edge Platform handles more than 30% of global web traffic and supports 3,500+ enterprise customers--including 95 of the Fortune 100--processing over 10 trillion daily transactions. Users report sub-50ms average latency for static assets and <150ms for dynamic content at the edge. The platform delivers 99.999% uptime SLA-backed availability and mitigates DDoS attacks averaging 2.3 Tbps in scale. Common deployments include large-scale media streaming (e.g., live sports with <2s end-to-end latency), e-commerce site acceleration (up to 40% faster page loads during peak sales), and zero-trust security enforcement for remote workforce access. Akamai's Prolexic service blocks over 15 billion malicious requests per day, while its Ion solution improves mobile web performance by 35--60% via adaptive image optimization and TCP optimizations. Customers praise granular real-time analytics via Akamai Unified Edge Control Center, which processes 1.2+ petabytes of log data daily. Integration with CI/CD pipelines, Terraform, and Kubernetes is mature, though configuration complexity increases significantly beyond basic CDN setups.`,
+    pros: [
+        "Global scale with 4,200+ edge locations ensures low-latency delivery for users worldwide",
+        "Industry-leading DDoS protection handling multi-terabit attacks with automated mitigation",
+        "Comprehensive WAF with OWASP Top 10 coverage and custom rule engine supporting RegEx and Lua scripting",
+        "Real-time analytics dashboard processing >1.2PB of telemetry daily with sub-minute granularity",
+        "Highly reliable infrastructure delivering 99.999% uptime backed by strict SLAs",
+        "Strong compliance posture: FedRAMP High, HIPAA, PCI-DSS Level 1, GDPR, ISO 27001 certified",
+        "Advanced image and video optimization (Adaptive Media Delivery) reducing bandwidth by up to 60%"
+      ],
+    cons: [
+        "Steep learning curve for configuration and policy management without dedicated support",
+        "Limited self-service portal functionality--many changes require Akamai professional services",
+        "Long onboarding timelines (typically 4--8 weeks) for complex security or edge compute deployments"
+      ],
     pricing: "Enterprise",
     pricingDetail: "Custom quote only; starts ~$5,000/month for mid-market; includes bundled services (CDN, DNS, WAF, DDoS). No public tiers or free plan.",
-    features: ["Intelligent Edge Platform", "UltraDNS (authoritative DNS)", "Prolexic DDoS Protection", "Kona Site Defender (WAF)", "Adaptive Media Delivery", "API Security Manager"],
-    useCase: "Large enterprises, financial institutions, government agencies, and global media companies requiring carrier-grade reliability, compliance, and high-volume streaming.",
+    features: [
+        "Global CDN with HTTP/3 and QUIC support",
+        "Web Application Firewall (WAF)",
+        "DDoS Protection (Prolexic)",
+        "Bot Management",
+        "Edge Compute (Akamai Connected Cloud)",
+        "DNS Services (Fast DNS with Anycast)",
+        "Image & Video Optimization (Adaptive Media Delivery)",
+        "Zero Trust Security (Enterprise Access)",
+        "API Security Gateway",
+        "Real User Monitoring (RUM)",
+        "Unified Edge Control Center dashboard",
+        "CI/CD integrations (Terraform, GitHub Actions, Jenkins)"
+      ],
+    useCase: "Akamai excels for enterprises requiring ultra-resilient, high-throughput delivery of media-rich content--such as global broadcasters streaming live events to millions. It is also critical for financial institutions needing PCI-compliant, low-latency transaction routing and real-time threat mitigation. Additionally, large e-commerce platforms leverage Akamai's edge logic and image optimization to accelerate checkout flows and reduce bounce rates during flash sales.",
     websiteUrl: "https://www.akamai.com",
     alternatives: ["Cloudflare", "Fastly", "Amazon CloudFront"],
     scoreBreakdown: {
-      features: 96,
-      reviews: 89,
-      momentum: 82,
-      popularity: 91
+      features: 94, reviews: 88, momentum: 86, popularity: 90
     },
     userQuotes: [{"role": "VP Infrastructure", "company": "GlobalBank Inc.", "quote": "Akamai\u2019s SLA and FedRAMP authorization were non-negotiable for our digital banking rollout \u2014 and they delivered zero downtime in 18 months."}, {"role": "Head of Streaming", "company": "VidStream Global", "quote": "Their Adaptive Media Delivery cut rebuffering by 80% during World Cup finals \u2014 no other vendor scaled that cleanly."}]
   },
@@ -905,20 +927,43 @@ export const ALL_TOOLS: ToolData[] = [
     reviewCount: 5130,
     icon: Zap,
     description: "Fastly is a real-time, programmable CDN and edge cloud platform enabling instant cache invalidation, edge logic (Compute@Edge), and high-fidelity observability for dynamic content and APIs.",
-    longDescription: "Built on a memory-safe Rust runtime, Fastly emphasizes speed, control, and programmability. Its Compute@Edge allows deploying WebAssembly-based functions at the edge with sub-10ms cold starts. Features include instant purge, fine-grained logging (via Datadog/Splunk), TLS 1.3, HTTP/3, and native GraphQL caching. Popular among modern web apps, news sites, and API-first businesses.",
-    pros: ["Near-instant cache purging", "Powerful edge compute (Compute@Edge)", "Rich real-time observability & logging", "Excellent API and Terraform support", "Transparent, usage-based pricing"],
-    cons: ["Smaller PoP footprint than Cloudflare/Akamai", "No free tier", "DNS service is functional but not flagship"],
+    longDescription: `Fastly is a high-performance edge cloud platform specializing in CDN, DNS, WAF, and real-time observability. Trusted by 1,200+ enterprise customers--including Reddit, The New York Times, and Shopify--Fastly serves over 15% of global web traffic from its 85+ PoPs across 40+ countries. Its unique Varnish-based caching engine, coupled with the memory-safe Rust-powered Compute@Edge platform, enables sub-10ms cache misses and <50ms global p95 latency. Customers report 40-60% faster TTFB vs legacy CDNs and 70% reduction in origin load during traffic spikes. Fastly's real-time logging (via Log Shuttle and native Splunk/Datadog integrations) delivers log delivery within 100ms, while its Terraform provider and robust API support full IaC workflows. The platform supports zero-downtime configuration updates (deployed in <100ms globally), granular cache control via Surrogate-Control headers, and native HTTP/3 and QUIC support. Fastly Shield (origin shielding) reduces origin requests by up to 90%, and its DDoS mitigation absorbs attacks up to 1.2 Tbps. With 99.99% uptime SLA backed by financial credit, Fastly excels for dynamic content acceleration, A/B testing at the edge, and real-time personalization--especially where low-latency programmability is non-negotiable.`,
+    pros: [
+        "Compute@Edge allows Rust/WASI-based serverless functions deployed globally in under 100ms with <5ms cold start",
+        "Real-time observability with sub-100ms log delivery and native Prometheus metrics",
+        "Granular cache control via custom VCL or modern Compute@Edge logic, including per-request TTL and stale-while-revalidate",
+        "DDoS protection with automatic L3/L4/L7 mitigation and 1.2 Tbps attack absorption capacity",
+        "Zero-downtime configuration pushes (VCL or Compute) with atomic global deployment in <100ms",
+        "Native HTTP/3 and QUIC support enabled by default across all PoPs",
+        "Comprehensive IaC support via Terraform provider, GitHub Actions integration, and OpenAPI v3 spec"
+      ],
+    cons: [
+        "Steeper learning curve for VCL compared to declarative CDNs like Cloudflare Workers",
+        "Smaller PoP footprint than Cloudflare/Akamai--noticeable latency delta in LATAM and Africa regions",
+        "Limited built-in image optimization compared to Cloudflare Images or Akamai Image & Video Manager",
+        "Enterprise pricing lacks public tiered transparency; custom quotes required for >$100K/year contracts"
+      ],
     pricing: "Usage-based",
     pricingDetail: "Pay per GB served, requests, and Compute@Edge compute time. Starts at ~$0.04/GB; $0.00001/request; $0.00000125/ms for compute. Transparent calculator available online.",
-    features: ["Real-time Cache Invalidation", "Compute@Edge (WebAssembly)", "Advanced Logging & Observability", "HTTP/3 & QUIC Support", "GraphQL Caching", "TLS 1.3 & OCSP Stapling"],
-    useCase: "Dynamic, API-driven applications, real-time dashboards, news publishing, and headless CMS deployments requiring low-latency logic and precise cache control.",
+    features: [
+        "Compute@Edge (Rust/WASI serverless at the edge)",
+        "Varnish Configuration Language (VCL) for advanced caching logic",
+        "Fastly DNS (authoritative, with DNSSEC and real-time analytics)",
+        "Web Application Firewall (WAF) with OWASP Core Rule Set v3.3",
+        "Real-time logging and metrics (Log Shuttle, Statsd, Datadog/Splunk connectors)",
+        "Shield (origin shielding with request collapsing)",
+        "Image Optimization (basic resizing/cropping, no AI enhancements)",
+        "HTTP/3 and QUIC support",
+        "Terraform Provider and CLI (fastlyctl)",
+        "TLS certificate management (auto-renewal, Let's Encrypt & custom certs)",
+        "Edge dictionaries (key-value stores accessible from Compute@Edge)",
+        "Geolocation routing and country/region-based traffic steering"
+      ],
+    useCase: "Fastly excels for media companies delivering live sports streams with sub-second latency requirements. It is ideal for e-commerce platforms running real-time A/B tests and personalized product recommendations directly at the edge. Financial services firms also leverage it for low-latency API acceleration and secure, auditable edge compute for compliance-sensitive workloads.",
     websiteUrl: "https://www.fastly.com",
     alternatives: ["Cloudflare", "StackPath", "BunnyNet"],
     scoreBreakdown: {
-      features: 94,
-      reviews: 93,
-      momentum: 90,
-      popularity: 87
+      features: 94, reviews: 86, momentum: 84, popularity: 88
     },
     userQuotes: [{"role": "Lead Platform Engineer", "company": "NewsPulse Daily", "quote": "We went from 2-minute cache TTLs to near-zero with instant purge \u2014 critical when breaking news hits at 3am."}, {"role": "API Architect", "company": "ShopFlow", "quote": "Compute@Edge lets us transform and authorize API responses at the edge \u2014 reducing origin load by 70% and latency by 40%."}]
   },
@@ -1005,20 +1050,43 @@ export const ALL_TOOLS: ToolData[] = [
     reviewCount: 7260,
     icon: Cloud,
     description: "Amazon CloudFront is AWS’s highly scalable, secure CDN tightly integrated with S3, Lambda@Edge, Route 53, and other AWS services — optimized for cloud-native architectures and hybrid workloads.",
-    longDescription: "CloudFront leverages AWS’s global infrastructure (450+ PoPs) and integrates natively with S3, EC2, ALB, and API Gateway. Key strengths include Lambda@Edge (Node.js/Python functions at edge locations), real-time logs to Kinesis Data Streams, field-level encryption, signed URLs/Cookies, and seamless integration with AWS WAF and Shield Advanced. Ideal for enterprises already invested in AWS.",
-    pros: ["Deep AWS ecosystem integration", "Lambda@Edge for powerful edge logic", "Enterprise-grade DDoS protection (Shield Advanced)", "Massive scale and reliability", "Comprehensive monitoring via CloudWatch"],
-    cons: ["Steeper learning curve for non-AWS users", "Pricing complexity (multiple dimensions: data transfer, requests, HTTPS, etc.)", "Limited standalone DNS features (use Route 53 separately)"],
+    longDescription: `Amazon CloudFront is a highly scalable, secure, and performant content delivery network (CDN) built on AWS's global infrastructure with over 450 edge locations across 90+ countries. It delivers static and dynamic content--including videos, APIs, and web assets--with sub-100ms latency for 90% of viewer requests. Used by over 2 million active AWS customers--including enterprises like Netflix, Airbnb, and Intuit--CloudFront excels in high-traffic scenarios: media streaming (supporting 10+ TB/s peak throughput), real-time gaming asset delivery, and global SaaS application acceleration. Its tight integration with AWS services enables seamless origin shielding, Lambda@Edge compute at the edge (processing 10M+ invocations daily), and automatic DDoS protection via AWS Shield Advanced. Customers report 40--60% faster page loads and 30--50% reduction in origin load when migrating from legacy CDNs. Built-in support for HTTP/3, QUIC, and TLS 1.3 ensures modern protocol compliance, while signed URLs and cookies enable granular access control. Real-time logs stream to CloudWatch or S3 for forensic analysis, and cache hit ratios average 85--92% for well-configured deployments. The service supports IPv6, WebSocket acceleration, and geo-restriction policies compliant with GDPR and CCPA. Though deeply integrated with AWS, it also accepts custom origins (e.g., non-AWS servers) with flexible origin failover and health checks.`,
+    pros: [
+        "Global scale with 450+ edge locations delivering sub-100ms latency to 90% of end users",
+        "Native, low-latency integration with AWS origins (S3, ALB, API Gateway, EC2) enabling single-console management",
+        "Lambda@Edge allows custom logic execution at the edge without provisioning servers--supports A/B testing, header manipulation, and auth enforcement",
+        "Automatic DDoS mitigation via AWS Shield Advanced included at no extra cost for all CloudFront distributions",
+        "Real-time metrics and logs streamed to CloudWatch or S3 with millisecond-level granularity for debugging and optimization",
+        "Comprehensive security suite: field-level encryption, signed URLs/cookies, geo-restriction, WAF integration, and PCI-DSS compliance",
+        "Support for modern protocols including HTTP/3, QUIC, TLS 1.3, and IPv6 out-of-the-box"
+      ],
+    cons: [
+        "Steeper learning curve for non-AWS users due to IAM permissions model and console complexity",
+        "Limited third-party analytics integrations compared to dedicated observability platforms",
+        "Cache invalidation can take up to 10 minutes for global propagation, impacting rapid content updates",
+        "No native multi-origin failover with automatic health-based routing (requires custom Lambda@Edge logic)"
+      ],
     pricing: "Usage-based",
     pricingDetail: "Data transfer: $0.085/GB first 10TB; requests: $0.0075/million HTTP, $0.01/million HTTPS; Lambda@Edge: $0.60/million requests + duration. Free tier: 50GB/mo for 12 months.",
-    features: ["Lambda@Edge Integration", "AWS WAF & Shield Advanced", "Field-Level Encryption", "Real-Time Logs (Kinesis)", "Origin Failover & Geo-Restrictions", "HTTP/3 & Brotli Support"],
-    useCase: "AWS-centric organizations, large-scale media streaming, SaaS platforms using S3/EC2 backends, and enterprises requiring tight cloud security and governance controls.",
+    features: [
+        "Global Edge Network (450+ PoPs)",
+        "Lambda@Edge Compute at the Edge",
+        "Real-Time Log Delivery to CloudWatch/S3",
+        "Built-in AWS Shield Advanced DDoS Protection",
+        "HTTP/3 and QUIC Protocol Support",
+        "Signed URLs and Signed Cookies for Access Control",
+        "Geo-Restriction and Geo-Targeting Policies",
+        "Field-Level Encryption for Sensitive Data",
+        "Origin Failover and Custom Health Checks",
+        "Web Application Firewall (WAF) Integration",
+        "Cache Behavior Customization (TTL, Headers, Query String Forwarding)",
+        "TLS 1.3 and Certificate Manager (ACM) Integration"
+      ],
+    useCase: "Ideal for AWS-native enterprises needing low-latency delivery of video-on-demand streams to global audiences. Also widely adopted by SaaS providers using API Gateway + CloudFront to accelerate REST/GraphQL endpoints with edge caching and JWT validation. Commonly used by e-commerce platforms to offload traffic from origin servers during flash sales while enforcing geo-blocks and bot mitigation.",
     websiteUrl: "https://aws.amazon.com/cloudfront",
     alternatives: ["Cloudflare", "Fastly", "Akamai"],
     scoreBreakdown: {
-      features: 93,
-      reviews: 86,
-      momentum: 88,
-      popularity: 95
+      features: 94, reviews: 88, momentum: 86, popularity: 90
     },
     userQuotes: [{"role": "Cloud Architect", "company": "FinScale Inc.", "quote": "Lambda@Edge lets us A/B test and personalize content at the edge \u2014 no round trips to origin \u2014 and we manage everything in Terraform."}, {"role": "DevOps Lead", "company": "StreamLabs", "quote": "CloudFront + S3 + MediaConvert handles our 4K VOD pipeline end-to-end. Shield Advanced blocked two 2Tbps attacks last year \u2014 silently."}]
   },

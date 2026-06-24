@@ -18,6 +18,7 @@ const BLOG_SLUGS = [
     "cloud-server-monitoring-2026-essentials",
     "vps-auto-scaling-strategies-2026-0622",
     "vps-monitoring-tools-2026-datadog-grafana-prometheus-nagios",
+    "cdn-edge-computing-showdown-2026-akamai-cloudfront-fastly-cloudflare",
 ] as const;
 
 const TOOL_SLUGS = [
