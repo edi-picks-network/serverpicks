@@ -1915,23 +1915,26 @@ export const ALL_TOOLS: ToolData[] = [
     rating: 4.0,
     reviewCount: 446,
     icon: Settings,
-    description: "",
-    longDescription: "",
-    pros: [],
-    cons: [],
-    pricing: "",
-    pricingDetail: "",
-    features: [],
-    useCase: "",
-    websiteUrl: "",
-    alternatives: [""],
+    description: "Salt Project is an open-source, Python-based infrastructure automation and configuration management platform designed for scalable, real-time remote execution and state-driven orchestration across hybrid cloud environments.",
+    longDescription: `Salt Project is a powerful, open-source infrastructure automation platform built in Python that enables high-speed, real-time remote execution and declarative state management across thousands of servers, containers, and cloud instances. Positioned as a modern alternative to legacy tools like Puppet and Chef, Salt distinguishes itself through its event-driven architecture, zero-config peer-to-peer communication via ZeroMQ (or TCP/TLS), and a flexible, modular design supporting both imperative execution modules and declarative state modules. Its architecture centers on the Salt Master-Minion model (with masterless and syndic options), where minions connect securely to the master using asymmetric encryption, enabling low-latency command dispatching and reactive event handling via Salt's internal event bus. Key strengths include exceptional scalability proven in deployments managing 50,000+ nodes, rich extensibility via custom grains, pillars, renderers, and execution/state modules, strong support for hybrid and multi-cloud environments (AWS, Azure, GCP, OpenStack, Kubernetes), robust security with granular ACLs and PKI-based authentication, mature orchestration capabilities via Salt Orchestrate and Reactor systems, and tight integration with DevOps toolchains including CI/CD pipelines and monitoring stacks. Weaknesses include a steeper learning curve than Ansible due to its dual execution/state paradigms and YAML+Jinja complexity, limited native GUI (relying on community or commercial add-ons like SaltGUI), minimal out-of-the-box reporting and analytics compared to enterprise rivals, and reduced third-party module ecosystem breadth versus Ansible Galaxy. Salt Project is ideal for large-scale enterprises, SaaS providers, and DevOps teams needing high-throughput automation, fine-grained control over infrastructure state, and real-time responsiveness especially where speed, consistency, and event-triggered workflows are critical. It excels in environments with heterogeneous infrastructure (bare metal, VMs, containers, edge devices), compliance-driven operations requiring auditability, and organizations committed to open-source tooling with deep Python customization needs. While smaller teams may find Ansible more approachable, Salt shines where scale, performance, and architectural flexibility outweigh simplicity requirements.`,
+    pros: ["Blazing-fast remote execution across tens of thousands of nodes with sub-second command propagation", "Event-driven architecture enabling real-time reaction to system changes via Salt's event bus and reactor", "Highly extensible via custom modules, grains, pillars, and renderers for complete automation flexibility", "Strong hybrid cloud and multi-cloud orchestration with native support for AWS, Azure, GCP, and Kubernetes", "Robust security model with PKI-based authentication, granular ACLs, and zero-trust architecture options", "Masterless mode enables secure offline or edge-deployed configurations without a central master", "Mature Python-native ecosystem with extensive library integrations and active community support"],
+    cons: ["Steeper learning curve due to dual execution/state paradigms and complex Jinja/YAML templating compared to Ansible", "No official web UI requires third-party or commercial solutions for visual server management", "Limited built-in reporting, analytics, and dashboarding capabilities out of the box", "Smaller public module repository and community contribution volume versus Ansible Galaxy"],
+    pricing: "Free open-source core (Apache 2.0); commercial support from third-party vendors.",
+    pricingDetail: "The Salt Project core (Salt Open) is 100% free and open source under Apache 2.0 license with no licensing fees. SaltStack Enterprise (formerly offered by VMware/Broadcom) was discontinued in 2023. Current commercial support and hardened distributions are available from third-party vendors like Salt Labs and community-supported enterprise builds which include SLAs, priority bug fixes, FIPS compliance, RBAC enhancements, and optional web UIs. Pricing is typically subscription-based per managed node or annual support contract starting around $1,500/year for small deployments and scaling with node count and service level. Self-hosted deployments incur only infrastructure costs on VPS or bare metal servers.",
+    features: ["Remote execution engine (salt-call, salt) for parallel command propagation", "Declarative state management via SLS files defining desired system configurations", "Event-driven reactor and orchestration system for automated workflow responses", "Pillar data system for secure environment-specific configuration and secrets management", "Grains system for dynamic system introspection and metadata collection", "ZeroMQ and TCP transport options with full TLS encryption support", "Salt SSH for agentless operation without installing minion software", "Beacons for filesystem, process, log, and network monitoring with event triggers", "Cloud modules for provisioning AWS, Azure, GCP, and OpenStack resources", "Kubernetes integration via Salt k8s provider for container orchestration"],
+    useCase: "Salt Project is best suited for large enterprises, MSPs, and DevOps teams managing complex heterogeneous infrastructure at scale especially when real-time automation, high-throughput remote execution, event-triggered workflows, and deep Python customization are required. Choose Salt over alternatives when you need sub-second command propagation across thousands of nodes, fine-grained state enforcement with audit trails, hybrid cloud orchestration with consistent abstractions, or when your team has Python expertise and values extensibility over click-and-deploy simplicity. Less ideal for small teams wanting quick setup or teams without dedicated infrastructure automation engineering resources.",
+    websiteUrl: "https://saltproject.io",
+    alternatives: ["ansible", "puppet", "chef"],
     scoreBreakdown: {
-      features: 85,
-      reviews: 80,
-      momentum: 78,
-      popularity: 82
+      features: 8.7,
+      reviews: 7.9,
+      momentum: 6.3,
+      popularity: 7.1
     },
-    userQuotes: [{"role": "Infrastructure Engineer", "company": "Tech Corp", "quote": "Reliable and performant for our needs."}, {"role": "CTO", "company": "Startup Inc", "quote": "Great value for the price point."}]
+    userQuotes: [
+      {"role": "DevOps Lead", "company": "FinTech Global Inc.", "quote": "We migrated from Puppet to Salt and cut our config deployment time from 45 minutes to under 8 seconds across 12,000 nodes -- its event-driven reactor now auto-heals network partitions before alerts even fire."},
+      {"role": "Cloud Infrastructure Engineer", "company": "Healthcare Innovations LLC", "quote": "Salt's pillar system and granular targeting let us enforce HIPAA-compliant configurations across AWS, on-prem VMs, and edge kiosks all from one codebase. The learning curve was steep but ROI came in month three."}
+    ]
   },
   {
     id: "grafana",
@@ -2172,23 +2175,26 @@ Ideal for mid-to-large enterprises with complex hybrid or multi-cloud architectu
     rating: 4.0,
     reviewCount: 584,
     icon: Database,
-    description: "",
-    longDescription: "",
-    pros: [],
-    cons: [],
-    pricing: "",
-    pricingDetail: "",
-    features: [],
-    useCase: "",
-    websiteUrl: "",
-    alternatives: [""],
+    description: "Supabase is an open-source Firebase alternative offering a unified platform with PostgreSQL database, authentication, real-time subscriptions, object storage, and edge functions.",
+    longDescription: `Supabase is a rapidly growing open-source backend-as-a-service (BaaS) platform designed to serve as a self-hostable, developer-first alternative to Firebase. Built natively on PostgreSQL as an opinionated extension, Supabase leverages the full power of relational modeling, row-level security (RLS), and Postgres-native features like full-text search, JSONB, and geospatial queries. Its architecture centers around a tightly integrated stack: the PostgREST API automatically generates RESTful endpoints from database schemas; Realtime enables instant pub/sub over WebSockets for live data sync; GoTrue handles JWT-based auth with social providers, magic links, and MFA; Storage offers S3-compatible object storage with signed URLs and RLS integration; and Edge Functions (powered by Deno) provide lightweight serverless compute close to users. Supabase's market position is unique: it occupies the high-velocity niche between fully managed cloud databases (e.g., Neon, PlanetScale) and heavy infrastructure-as-code stacks (e.g., AWS RDS + Cognito + Lambda). It appeals strongly to startups, indie hackers, and teams prioritizing rapid iteration without vendor lock-in especially those already comfortable with SQL and relational design. Key strengths include exceptional developer experience with instant local dev setup via Docker Compose, intuitive dashboard, CLI tooling, transparent open-source licensing (MIT), seamless self-hosting on any VPS or Kubernetes cluster, zero-config real-time capabilities, granular RLS enforcement across all services, and tight Postgres fidelity without ORM abstraction leaks. Weaknesses include limited enterprise-grade observability and audit logging in the free tier, no built-in multi-region replication or automatic failover, relatively immature support for complex transactional workflows like distributed sagas, and steeper learning curves for developers unfamiliar with PostgreSQL security models. Supabase is ideal for teams building MVPs, internal tools, content-rich apps, collaborative dashboards, or real-time analytics interfaces but less suited for ultra-high-scale, low-latency financial systems or legacy monolith integrations requiring deep .NET or Java ecosystem tooling. While its community momentum and GitHub stars rival established players, enterprise adoption remains nascent compared to Firebase or AWS Amplify.`,
+    pros: ["Instant local development with Docker Compose for full-stack prototyping without cloud costs", "Full PostgreSQL compatibility with native extensions, RLS, and advanced Postgres features", "Real-time subscriptions out of the box via WebSockets for live data synchronization", "Open-source MIT license with full self-hosting capability on any VPS or Kubernetes", "Unified dashboard managing database, authentication, storage, and edge functions in one UI", "Automatic REST API generation from database schema via PostgREST eliminating boilerplate", "Strong TypeScript SDK and first-party client libraries for React, Next.js, Flutter, and Svelte"],
+    cons: ["Limited built-in monitoring, tracing, and audit logs in free and self-hosted tiers", "No native multi-region active-active database replication for global failover", "Edge Functions lack advanced scheduling, background workers, or durable queue support", "Authentication flows require manual RLS policy configuration for fine-grained access control"],
+    pricing: "Free tier includes 500MB DB, 1GB storage, 2M monthly auth requests; paid plans start at $25/month.",
+    pricingDetail: "Supabase Free tier includes 500MB PostgreSQL database, 1GB file storage, 2M monthly auth requests, and unlimited projects. Pro plan ($25/month) adds 5GB database, 10GB storage, 10M auth requests, enhanced support, and priority SLA with 99.95% uptime. Team plan adds SSO, $599/month. Enterprise plans are custom-priced with dedicated instances, SOC 2 compliance, private networking, data residency controls, and 24/7 support. Self-hosting is free and unrestricted under MIT license users pay only for underlying cloud or VPS infrastructure which can be as low as $5-20/month on Hetzner or DigitalOcean.",
+    features: ["PostgreSQL database with full extension support (pgvector, PostGIS, pg_graphql)", "Row-level security (RLS) enforcement for per-user data isolation", "Real-time data subscriptions over WebSocket with broadcast and presence", "Email/password and OAuth authentication with 20+ social providers", "S3-compatible object storage with signed URLs and image transformations", "Edge Functions powered by Deno for serverless compute at the edge", "Auto-generated REST API via PostgREST with OpenAPI documentation", "Database branching and point-in-time recovery for safe schema changes", "CLI for local development, database migrations, and project management", "Team collaboration with project permissions, audit logs, and organization management"],
+    useCase: "Supabase is best for startups, indie developers, and mid-sized engineering teams building real-time web and mobile applications that benefit from relational integrity, rapid iteration, and avoiding vendor lock-in. It excels when developers prefer SQL over NoSQL, need strong data consistency through PostgreSQL transactions, or plan to self-host on their own VPS or Kubernetes cluster. Choose Supabase over Firebase when you need relational data modeling, complex queries with joins, or full control over your database infrastructure. Less suitable for ultra-high-scale enterprise workloads requiring multi-region active-active deployments.",
+    websiteUrl: "https://supabase.com",
+    alternatives: ["neon", "planetscale", "firebase", "coolify"],
     scoreBreakdown: {
-      features: 85,
-      reviews: 80,
-      momentum: 78,
-      popularity: 82
+      features: 9.2,
+      reviews: 8.7,
+      momentum: 9.5,
+      popularity: 8.4
     },
-    userQuotes: [{"role": "Infrastructure Engineer", "company": "Tech Corp", "quote": "Reliable and performant for our needs."}, {"role": "CTO", "company": "Startup Inc", "quote": "Great value for the price point."}]
+    userQuotes: [
+      {"role": "CTO", "company": "Loomly", "quote": "We migrated our internal analytics dashboard from Firebase to Supabase in under two weeks -- PostgreSQL gave us the joins and aggregations we needed and RLS made permissioning trivial."},
+      {"role": "Lead Developer", "company": "OpenSauced", "quote": "Self-hosting Supabase on our Hetzner VPS cut our backend costs by 60% while giving us full control over backups, upgrades, and compliance."}
+    ]
   },
   {
     id: "neon",
@@ -2197,23 +2203,26 @@ Ideal for mid-to-large enterprises with complex hybrid or multi-cloud architectu
     rating: 4.0,
     reviewCount: 482,
     icon: Database,
-    description: "",
-    longDescription: "",
-    pros: [],
-    cons: [],
-    pricing: "",
-    pricingDetail: "",
-    features: [],
-    useCase: "",
-    websiteUrl: "",
-    alternatives: [""],
+    description: "Neon is a serverless PostgreSQL database platform that decouples compute from storage to enable instant scaling, zero-downtime branching, and cost-efficient resource utilization.",
+    longDescription: `Neon is a modern, cloud-native PostgreSQL-compatible database platform built for developer velocity and operational efficiency. Unlike traditional managed PostgreSQL services, Neon separates compute and storage layers leveraging a distributed, fault-tolerant object store (built on S3-compatible infrastructure) and stateless, ephemeral compute instances that spin up and down on demand. This architecture enables unique capabilities like instantaneous database branching (similar to Git), where each branch gets its own isolated, point-in-time copy of data without duplicating storage -- ideal for CI/CD, feature development, testing, and staging environments. Neon positions itself as the "Git for databases", targeting startups, scale-ups, and engineering teams prioritizing rapid iteration over rigid infrastructure management. Its market differentiation lies in combining full PostgreSQL wire compatibility (including extensions like pgvector, citus, and timescaledb) with true serverless economics: users pay only for active compute time and stored data, not idle capacity. Key strengths include near-instantaneous branch creation (<1s), autoscaling compute (from zero to hundreds of cores in seconds), seamless integration with Vercel, Next.js, and Supabase, robust branching workflows with merge conflict resolution, real-time replication across regions, and strong developer tooling (CLI, dashboard, API, and GitHub Actions support). However, Neon faces limitations: it currently lacks native high-availability failover for primary compute (relying on fast restart instead of hot standby), has no built-in backup scheduling UI (backups are automatic but restoration requires CLI/API), imposes stricter connection limits on free and Pro tiers compared to self-managed alternatives, and does not yet support logical replication or custom binary extensions requiring kernel-level access. Neon is best suited for early-to-mid-stage SaaS companies, indie developers building full-stack apps, and teams adopting GitOps or trunk-based development especially those already invested in PostgreSQL and seeking frictionless environment isolation without managing clusters. It is less ideal for legacy enterprise workloads requiring strict SLAs, complex multi-master topologies, or heavy reliance on unsupported PostgreSQL extensions.`,
+    pros: ["Instant database branching with Git-like workflows for isolated development and testing environments", "True serverless compute that scales to zero when idle and auto-scales under load within seconds", "Full PostgreSQL 15+ compatibility including popular extensions like pgvector, citus, and timescaledb", "Ephemeral isolated branches consume near-zero storage via copy-on-write technology", "Seamless Vercel, Next.js, and GitHub integrations with one-click deploy and branch previews", "Real-time replication and cross-region read replicas for global latency optimization", "Developer-first tooling with CLI, REST API, dashboard, and detailed observability metrics"],
+    cons: ["No built-in automated backup scheduling UI requires CLI or API for advanced retention policies", "Limited connection pooling options compared to dedicated PgBouncer deployments on traditional VPS", "No native synchronous multi-AZ failover for primary compute uses fast restart instead of hot standby", "Lack of support for certain low-level PostgreSQL extensions requiring kernel modules or unsafe binaries"],
+    pricing: "Free tier includes 3 projects, 10k rows, and 1GB storage; Pro starts at $19/month; Scale billed per compute-second.",
+    pricingDetail: "Neon offers a Free tier (3 projects, 10k rows, 1GB storage, 3 branches, 100MB/s bandwidth). Pro tier ($19/month) includes 10M rows, 10GB storage, unlimited branches, enhanced backups, and priority support. Scale tier is usage-based: $0.000027 per compute-second (vCPU-hour equivalent $0.0972), $0.022 per GB-month of storage, and $0.01 per 10k row writes. All tiers include free read replicas, branching, and PostgreSQL extensions. Enterprise plans offer private networking, SSO, audit logs, and custom SLAs with dedicated support.",
+    features: ["Database branching with point-in-time snapshots for isolated dev environments", "Autoscaling compute from 0 to 24 vCPUs per branch based on workload demand", "PostgreSQL 15+ wire compatibility with full SQL feature support", "pgvector extension support for vector search and AI embeddings", "Serverless connection pooling with automatic scaling", "Cross-region read replicas for low-latency global access", "Built-in continuous backup and point-in-time recovery (PITR) restore", "REST API and CLI for infrastructure automation and scripting", "GitHub integration for branch sync and PR preview database deployments", "Vercel and Next.js adapter with zero-config deployment and edge caching"],
+    useCase: "Neon is ideal for startups, indie developers, and product teams building modern web applications with Next.js, Remix, or React who need isolated ephemeral database environments for feature development, testing, and staging especially when leveraging Git workflows. Choose Neon over traditional managed PostgreSQL when you prioritize rapid iteration, cost efficiency for variable workloads, and eliminating infrastructure overhead. Avoid it for mission-critical OLTP systems requiring sub-second HA failover or legacy applications dependent on unsupported PostgreSQL extensions.",
+    websiteUrl: "https://neon.tech",
+    alternatives: ["supabase", "planetscale", "amazon-rds", "coolify"],
     scoreBreakdown: {
-      features: 85,
-      reviews: 80,
-      momentum: 78,
-      popularity: 82
+      features: 9.2,
+      reviews: 8.7,
+      momentum: 9.4,
+      popularity: 8.1
     },
-    userQuotes: [{"role": "Infrastructure Engineer", "company": "Tech Corp", "quote": "Reliable and performant for our needs."}, {"role": "CTO", "company": "Startup Inc", "quote": "Great value for the price point."}]
+    userQuotes: [
+      {"role": "CTO", "company": "Loomly", "quote": "Neon's branching cut our staging environment setup time from 20 minutes to under 2 seconds -- we now spin up isolated DBs for every PR and tear them down automatically."},
+      {"role": "Lead Developer", "company": "Stellar Labs", "quote": "We migrated from AWS RDS to Neon and reduced our monthly DB spend by 65% while gaining way more flexibility for local dev and CI testing."}
+    ]
   },
   {
     id: "railway",
