@@ -14,7 +14,6 @@ const BLOG_SLUGS = [
     "vps-vpn-guide-2026-deep-dive",
     "cloud-server-pricing-2026-cost-optimization",
     "vps-backup-disaster-recovery-2026",
-    "cross-border-ecommerce-cloud-server-guide-20260620",
     "cloud-server-monitoring-2026-essentials",
     "vps-auto-scaling-strategies-2026-0622",
     "vps-monitoring-tools-2026-datadog-grafana-prometheus-nagios",
