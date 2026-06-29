@@ -41,3 +41,6 @@ append_blog_monitoring.py
 check_dollar.py
 gen_blog_monitoring.py
 refine_tools_batch.py
+package-lock.json
+vercel.json
+components.json

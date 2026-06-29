@@ -22,6 +22,9 @@ const BLOG_SLUGS = [
     "cross-border-ecommerce-cloud-server-guide-2026",
     "vps-vs-cloud-vs-dedicated-server-2026",
     "cloud-server-backup-strategies-2026",
+    "hetzner-vps-saas-production-2026",
+    "vps-performance-benchmarks-2026",
+    "docker-on-vps-vs-kubernetes-2026",
 ] as const;
 
 const TOOL_SLUGS = [
