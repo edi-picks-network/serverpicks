@@ -44,3 +44,4 @@ refine_tools_batch.py
 package-lock.json
 vercel.json
 components.json
+tsconfig.tsbuildinfo
