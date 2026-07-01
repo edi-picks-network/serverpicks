@@ -25,6 +25,7 @@ const BLOG_SLUGS = [
     "hetzner-vps-saas-production-2026",
     "vps-performance-benchmarks-2026",
     "docker-on-vps-vs-kubernetes-2026",
+    "cloud-gpu-hosting-ai-workloads-2026",
 ] as const;
 
 const TOOL_SLUGS = [
