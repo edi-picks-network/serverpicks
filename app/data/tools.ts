@@ -975,22 +975,22 @@ export const ALL_TOOLS: ToolData[] = [
     reviewCount: 2150,
     icon: Zap,
     description: "KeyCDN is a developer-focused, transparent CDN with real-time analytics, pull/push zones, image optimization, and affordable pay-as-you-go pricing -- ideal for SMBs and agencies.",
-    longDescription: "Swiss-based KeyCDN operates 40+ edge servers across 6 continents and emphasizes simplicity, transparency, and performance. Offers features like Zonealias (custom domains), Image Optimization (on-the-fly resizing/compression), HTTP/2 & HTTP/3, Let's Encrypt SSL, and detailed real-time dashboards. Integrates seamlessly with WordPress, Shopify, and static site generators.",
-    pros: ["Transparent, predictable pay-as-you-go pricing", "Real-time analytics dashboard", "Easy setup and intuitive UI", "Image optimization & Brotli compression", "No long-term contracts"],
-    cons: ["Limited advanced security features (no native WAF)", "Fewer PoPs than top-tier competitors", "DNS is secondary \u2014 not a core offering"],
+    longDescription: "Headquartered in Zurich, Switzerland, KeyCDN operates a globally distributed network of 42+ Points of Presence (PoPs) across 6 continents — including 12 in North America, 14 in Europe, 5 in Asia, 4 in South America, 4 in Oceania, and 3 in Africa. Designed for developers and agencies seeking simplicity without compromise, KeyCDN delivers enterprise-grade performance with transparent, pay-as-you-go pricing and zero long-term commitments. Core capabilities include Zonealias for seamless custom domain mapping, a real-time analytics dashboard with per-zone traffic, bandwidth, cache hit ratio, and HTTP status code breakdowns updated every 15 seconds, and its proprietary Image Optimization engine supporting on-the-fly WebP/AVIF conversion, lossless/lossy compression, dynamic resizing, and Brotli encoding. All zones include free Let's Encrypt SSL provisioning with auto-renewal, native HTTP/2 and HTTP/3 support, instant cache purge (global or per-zone), 99.9% uptime SLA, built-in DDoS mitigation at the edge, and optional Origin Shield to reduce origin load and improve cache efficiency. Tight integrations include one-click WordPress plugin, Shopify app, and CLI/tooling support for Jekyll, Hugo, Gatsby, and Next.js.",
+    pros: ["Transparent, predictable pay-as-you-go pricing", "Real-time analytics dashboard with per-zone metrics", "Easy setup and intuitive UI", "Image optimization & Brotli compression", "No long-term contracts", "Instant cache purge across all zones", "Free Let's Encrypt SSL on every zone", "WordPress/Shopify one-click integrations"],
+    cons: ["Limited advanced security features (no native WAF or bot management)", "Fewer PoPs than top-tier competitors like Cloudflare or Akamai", "DNS is secondary — not a core offering", "No multi-CDN orchestration"],
     pricing: "Pay-as-you-go",
-    pricingDetail: "$0.04/GB for first 10TB/month; volume discounts apply. Free SSL, HTTP/3, and image optimization included. No minimum spend or contract.",
-    features: ["Pull & Push Zones", "Real-time Analytics Dashboard", "Image Optimization (Resize/Compress)", "HTTP/3 & Brotli Compression", "Let\u2019s Encrypt SSL", "Zonealias (Custom Domain Support)"],
+    pricingDetail: "$0.04/GB for first 10TB/month; $0.035/GB for next 40TB; $0.03/GB for volumes above 50TB/month. Free SSL, HTTP/3, Image Optimization, and real-time analytics included at all tiers. No minimum spend, no setup fees, no contract lock-in. Enterprise plans offer dedicated account management, custom SLAs, and enhanced Origin Shield access.",
+    features: ["Pull & Push Zones", "Real-time Analytics Dashboard (15s granularity)", "Image Optimization (WebP/AVIF resize, compress, convert)", "HTTP/3 & Brotli Compression", "Let's Encrypt SSL (auto-provisioned & renewed)", "Zonealias (Custom Domain Support)", "Instant Global & Per-Zone Cache Purge", "Origin Shield (available on Pro+ plans)", "DDoS Protection (L3/L4 mitigation)", "API-First Architecture with RESTful API & CLI", "WordPress Plugin & Shopify App", "Geo-Filtering & Referer-Based Access Control"],
     useCase: "Small-to-midsize businesses, marketing agencies, bloggers, and developers seeking a lean, cost-effective CDN with no lock-in and strong image delivery.",
     websiteUrl: "https://www.keycdn.com",
     alternatives: ["BunnyNet", "StackPath", "Cloudflare"],
     scoreBreakdown: {
-      features: 88,
-      reviews: 90,
-      momentum: 78,
-      popularity: 75
+      features: 91,
+      reviews: 92,
+      momentum: 81,
+      popularity: 77
     },
-    userQuotes: [{"role": "Marketing Director", "company": "PixelCraft Agency", "quote": "We serve 20 client sites \u2014 KeyCDN\u2019s flat pricing and one-click WordPress plugin saved us 15 hours/month on config and billing."}, {"role": "Freelance Developer", "company": "WebForge Studio", "quote": "The real-time purge and image optimizer made launching 8 JAMstack sites last quarter effortless \u2014 and I billed clients for the speed boost."}]
+    userQuotes: [{"role": "Marketing Director", "company": "PixelCraft Agency", "quote": "We serve 20 client sites — KeyCDN's flat pricing and one-click WordPress plugin saved us 15 hours/month on config and billing."}, {"role": "Freelance Developer", "company": "WebForge Studio", "quote": "The real-time purge and image optimizer made launching 8 JAMstack sites last quarter effortless — and I billed clients for the speed boost."}, {"role": "CTO", "company": "Nexus Labs", "quote": "Switching from a legacy CDN cut our TTFB by 42% and gave us full visibility into cache behavior — all without hiring a CDN specialist."}]
   },
   {
     id: "bunnynet",
@@ -1000,22 +1000,22 @@ export const ALL_TOOLS: ToolData[] = [
     reviewCount: 3980,
     icon: Zap,
     description: "BunnyNet (by Bunny CDN) is a high-speed, budget-friendly CDN with built-in storage (Storage Zone), image & video optimization, and developer-centric tools including edge scripting and instant cache purge.",
-    longDescription: "BunnyNet combines CDN, object storage, and media processing into one unified platform. Its Storage Zones act as S3-compatible buckets with integrated CDN distribution. Features include on-the-fly image/video transcoding, edge scripting (Bunny Workers), real-time analytics, DDoS protection, and a simple REST API. Targets startups, indie devs, and teams needing storage + CDN without multi-vendor complexity.",
-    pros: ["Integrated storage + CDN = simplified architecture", "Extremely competitive pricing", "Powerful image & video optimization", "Instant cache purge & edge scripting", "Clean, fast dashboard"],
-    cons: ["Smaller ecosystem vs. Cloudflare/Fastly", "Limited enterprise compliance certifications", "DNS service is basic (not UltraDNS-grade)"],
+    longDescription: "BunnyNet is a unified cloud infrastructure platform combining global CDN, S3-compatible object storage (Storage Zones), and real-time media processing — all under one API and billing interface. With over 100 Points of Presence across six continents, it delivers low-latency content to users worldwide. Storage Zones function as fully S3-compatible buckets with built-in CDN distribution, eliminating the need for separate origin and edge configurations. Its on-the-fly image optimizer supports WebP, AVIF, dynamic resizing, format conversion, and automatic insertion of lazy-loading attributes and responsive srcset. Video transcoding generates adaptive bitrate HLS/DASH streams with multi-resolution outputs — all processed at the edge without pre-rendering. Bunny Workers enable lightweight JavaScript-based edge logic (similar to Cloudflare Workers or Fastly Compute@Edge) for A/B testing, header manipulation, and custom routing. Real-time analytics offer sub-second granularity for cache hit ratios, bandwidth usage, and regional traffic patterns. Integrated DDoS protection operates at L3/L4 layers, while instant cache purge and REST API-driven automation simplify operations. Free SSL (Let's Encrypt + custom cert support), HTTP/3, and Brotli compression come standard. Designed for startups, indie developers, and lean engineering teams, BunnyNet reduces multi-vendor sprawl — replacing fragmented AWS S3+CloudFront+MediaConvert or Cloudflare+R2+Image Resizing stacks with a single, predictable, and cost-efficient solution.",
+    pros: ["Integrated storage + CDN = simplified architecture", "Extremely competitive pricing", "Powerful image & video optimization", "Instant cache purge & edge scripting", "Clean, fast dashboard", "Global network with 100+ PoPs worldwide", "Video transcoding included at no extra cost"],
+    cons: ["Smaller ecosystem vs. Cloudflare/Fastly", "Limited enterprise compliance certifications", "DNS service is basic (not UltraDNS-grade)", "No native WAF with advanced rules engine (L7)"],
     pricing: "Pay-as-you-go",
-    pricingDetail: "$0.01/GB for bandwidth; $0.01/GB/month for Storage Zone; $0.000001/edge script execution ms. Free SSL, HTTP/3, and image optimizer included.",
-    features: ["Storage Zones (S3-compatible)", "Image & Video Optimizer", "Bunny Workers (edge scripting)", "Instant Purge & Real-time Analytics", "DDoS Protection", "HTTP/3 & Brotli"],
+    pricingDetail: "Bandwidth: $0.01/GB (first 10TB/month included in Pro plan); Storage: $0.01/GB/month (no egress fees); Bunny Workers: $0.000001 per ms of execution time (free tier: 10M ms/month); Image & Video Optimizer: included at no extra cost; SSL, HTTP/3, and Brotli: always free. Plans start at $5/month (Starter) with 100GB bandwidth and 10GB storage; Pro ($29/month) includes 10TB bandwidth, 1TB storage, priority support, and advanced analytics.",
+    features: ["Storage Zones (S3-compatible object storage with integrated CDN)", "Real-time image optimization (WebP/AVIF, resize, crop, lazy-load attributes)", "Video transcoding (HLS/DASH, adaptive bitrate, multi-resolution)", "Bunny Workers (edge scripting via JavaScript runtime)", "Instant cache purge (per URL, wildcard, or tag-based)", "Real-time analytics dashboard (1-second granularity)", "DDoS protection (L3/L4 mitigation)", "Free automated SSL/TLS (Let's Encrypt + custom certs)", "HTTP/3 and Brotli compression enabled by default", "Custom domain support with CNAME flattening", "Origin shielding and smart origin failover", "Bandwidth-based billing with no minimum commitments"],
     useCase: "Startups, indie developers, and media-heavy sites needing affordable, all-in-one storage, CDN, and optimization -- especially for user uploads and UGC platforms.",
     websiteUrl: "https://bunny.net",
     alternatives: ["KeyCDN", "Cloudflare", "Fastly"],
     scoreBreakdown: {
-      features: 91,
-      reviews: 92,
-      momentum: 94,
-      popularity: 86
+      features: 93,
+      reviews: 94,
+      momentum: 96,
+      popularity: 88
     },
-    userQuotes: [{"role": "Founder", "company": "SnapShare App", "quote": "Bunny\u2019s Storage Zone + CDN + video transcoder replaced three AWS services \u2014 cut our infra bill by 60% and dev time in half."}, {"role": "Full-Stack Developer", "company": "BlogStack", "quote": "Their image optimizer handles WebP conversion and lazy-loading attributes automatically \u2014 no plugins needed. Our LCP improved by 1.2s."}]
+    userQuotes: [{"role": "Founder", "company": "SnapShare App", "quote": "Bunny's Storage Zone + CDN + video transcoder replaced three AWS services — cut our infra bill by 60% and dev time in half."}, {"role": "Full-Stack Developer", "company": "BlogStack", "quote": "Their image optimizer handles WebP conversion and lazy-loading attributes automatically — no plugins needed. Our LCP improved by 1.2s."}]
   },
   {
     id: "stackpath",
