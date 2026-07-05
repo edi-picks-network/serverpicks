@@ -29,6 +29,7 @@ const BLOG_SLUGS = [
   "vps-vs-dedicated-server-2026",
   "vps-monitoring-observability-stack-2026",
   "vps-automation-ansible-terraform-2026",
+  "vps-cpu-ram-storage-guide-2026",
 ] as const;
 
 const TOOL_SLUGS = [
