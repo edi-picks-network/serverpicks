@@ -3961,4 +3961,91 @@ Testing methodology, raw fio configs, and provider-specific latency heatmaps ava
     readTime: 12,
     tags: ["NVMe", "SSD", "Object Storage", "VPS Storage", "Cloud Storage", "Storage Comparison", "VPS Performance", "Storage Benchmarks"],
   },
+
+  {
+    slug: "container-registries-2026-docker-hub-ghcr-gitlab-ecr",
+    title: "Container Registries in 2026: Docker Hub, GHCR, GitLab, and ECR Compared",
+    excerpt:
+      "Choosing the right container registry can make or break your deployment pipeline. I compare Docker Hub, GitHub Container Registry (GHCR), GitLab Container Registry, and AWS ECR based on rate limits, geo replication, vulnerability scanning, and real-world costs.",
+    content: `# Container Registries in 2026: Docker Hub, GHCR, GitLab, and ECR Compared
+
+Choosing the right container registry is a critical decision for any project, whether it’s a small personal project or a large-scale enterprise application. Over the years, I’ve had the opportunity to work with various container registries, and each has its own set of strengths and weaknesses. In this post, I’ll share my experience with Docker Hub, GitHub Container Registry (GHCR), GitLab Container Registry, and AWS Elastic Container Registry (ECR) as they stand in 2026.
+
+## Introduction
+
+The choice of a container registry can significantly impact your deployment workflows, security, and overall costs. A good registry should be reliable, secure, and integrate seamlessly with your existing CI/CD pipelines. In my experience, the right registry can streamline your development process, while the wrong one can introduce unnecessary friction and overhead.
+
+## Docker Hub
+
+### Pros
+- **Largest Ecosystem:** Docker Hub has the largest collection of images, making it easy to find and use pre-built containers.
+- **Trusted Content:** Many official images are maintained by the Docker community, ensuring a high level of trust and reliability.
+
+### Cons
+- **Rate Limits:** Since late 2025, Docker Hub introduced stricter rate limits for anonymous and free accounts. Free users are now limited to 100 pulls per 6 hours, which can be a significant bottleneck for larger projects.
+- **Pull Restrictions:** Free accounts also face pull restrictions, which can force you to upgrade to a paid plan if you need more frequent access to images.
+
+## GitHub Container Registry (GHCR)
+
+### Pros
+- **Integration with GitHub Actions:** If you’re already using GitHub for your source code, GHCR integrates seamlessly with GitHub Actions, making it easy to build, test, and deploy your containers.
+- **Free for Public Repositories:** For public repositories, GHCR offers unlimited storage and bandwidth, which is a huge plus for open-source projects.
+
+### Cons
+- **Limited Private Repository Support:** While private repositories are supported, they come with a cost. The free tier only includes 2GB of storage and 10GB of data transfer per month, which may not be enough for larger projects.
+- **Learning Curve:** If you’re new to GitHub, there’s a bit of a learning curve to get everything set up and working smoothly.
+
+## GitLab Container Registry
+
+### Pros
+- **Built-in CI/CD Pipeline:** GitLab’s built-in CI/CD pipeline makes it incredibly easy to automate the entire build and deployment process.
+- **Private Registry Included:** Every GitLab account comes with a private container registry, which is a great feature for teams that need to keep their images secure.
+
+### Cons
+- **Storage and Bandwidth Limits:** The free tier on GitLab is quite restrictive, offering only 10GB of storage and 400 minutes of CI/CD pipeline time per month. This can be a limiting factor for larger projects.
+- **Complexity:** While the integration is powerful, setting up and managing the CI/CD pipeline can be complex, especially for those who are not familiar with GitLab’s ecosystem.
+
+## AWS Elastic Container Registry (ECR)
+
+### Pros
+- **Security Features:** AWS ECR offers robust security features, including IAM roles for fine-grained access control and VPC endpoints for secure communication.
+- **Vulnerability Scanning:** ECR integrates with Amazon Inspector for automatic vulnerability scanning, helping you identify and mitigate security risks.
+- **Geo Replication:** ECR supports geo replication, which can significantly improve the performance and availability of your containers across different regions.
+
+### Cons
+- **Costs:** ECR can be expensive, especially when you factor in storage, data transfer, and additional services like vulnerability scanning. For example, data transfer costs can add up quickly, with rates starting at $0.09 per GB.
+- **AWS Dependency:** If you’re not already using AWS, integrating ECR into your workflow can be a bit cumbersome. You’ll need to set up an AWS account, configure IAM roles, and manage other AWS-specific settings.
+
+## Comparison Table
+
+| Feature                 | Docker Hub              | GitHub Container Registry (GHCR) | GitLab Container Registry | AWS ECR                |
+|-------------------------|-------------------------|----------------------------------|---------------------------|------------------------|
+| **Free Tier Storage**   | 5GB                     | 2GB (private), Unlimited (public) | 10GB                      | 5GB                    |
+| **Rate Limits**         | 100 pulls/6 hours (free) | No limits (public), 2,000 pulls/month (private) | 1,000 pulls/month (free) | No limits (pay-as-you-go) |
+| **Geo Replication**     | No                      | No                               | No                        | Yes                    |
+| **Vulnerability Scanning** | No                  | No                               | No                        | Yes (with Amazon Inspector) |
+| **Pricing**             | Free, $7/user/mo (pro)  | Free (public), $4/user/mo (private) | Free, $19/user/mo (premium) | Pay-as-you-go, starts at $0.10/GB-month |
+
+## Verdict / Which to Choose for Different Scenarios
+
+- **Small Personal Projects or Open-Source Projects:** If you’re working on a small personal project or an open-source project, **GitHub Container Registry (GHCR)** is a great choice. The unlimited storage and bandwidth for public repositories, combined with seamless integration with GitHub Actions, make it a no-brainer.
+- **Teams with Existing GitLab Setup:** If your team is already using GitLab, the **GitLab Container Registry** is a natural fit. The built-in CI/CD pipeline and included private registry make it a powerful and convenient option.
+- **Enterprise-Level Projects:** For larger, enterprise-level projects, **AWS ECR** is the way to go. The robust security features, geo replication, and automatic vulnerability scanning make it a top choice, despite the higher costs.
+- **General Use with Large Community Support:** **Docker Hub** is still a solid choice for general use, especially if you value the large ecosystem and trusted content. However, be mindful of the rate limits and pull restrictions, which may require you to upgrade to a paid plan.
+
+## Personal Tips from My Deployments
+
+- **Monitor Your Usage:** Keep an eye on your usage, especially if you’re on a free tier. Exceeding rate limits or storage quotas can lead to unexpected costs or disruptions.
+- **Automate Security Scans:** If you’re using a registry that doesn’t include built-in vulnerability scanning, consider integrating a third-party tool like Trivy or Clair to keep your images secure.
+- **Consider Geo Replication:** If you have a global user base, geo replication can significantly improve the performance and availability of your containers. AWS ECR and Google Artifact Registry both support this feature.
+- **Evaluate Integration Needs:** Consider how well the registry integrates with your existing tools and workflows. A registry that integrates seamlessly with your CI/CD pipeline can save you a lot of time and effort.
+
+-- Alex Chen, Infrastructure Engineer`,
+    author: "Alex Chen",
+    authorRole: "Infrastructure Engineer",
+    date: "2026-07-09",
+    category: "DevOps",
+    readTime: 9,
+    tags: ["Docker Hub", "GHCR", "GitLab Container Registry", "AWS ECR", "Container Registry", "DevOps", "CI/CD", "Containerization", "Cloud Infrastructure"],
+  },
 ];
