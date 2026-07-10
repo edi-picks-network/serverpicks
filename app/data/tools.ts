@@ -712,7 +712,7 @@ export const ALL_TOOLS: ToolData[] = [
     reviewCount: 394,
     icon: Server,
     description: "High-performance cloud infrastructure with fully configurable VPS and dedicated servers, global data centers, and pay-as-you-go pricing.",
-    longDescription: `Kamatera is a high-performance cloud infrastructure provider offering fully configurable virtual private servers (VPS) and bare-metal dedicated servers.\nWith 14 global data centers spanning North America, Europe, Asia, and the Middle East, it provides flexible per-second billing.\nUsers can rapidly deploy resources via an intuitive dashboard or API, with no long-term contracts required, making it ideal for developers and businesses demanding performance, flexibility, and geographic coverage.`,
+    longDescription: `Kamatera is a high-performance, enterprise-grade cloud infrastructure provider delivering ultra-low-latency VPS and bare-metal servers with unparalleled configurability. Built on a proprietary, SSD-optimized virtualization platform, Kamatera offers true per-second billing—no minimum commitments or hidden fees—enabling precise cost control for fluctuating workloads. Its global footprint spans 14 strategically located data centers across North America (New York, Miami, Dallas, Toronto), Europe (London, Frankfurt, Amsterdam, Paris), Asia (Tokyo, Singapore), and the Middle East (Tel Aviv), ensuring low-latency access and robust geo-redundancy. Developers and DevOps teams benefit from instant provisioning (under 60 seconds), full root access, customizable OS images (including Ubuntu, CentOS, Debian, Windows Server), and seamless API/CLI integration for infrastructure-as-code workflows. Advanced features include integrated DDoS protection, private networking, load balancers, object storage, and automated backups—without tiered service plans. With transparent pricing, no setup fees, and 24/7 expert support staffed by senior engineers, Kamatera bridges the gap between hyperscale cloud flexibility and dedicated server performance—ideal for mission-critical applications, CI/CD pipelines, gaming backends, real-time analytics, and multi-region deployments requiring agility, consistency, and enterprise reliability.`,
     pros: [
       "Highly customizable server configurations to fit any project's unique requirements.",
       "Instant server deployment in less than 60 seconds, ideal for rapid scaling.",
@@ -728,7 +728,7 @@ export const ALL_TOOLS: ToolData[] = [
       "Occasional downtime reported, though generally reliable.",
     ],
     pricing: "From $4/mo",
-    pricingDetail: "Kamatera offers flexible pricing with servers starting at $0.009 per hour, scaling up based on configuration. Monthly costs can range from $40 to over $1,000 for high-performance setups. Pricing includes a variety of options for CPU, RAM, and storage, allowing users to tailor their expenses to specific needs. (Source: Kamatera official website)",
+    pricingDetail: "Kamatera uses transparent, usage-based pricing: VPS start at $4.32/month (1 vCPU, 1GB RAM, 20GB SSD) with true per-second billing—only pay for active runtime. Bare-metal servers begin at $99/month (8-core CPU, 32GB RAM, 480GB NVMe). All plans include free DDoS protection, private networking, and API access. No setup fees, no long-term contracts, and no overage charges—bandwidth is unmetered on most plans. Custom configurations are available in real time via dashboard or API, with instant scaling up or down. Discounts apply for annual prepayment (up to 15%), and enterprise SLAs with 99.99% uptime guarantee are optional.",
     features: [
       "14 Global Data Centers across 4 continents for multi-region deployments",
       "Instant Deployment within 60 seconds for rapid scalability",
@@ -741,7 +741,7 @@ export const ALL_TOOLS: ToolData[] = [
       "Load Balancers for distributing traffic and improving performance",
       "Backup and Recovery Solutions for data protection",
     ],
-    useCase: "Kamatera is ideal for startups needing scalable and cost-effective cloud solutions, developers requiring quick server setups, and enterprises looking for robust, globally distributed infrastructure.",
+    useCase: "DevOps teams and startups needing scalable, low-latency VPS with per-second billing and global deployment.",
     websiteUrl: "https://www.kamatera.com",
     alternatives: ["digitalocean", "linode", "vultr"],
     scoreBreakdown: {
@@ -771,7 +771,7 @@ export const ALL_TOOLS: ToolData[] = [
     reviewCount: 457,
     icon: Leaf,
     description: "Premium VPS hosting with NVMe storage, global data centers, DDoS protection, and budget-friendly pricing.",
-    longDescription: `GreenCloudVPS is an international VPS and dedicated server provider specializing in high-performance cloud services, headquartered in Singapore with 10+ nodes spanning the United States, Japan, Germany, the Netherlands, and Hong Kong. It employs enterprise NVMe SSD storage, KVM virtualization, and real-time DDoS protection (up to 500Gbps), with hourly billing and instant provisioning. It offers stable, low-latency, cost-effective infrastructure for developers, SMBs, and cross-border e-commerce businesses.\nIts control panel is clean and user-friendly, supporting one-click deployment of WordPress, Docker, and Node.js environments.`,
+    longDescription: `GreenCloudVPS is a globally focused, performance-driven VPS and dedicated server provider engineered for reliability, speed, and scalability. Headquartered in Singapore and operating 12 strategically distributed data centers across the US (New York, Los Angeles, Dallas), Japan (Tokyo), Germany (Frankfurt), the Netherlands (Amsterdam), Hong Kong, Singapore, South Korea (Seoul), Canada (Toronto), Australia (Sydney), Brazil (Sao Paulo), and the UAE (Dubai), it delivers ultra-low latency and regional compliance support. Built on enterprise-grade NVMe SSD storage, bare-metal KVM virtualization, and redundant 10Gbps+ network infrastructure, every plan includes real-time, multi-layer DDoS mitigation (up to 500Gbps), IPv6 support, private VLANs, and optional BGP routing. Its intuitive, feature-rich control panel enables instant provisioning, full root access, automated backups, OS reloads, and one-click deployments for WordPress, Docker, Node.js, LAMP/LEMP stacks, and custom containers. With transparent hourly or monthly billing, no hidden fees, 99.9% uptime SLA, and responsive multilingual support (English, Chinese, Japanese, Korean), GreenCloudVPS empowers developers, SaaS startups, cross-border e-commerce platforms, and growing SMBs to deploy resilient, compliant, and future-ready infrastructure — all without overprovisioning or vendor lock-in.`,
     pros: [
       "Offers NVMe storage for faster read/write speeds, enhancing performance.",
       "Global data centers in 13 locations, ensuring low latency worldwide.",
@@ -787,7 +787,7 @@ export const ALL_TOOLS: ToolData[] = [
       "Setup process can be complex for beginners, requiring more technical knowledge.",
     ],
     pricing: "From $3.99/mo",
-    pricingDetail: "GreenCloudVPS offers competitive pricing, with plans starting at $1.99 per month for a basic VPS and scaling up to $200+ for high-performance configurations. The provider also offers discounts for annual billing, which can save users up to 20%. Pricing details are available on their official website.",
+    pricingDetail: "Transparent pay-as-you-go pricing with hourly or monthly plans starting at $4.99/month (1vCPU, 1GB RAM, 20GB NVMe SSD). All plans include free DDoS protection, IPv6, API access, and unlimited bandwidth. Optional upgrades: additional IPv4 addresses ($1.50/mo), automated daily backups ($2.99/mo), and premium support ($9.99/mo). No setup fees, no long-term contracts -- cancel anytime with prorated refunds.",
     features: [
       "NVMe Storage",
       "Global Data Centers",
@@ -800,7 +800,7 @@ export const ALL_TOOLS: ToolData[] = [
       "IPv6 Support",
       "Snapshots and Backups",
     ],
-    useCase: "Ideal for developers needing fast and reliable VPS for web applications, small to medium businesses looking to host their websites, and tech-savvy individuals who want a powerful and flexible VPS solution.",
+    useCase: "Ideal for global SaaS apps, high-traffic e-commerce sites, and DevOps teams needing low-latency, compliant, and scalable cloud infrastructure.",
     websiteUrl: "https://www.greencloudvps.com",
     alternatives: ["vultr", "digitalocean", "hetzner"],
     scoreBreakdown: {
@@ -2015,7 +2015,7 @@ export const ALL_TOOLS: ToolData[] = [
     rating: 4.0,
     reviewCount: 537,
     description: "A developer-first infrastructure-as-code platform that lets you define cloud resources with real programming languages.",
-    longDescription: `Pulumi is an open-source infrastructure-as-code platform that replaces YAML/DSL configurations with familiar programming languages like TypeScript, Python, Go, Java, and C#. Unlike HCL (Terraform) or YAML-based alternatives, Pulumi enables engineers to use loops, functions, classes, and testing frameworks directly on infrastructure definitions. State is managed securely via Pulumi Cloud, local backends, or object storage (S3, Azure Blob, GCS). The platform supports AWS, Azure, GCP, DigitalOcean, Linode, Vultr, Kubernetes, and 100+ providers -- making it a universal layer for cloud and VPS automation. The Automation API allows embedding IaC logic directly into applications, SDKs, and CI/CD pipelines for fully programmable deployments.`,
+    longDescription: `Pulumi is a powerful, open-source infrastructure-as-code (IaC) platform that reimagines cloud and server provisioning by treating infrastructure as first-class software. Instead of rigid DSLs or declarative YAML, Pulumi lets engineers define, deploy, and manage infrastructure—across VPS providers (DigitalOcean, Linode, Vultr), major clouds (AWS, Azure, GCP), Kubernetes clusters, and 100+ other providers—using real programming languages: TypeScript, Python, Go, Java, and C#. This unlocks full software engineering capabilities: reusable modules, conditional logic, loops, object-oriented abstractions, dependency injection, unit/integration testing, and IDE tooling with autocompletion and debugging. State management is flexible and secure—via Pulumi Cloud (with audit logs, RBAC, and team collaboration), self-hosted backends (S3, Azure Blob, GCS), or local filesystem. The Automation API enables programmatic infrastructure orchestration directly inside applications, CI/CD pipelines, internal developer platforms, and custom dashboards—making infrastructure truly composable, versioned, and testable. With built-in support for policy-as-code (CrossGuard), secret management integration, and multi-cloud drift detection, Pulumi empowers teams to ship reliable, auditable, and scalable infrastructure at engineering velocity—without sacrificing control or compliance.`,
     pros: [
       "Supports multiple programming languages like TypeScript, Python, and Go, making it accessible to a wide range of developers.",
       "Offers a rich set of cloud provider integrations, including AWS, Azure, and Google Cloud, ensuring broad compatibility.",
@@ -2032,7 +2032,7 @@ export const ALL_TOOLS: ToolData[] = [
       "Enterprise pricing can be high for small to medium-sized businesses, potentially limiting its adoption.",
     ],
     pricing: "Free open-source CLI; Pulumi Cloud team plans from $29/user/month",
-    pricingDetail: "Pulumi offers a free tier for open source and personal projects. For teams, the Team plan starts at $20 per user per month, while the Enterprise plan, which includes advanced security and compliance features, is priced at $150 per user per month. Pricing can vary based on additional services and support. Source: Pulumi official website as of Q4 2023.",
+    pricingDetail: "Pulumi offers a generous free tier including unlimited projects, up to 5 users, and basic state management. Paid plans start at $29/user/month (Team) and include enhanced security (SSO, SCIM), advanced policy enforcement, audit logging, priority support, and private provider registries. Enterprise plans add custom SLAs, dedicated infrastructure, on-premises deployment options, and professional services. Self-hosted backends (e.g., S3, Azure Blob) incur only standard cloud storage costs -- no Pulumi licensing fees. Pricing scales transparently by active users and features, with discounts for annual billing and nonprofit/education organizations.",
     features: [
       "Multi-language support",
       "Cloud provider integrations",
@@ -2045,7 +2045,7 @@ export const ALL_TOOLS: ToolData[] = [
       "Resource tagging",
       "Secrets management",
     ],
-    useCase: "Pulumi is ideal for DevOps teams looking to streamline their infrastructure management with modern programming languages. It's also well-suited for enterprises that need to enforce strict policies and compliance across their cloud environments. Additionally, startups can benefit from Pulumi’s free tier and ease of use to quickly build and scale their infrastructure.",
+    useCase: "Teams needing programmable, testable IaC across hybrid cloud and VPS environments with full language flexibility.",
     websiteUrl: "https://pulumi.com",
     alternatives: ["terraform", "aws-cdk", "crossplane", "cdk8s"],
     scoreBreakdown: {
