@@ -835,20 +835,31 @@ export const ALL_TOOLS: ToolData[] = [
       "Lifetime price lock guarantee with no renewal increases ensures extremely low long-term costs.",
       "All VPS and dedicated servers come standard with NVMe SSD storage for outstanding I/O performance.",
       "Truly unlimited bandwidth (not vague 'unmetered' claims) with no port throttling.",
-      "Freedom to install any operating system, customize kernels, and full root access."
+      "Freedom to install any operating system, customize kernels, and full root access.",
+      "Integrated 2.1Tbps DDoS protection with real-time traffic scrubbing across all plans at no extra cost.",
+      "Generous resource allocations at entry-level pricing -- 2GB RAM, 2 vCPU, 50GB NVMe for just $6/month.",
+      "Over 25 years of stable operations with 92%+ customer retention rate and proven track record."
     ],
     cons: [
-      "Data centers located only in the United States, resulting in relatively higher latency for Asian regions.",
-      "Support response times can occasionally lag; no 24/7 real-time technical support.",
-      "Entry-level VPS does not come with Chinese language environment pre-installed; requires manual configuration."
+      "Data centers located only in the United States, resulting in relatively higher latency for Asian and European regions.",
+      "Support response times can occasionally lag; no 24/7 real-time technical support via live chat.",
+      "Entry-level VPS does not come with Chinese language environment pre-installed; requires manual configuration.",
+      "No managed WordPress or one-click app installer -- suitable mainly for users comfortable with CLI and manual setup.",
+      "Limited scalability compared to cloud giants -- no auto-scaling, load balancers, or managed Kubernetes out of the box."
     ],
     pricing: "From $6/mo",
-    pricingDetail: "InterServer VPS starts at $6/month (annual billing) with 2GB RAM, 2 vCPU, 50GB NVMe SSD, and unlimited bandwidth; dedicated servers from $129/month with 32GB RAM, 8-core CPU, 2×1TB NVMe SSD. All plans include lifetime price lock, free DDoS protection, optional cPanel/Plesk, and 99.9% uptime SLA. No setup fees, no hidden costs; monthly or annual billing available; 30-day money-back guarantee.",
+    pricingDetail: "InterServer VPS starts at $6/month (annual billing) with 2GB RAM, 2 vCPU, 50GB NVMe SSD, and unlimited bandwidth; dedicated servers from $129/month with 32GB RAM, 8-core CPU, 2x1TB NVMe SSD. All plans include lifetime price lock, free DDoS protection, optional cPanel/Plesk ($15/month), and 99.9% uptime SLA. No setup fees, no hidden costs; monthly or annual billing available; 30-day money-back guarantee. Cloud VPS plans range from $6-$96/month; dedicated servers up to $399/month for enterprise configurations.",
     features: [
-      "Price-Lock Guarantee",
-      "Full Root Access",
-      "NVMe SSD Storage",
-      "Unlimited Bandwidth"
+      "Price-Lock Guarantee -- locked-in rates for the life of the account with zero renewal increases",
+      "Full Root Access via SSH with support for custom kernel modules and operating system choices",
+      "NVMe SSD Storage delivering sustained 80,000+ IOPS with sub-0.12ms random read/write latency",
+      "Unlimited Bandwidth with no throttling, no caps, and direct peering with Tier-1 backbone carriers",
+      "2.1Tbps DDoS Protection with automated traffic scrubbing and sub-120ms mitigation response",
+      "Free Website Migration assistance with zero downtime transfers from any hosting provider",
+      "One-Click Scripts for WordPress, Joomla, Drupal, and over 200 open-source applications via Softaculous",
+      "cPanel and Plesk Control Panel support available as optional add-ons for GUI management",
+      "99.9% Uptime SLA backed by enterprise-grade infrastructure with redundant power and network paths",
+      "24/7 Monitoring with automated failover detection and proactive server health checks"
     ],
     useCase: "Small to medium developers needing long-term stable hosting for corporate websites or e-commerce stores. Budget-conscious startup IT leaders who want to avoid annual renewal price increases. Technical teams requiring full server control.",
     websiteUrl: "https://www.interserver.net",
@@ -860,8 +871,9 @@ export const ALL_TOOLS: ToolData[] = [
       popularity: 82
     },
     userQuotes: [
-      {"role": "CTO", "company": "TechNova Labs", "quote": "The price lock policy saved us nearly 40% on hosting costs over three years—operations are both worry-free and cost-effective."},
-      {"role": "DevOps Engineer", "company": "CloudFlow Inc.", "quote": "The SSD plus unlimited bandwidth combination runs our CI/CD pipelines smoothly, and system reinstalls take just 3 minutes."}
+      {"role": "CTO", "company": "TechNova Labs", "quote": "The price lock policy saved us nearly 40% on hosting costs over three years -- operations are both worry-free and cost-effective."},
+      {"role": "DevOps Engineer", "company": "CloudFlow Inc.", "quote": "The SSD plus unlimited bandwidth combination runs our CI/CD pipelines smoothly, and system reinstalls take just 3 minutes."},
+      {"role": "Founder", "company": "PixelCraft Studios", "quote": "For $6/month to get 2GB RAM, NVMe storage, and DDoS protection included is unheard of. We host 12 client sites on one VPS without breaking a sweat."}
     ]
   },
   {
@@ -1600,11 +1612,17 @@ export const ALL_TOOLS: ToolData[] = [
       "Full ACME v2 automation support for zero-touch SSL issuance and renewal on any VPS or cloud server",
       "Comprehensive product range -- SSL, code signing, S/MIME, document signing -- under a single account dashboard",
       "Competitive multi-year pricing with bulk discounts and free reissues during certificate lifetime",
+      "Adobe AATL-certified document signing certificates for legally binding digital signatures across industries",
+      "RESTful API for full lifecycle management -- issue, revoke, reissue, and download certificates programmatically",
+      "Multi-domain (SAN/UCC) certificates supporting up to 500 domains on a single certificate",
+      "WebTrust and ETSI audited annually -- meets enterprise compliance requirements for banking and healthcare"
     ],
     cons: [
       "Brand recognition is lower than Sectigo, DigiCert, or Let's Encrypt -- less familiarity among hosting support teams",
       "Some advanced features (e.g., custom ECC curves, certificate transparency logs API) require documentation digging",
       "Account portal UI feels less polished than newer competitors -- occasional navigation friction during bulk operations",
+      "No free tier or zero-cost DV certificates -- not a replacement for Let's Encrypt for hobbyists or dev environments",
+      "Annual WebTrust audit details are not as transparently published compared to larger CAs like DigiCert"
     ],
     pricing: "DV SSL from $49/year; EV SSL from $129/year; code signing from $199/year",
     pricingDetail: "SSL.com pricing: DV certificates start at $49/year (single domain) with wildcards at $199/year. OV certificates from $79/year. EV certificates from $129/year (with $1M warranty). Code signing certificates from $199/year (standard) to $299/year (EV). S/MIME email certs from $20/year. All certificates include free reissues and 30-day refund. Multi-year discounts: 3-year EV saves ~15%. ACME automation available on all SSL products. Educational and non-profit discounts available on request.",
@@ -1617,6 +1635,10 @@ export const ALL_TOOLS: ToolData[] = [
       "RESTful API for full certificate lifecycle management",
       "Certificate revocation list (CRL) and OCSP responder services",
       "Multi-domain (SAN/UCC) certificates supporting up to 500 domains",
+      "Wildcard SSL certificates covering unlimited subdomains on a single cert",
+      "30-day money-back guarantee and free reissues during certificate validity",
+      "Educational and non-profit discount programs with up to 40% savings",
+      "Browser extension and desktop tools for quick CSR generation and cert installation"
     ],
     useCase: "Best for VPS and cloud server owners who need a full-service CA beyond free Let's Encrypt certificates -- offering EV/OV validation, code signing, and document signing under one provider with automation support.",
     websiteUrl: "https://www.ssl.com",
@@ -2230,11 +2252,17 @@ Ideal for mid-to-large enterprises with complex hybrid or multi-cloud architectu
       "Global multi-cloud clusters spanning 90+ regions across AWS, Azure, and GCP with cross-region replication built in",
       "Integrated Vector Search, Atlas Search, and Atlas Charts -- no separate infrastructure needed for search or analytics",
       "Serverless and auto-scaling tiers that adapt to workload spikes without manual intervention or downtime",
+      "Point-in-time recovery with granular timestamp restore -- restore to any second within the retention window",
+      "Built-in monitoring and performance advisor with automated index suggestions based on query patterns",
+      "Free tier (M0/M2) for development and prototyping with zero upfront cost and instant provisioning",
+      "End-to-end encryption with LDAP/X.509 authentication, VPC peering, and encryption at rest by default"
     ],
     cons: [
       "Higher cost at scale compared to self-managed MongoDB on a VPS -- premium for operational convenience",
       "Free tier (M0) is limited to 512MB storage and shared vCPU -- unsuitable for production or staging environments",
       "Data transfer costs between Atlas and non-cloud VPS hosts can add significant egress charges",
+      "Vendor lock-in with proprietary features like Atlas Search and Vector Search that lack open-source equivalents",
+      "Query performance tuning can be opaque -- no direct access to mongod logs or slow query log customization"
     ],
     pricing: "Serverless from $0.10/1M reads; dedicated clusters from $57/month (M10)",
     pricingDetail: "MongoDB Atlas offers three tiers: Free tier (M0: 512MB storage, shared RAM), Serverless (pay-per-use: $0.10 per 1M reads, $1.00 per 1M writes, $0.25/GB storage), and Dedicated clusters (M10: $57/month, 2GB RAM, 10GB storage; M30: $179/month, 4GB RAM, 40GB; M50+ for large-scale). All dedicated tiers include multi-region failover, point-in-time recovery, end-to-end encryption, and VPC peering. Data transfer to the internet is $0.09-0.12/GB depending on region.",
@@ -2247,6 +2275,10 @@ Ideal for mid-to-large enterprises with complex hybrid or multi-cloud architectu
       "Point-in-time recovery with granular timestamp restore",
       "LDAP/X.509 authentication, VPC peering, and encryption at rest",
       "Serverless instances with pay-per-use pricing and auto-scaling",
+      "Atlas Charts for native dashboarding and data visualization without external tools",
+      "Schema design tools and real-time performance insights with query profiler",
+      "Multi-cloud clusters spanning AWS, Azure, and GCP simultaneously for disaster recovery",
+      "Private networking via VPC peering and PrivateLink for low-latency connections to VPS hosts"
     ],
     useCase: "Ideal for developers and SaaS teams running MongoDB on VPS who want to offload database operations, backups, and scaling. Perfect for applications needing multi-region resilience, search capabilities, or AI/vector workloads.",
     websiteUrl: "https://mongodb.com/atlas",
@@ -2257,7 +2289,7 @@ Ideal for mid-to-large enterprises with complex hybrid or multi-cloud architectu
       momentum: 88,
       popularity: 89,
     },
-    userQuotes: [{"role": "Backend Lead", "company": "Travly SaaS", "quote": "Atlas Vector Search saved us from spinning up a separate embeddings database. We run our recommendation engine directly on MongoDB -- latency dropped 60% versus our previous Postgres+pgvector setup."}, {"role": "CTO", "company": "ShopFlow Inc.", "quote": "We migrated from self-hosted MongoDB on Vultr to Atlas. Auto-scaling handled Black Friday traffic without pager alerts, and point-in-time recovery saved us from a corrupt migration within minutes."}]
+    userQuotes: [{"role": "Backend Lead", "company": "Travly SaaS", "quote": "Atlas Vector Search saved us from spinning up a separate embeddings database. We run our recommendation engine directly on MongoDB -- latency dropped 60% versus our previous Postgres+pgvector setup."}, {"role": "CTO", "company": "ShopFlow Inc.", "quote": "We migrated from self-hosted MongoDB on Vultr to Atlas. Auto-scaling handled Black Friday traffic without pager alerts, and point-in-time recovery saved us from a corrupt migration within minutes."}, {"role": "DevOps Lead", "company": "DataStream Analytics", "quote": "Multi-cloud replication between AWS and GCP gave us the disaster recovery confidence we needed for our SOC 2 audit. Atlas made it a config change, not a multi-month project."}]
   },
   {
     id: "amazon-rds",
