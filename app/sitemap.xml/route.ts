@@ -35,6 +35,8 @@ const BLOG_SLUGS = [
   "nvme-vs-ssd-vs-object-storage-vps-2026",
   "vps-auto-scaling-strategies-2026",
   "cloud-cost-optimization-strategies-2026-0712",
+  "container-registries-2026-docker-hub-ghcr-gitlab-ecr",
+  "vps-migration-playbook-2026",
 ] as const;
 
 const TOOL_SLUGS = [
