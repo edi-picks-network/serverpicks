@@ -3639,7 +3639,7 @@ A *dedicated server* in 2026 means exactly what it says: one physical machine—
 
 A *cloud server*—more accurately called a *virtual machine (VM) instance*—is a software-defined abstraction running atop a shared physical host. Even "dedicated host" offerings (like AWS Dedicated Hosts or Azure Dedicated Hosts) still involve a hypervisor layer (KVM, Hyper-V, or Nitro) managing resource allocation, interrupt routing, and memory virtualization. The key distinction isn\u2019t "shared hardware" versus "not shared"—it\u2019s *who controls the isolation boundary*. In cloud, the provider owns and enforces that boundary. On dedicated, *you* own and enforce it.
 
-Important nuance: "Cloud server" does *not* mean "managed service." You can run unmanaged VMs on DigitalOcean or Linode just as you can run unmanaged bare metal on Hetzner. Likewise, you can get fully managed dedicated servers with SLA-backed patching, DDoS mitigation, and 24/7 sysadmin support—just as you can get fully managed Kubernetes on EKS or AKS. Management level ≠ infrastructure type.
+Important nuance: "Cloud server" does *not* mean "managed service." You can run unmanaged VMs on DigitalOcean or Linode just as you can run unmanaged bare metal on Hetzner. Likewise, you can get fully managed dedicated servers with SLA-backed patching, DDoS mitigation, and 24/7 sysadmin support—just as you can get fully managed Kubernetes on EKS or AKS. Management level != infrastructure type.
 
 Also worth noting: "Cloud" is often conflated with "public cloud." But private cloud (OpenStack, VMware vSphere, Nutanix), edge cloud (Equinix Metal, Vultr Edge), and hybrid models are all part of the broader landscape—and all sit somewhere on the spectrum between pure virtualization and pure bare metal.
 
