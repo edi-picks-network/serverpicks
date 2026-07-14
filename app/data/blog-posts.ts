@@ -1180,9 +1180,9 @@ Eva Quinn
 Founder @ Spark Werks Studio
 --- Building infrastructure that survives the worst day of your business.`,
     author: "Eva Quinn",
-    authorRole: "Founder @ Spark Werks Studio",
+    authorRole: "Disaster Recovery Specialist @ ServerPicks",
     date: "2026-06-19",
-    category: "hosting",
+    category: "Cloud Hosting",
     readTime: 12,
     tags: ["vps-backup", "disaster-recovery", "snapshot", "offsite-backup", "server-automation", "data-protection", "cloud-backup", "vps-management", "backup-strategy", "business-continuity"]
   },
@@ -1263,7 +1263,7 @@ You don't need the strongest server -- you need the one that's always online whe
     author: "Marcus Chen",
     authorRole: "Lead Geospatial Engineer @ ServerPicks",
     date: "2026-06-20",
-    category: "cloud-hosting",
+    category: "Cloud Hosting",
     readTime: 10,
     tags: ["cross-border-ecommerce", "cloud-server", "VPS", "ecommerce-hosting", "digitalocean", "vultr", "alibaba-cloud", "aws-lightsail", "hetzner"]
     },
@@ -1365,11 +1365,11 @@ Remember: scaling monitoring isn't about adding more tools--it's about adding mo
 
 Investing in observability early pays exponential dividends: faster debugging, stronger stakeholder trust, and the quiet confidence that comes from knowing your infrastructure--not hoping it holds up.`,
     author: "Henry Nielsen",
-    authorRole: "Senior Cloud Infrastructure Engineer @ Spark Werks",
+    authorRole: "Senior Cloud Infrastructure Engineer @ ServerPicks",
     date: "2026-06-21",
-    category: "devops",
+    category: "DevOps & Monitoring",
     readTime: 8,
-    tags: ["monitoring", "observability", "prometheus", "grafana", "new-relic", "datadog", "VPS", "cloud-server", "devops"]
+    tags: ["monitoring", "observability", "prometheus", "grafana", "new-relic", "datadog", "VPS", "cloud-server", "DevOps & Monitoring"]
   },
   {
     slug: "vps-auto-scaling-strategies-2026-0622",
@@ -1455,11 +1455,11 @@ Auto-scaling is not a silver bullet. Avoid it when:
 
 In 2026, auto-scaling is accessible to every VPS owner, not just hyperscale cloud users. Start with vertical scaling for simplicity, graduate to Nomad or Docker Swarm for horizontal scaling when your application architecture supports it, and reserve Kubernetes for teams with dedicated DevOps capacity. The best scaling strategy balances cost, complexity, and reliability for your specific workload.`,
     author: "James Chen",
-    authorRole: "Infrastructure Architect @ Spark Werks",
+    authorRole: "Infrastructure Architect @ ServerPicks",
     date: "2026-06-22",
-    category: "devops",
+    category: "DevOps & Monitoring",
     readTime: 9,
-    tags: ["auto-scaling", "VPS", "kubernetes", "docker-swarm", "nomad", "prometheus", "cloud-server", "scaling", "devops"]
+    tags: ["auto-scaling", "VPS", "kubernetes", "docker-swarm", "nomad", "prometheus", "cloud-server", "scaling", "DevOps & Monitoring"]
   },
 {
     slug: "vps-vs-cloud-vs-dedicated-server-2026",
@@ -2416,15 +2416,16 @@ This isn't DevOps theater. It's maintenance. It's vigilance. It's choosing the t
 And for us, in 2026, that tool is still Hetzner.
     `,
     author: "Alex Rivera",
+    authorRole: "Senior Backend Engineer @ ServerPicks",
     category: "VPS & Cloud",
     tags: ["Hetzner", "VPS", "SaaS", "PostgreSQL", "Docker", "Cloud Migration", "Production Deployment", "Cost Optimization", "DevOps", "Infrastructure"],
     readTime: 11,
   },
-
 {
     slug: "vps-performance-benchmarks-2026",
     title: "VPS Performance Benchmarks 2026: Linode, Vultr, Hetzner, Contabo Tested",
     excerpt: "Real-world VPS benchmarks from June 2026 comparing Linode, Vultr, Hetzner, and Contabo. I ran Geekbench 6, fio disk tests, network latency probes, and WordPress load tests to find out which provider delivers real performance for your money.",
+    authorRole: "Senior Cloud Engineer @ ServerPicks",
     date: "2026-06-29",
     content: `
 # VPS Performance Benchmarks 2026: Linode, Vultr, Hetzner, Contabo Tested  
