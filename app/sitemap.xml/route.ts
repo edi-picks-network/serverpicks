@@ -38,6 +38,7 @@ const BLOG_SLUGS = [
   "container-registries-2026-docker-hub-ghcr-gitlab-ecr",
   "vps-migration-playbook-2026",
   "cloud-vps-network-optimization-2026",
+  "vps-edge-iot-deployment-2026",
 ] as const;
 
 const TOOL_SLUGS = [
