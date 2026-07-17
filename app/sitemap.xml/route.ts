@@ -41,6 +41,7 @@ const BLOG_SLUGS = [
   "vps-edge-iot-deployment-2026",
   "cdn-showdown-2026-cloudflare-stackpath-azure-cdn",
   "vps-security-solutions-2026-modsecurity-fail2ban-cloudflare-waf-ossec",
+  "vps-vs-dedicated-server-comparison-2026",
 ] as const;
 
 const TOOL_SLUGS = [
