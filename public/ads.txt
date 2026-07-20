@@ -1,1 +1,2 @@
-google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+# Ads.txt placeholder — Google AdSense will be integrated once account is approved.
+# This file will be updated with the real publisher ID upon AdSense approval.

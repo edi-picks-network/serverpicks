@@ -134,7 +134,7 @@ export default function HomePage() {
       <section className="py-16 bg-ever-800">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-2xl font-bold text-white mb-2">Top Providers Comparison</h2>
-          <p className="text-ever-400 mb-8">Highest-rated cloud hosts ranked by verified reviews</p>
+          <p className="text-ever-400 mb-8">Highest-rated cloud hosts ranked by community feedback</p>
           <div className="overflow-x-auto rounded-xl border border-ever-600">
             <table className="w-full text-left">
               <thead>

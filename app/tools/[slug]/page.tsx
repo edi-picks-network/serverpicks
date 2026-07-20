@@ -383,7 +383,7 @@ export default function ToolDetailPage() {
         </div>
 
         <div className="mt-10 p-8 border border-dashed border-[#1E3A5F] rounded-lg text-center text-[#4A6080] italic bg-[#0A0F1A]/50">
-          [AdSense In-Article Ad]
+          {/* Ad placement — will be integrated upon AdSense approval */}
         </div>
 
         <div className="mt-6 text-center">
