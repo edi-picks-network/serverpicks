@@ -44,7 +44,8 @@ const BLOG_SLUGS = [
   "vps-vs-dedicated-server-comparison-2026",
   "cloud-server-vps-bare-metal-comparison-2026",
 
-  "vps-performance-benchmarking-guide-2026",] as const;
+  "vps-performance-benchmarking-guide-2026",
+  "cdn-performance-optimization-vps-diary-2026",] as const;
 
 const TOOL_SLUGS = [
   "aws",

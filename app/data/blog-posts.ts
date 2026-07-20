@@ -5436,4 +5436,129 @@ Run your own benchmarks. The five minutes of setup will save you months of produ
     readTime: 8,
     tags: ["Cloud Server", "VPS", "Performance", "Benchmarking", "CPU", "NVMe", "Network Testing", "DevOps"],
   },
+  {
+    slug: "cdn-performance-optimization-vps-diary-2026",
+    title: "CDN Performance Optimization: A Diary of Shaving 800ms Off Our VPS-Hosted App",
+    excerpt: "Follow a DevOps engineer's journey optimizing CDN delivery for a Node.js app on a $20/month DigitalOcean VPS. Learn real-world cache strategies, image optimization, Brotli compression, and how to measure TTFB improvements across global regions.",
+    content: `CDN Performance Optimization: A Diary of Shaving 800ms Off Our VPS-Hosted App
+
+June 12 -- 09:43 AM  
+I woke up to a Slack alert at 6:17 AM. Not the kind with fire emojis -- just a quiet, ominous Lighthouse report: "Performance score: 42. TTFB: 980ms. Largest Contentful Paint: 4.8s." Our Node.js app -- a modest SaaS dashboard running on a $20/mo DigitalOcean VPS in NYC -- had become painfully slow for users in Europe and APAC. We'd been ignoring it, assuming "it's fine for our 2K MAU." But last week, churn spiked 12% among EU customers. Time to stop pretending.
+
+June 12 -- 02:15 PM  
+Spent the afternoon benchmarking. Ran curl -w "\nTTFB: %{time_starttransfer}\nTotal: %{time_total}\n" -o /dev/null -s https://app.ourdomain.com from Frankfurt, Tokyo, and NYC. Results:
+
+NYC: TTFB 210ms  
+Frankfurt: TTFB 980ms  
+Tokyo: TTFB 1.42s  
+
+The VPS is bare-metal fast -- 2.4GHz CPU, 4GB RAM, Nginx reverse proxy, PM2-managed Express server, all tuned. But every request was hitting that single origin -- no caching layer, no edge logic, no compression beyond basic gzip. Our static assets (JS/CSS/images) were served with Cache-Control: public, max-age=3600 -- but that only helps *repeat* visits, and only if the browser doesn't revalidate. Worse: our image-heavy dashboard loaded 12 PNGs at 800-1200px wide -- all unoptimized, all over 500KB each.
+
+June 13 -- 10:02 AM  
+Evaluated CDNs. Cloudflare? Too much overhead -- we don't need WAF or DDoS protection *yet*, and their free tier caps cacheable response size at 100MB (we serve PDF reports). Fastly? Overkill -- $50/mo minimum, steep learning curve for our small team. BunnyCDN stood out: $0.01/GB egress, instant cache purging, intuitive dashboard, and -- crucially -- native Brotli + WebP/AVIF transformation *at the edge*. Their "Origin Shield" feature also caught my eye: one shared cache layer between edge nodes and our origin, reducing upstream load by deduplicating concurrent requests during cold starts.
+
+Signed up. Pointed CNAME cdn.ourdomain.com → our-bunny.b-cdn.net. Updated DNS TTL to 60s. Waited 4 minutes. First test: curl -I https://cdn.ourdomain.com/static/main.css. Headers confirmed: x-bunny-cache: HIT, content-encoding: br, cache-control: public, max-age=31536000.
+
+June 14 -- 03:30 PM  
+Cache rules -- this is where most teams fail. We didn't want blanket caching. Our app has three tiers:
+
+1. Truly static: /static/*, /assets/*, /favicon.ico → cache forever (max-age=31536000), immutable hashes in filenames  
+2. Semi-static: /api/v1/docs/*, /public/* → cache 1 hour, but respect ETag/Last-Modified  
+3. Dynamic: /api/*, /dashboard/*, /auth/* → cache only at edge *if* response includes Cache-Control: s-maxage=60, and never store cookies/auth headers  
+
+In BunnyCDN's dashboard, I created three cache rules in order of specificity:  
+- Rule 1: Path contains "/static/" → Cache TTL: 31536000s, Ignore query string: yes, Respect origin cache headers: no  
+- Rule 2: Path matches regex "^/api/v1/docs/.*$" → Cache TTL: 3600s, Respect origin headers: yes  
+- Rule 3: Default → Cache TTL: 0 (pass-through), but enable Origin Shield  
+
+Enabled Origin Shield globally. This meant all edge POPs route cache-miss requests through Bunny's NYC shield node first -- so if 50 users in London simultaneously request /api/v1/docs/swagger.json, only *one* request hits our VPS, not 50.
+
+June 15 -- 11:18 AM  
+Image optimization -- the low-hanging fruit. Our /dashboard used <img src="/uploads/chart-2024-06.png">. No srcset. No modern formats. All PNGs. I updated our upload flow: when a user uploads an image, our Node.js backend now generates WebP (quality 82) and AVIF (quality 65) variants alongside the original, storing them as chart-2024-06.png, chart-2024-06.webp, chart-2024-06.avif.
+
+Then, in BunnyCDN, enabled "Image Optimization" with these settings:  
+- Auto WebP/AVIF: enabled  
+- Fallback: WebP only (AVIF still has spotty Safari support)  
+- Quality: 80 for WebP, 60 for AVIF  
+- Strip metadata: yes  
+- Resize on demand: enabled (with max-width=1200)  
+
+Finally, updated frontend img tags to use <picture>:  
+<picture>  
+  <source srcset="/uploads/chart-2024-06.avif" type="image/avif">  
+  <source srcset="/uploads/chart-2024-06.webp" type="image/webp">  
+  <img src="/uploads/chart-2024-06.png" alt="Chart">  
+</picture>  
+
+Tested with curl -H "Accept: image/avif" https://cdn.ourdomain.com/uploads/chart-2024-06.png -- got 200 OK, content-type: image/avif, size dropped from 782KB → 94KB.
+
+June 16 -- 08:55 AM  
+Dynamic content cache invalidation -- the landmine. Our dashboard shows real-time metrics: /api/v1/metrics?range=last_24h returns JSON with timestamps. We *cannot* cache that globally. But we *can* cache it per-user -- if authenticated -- and bust it on data update.
+
+We added a custom header to responses: X-Cache-Key: metrics-\${userId}-\${range}. Then configured BunnyCDN to use that header as the cache key *only* for /api/v1/metrics paths. In Nginx, we added:  
+proxy_cache_key "$scheme$request_method$host$uri$is_args$arg_range$upstream_http_x_cache_key";  
+
+And in Express:  
+res.set('X-Cache-Key', 'metrics-\${req.user.id}-\${req.query.range}');  
+res.set('Cache-Control', 's-maxage=60, stale-while-revalidate=30');  
+
+For cache busting, we POST to BunnyCDN's purge API with path=/api/v1/metrics* and cache-key=metrics-12345-last_24h -- precise, surgical, no full-site flushes.
+
+Also enabled Brotli compression on BunnyCDN (disabled gzip -- Brotli gives ~15% better compression than gzip at level 4, and Bunny serves it automatically when Accept-Encoding includes br). Verified with curl -H "Accept-Encoding: br" -- got content-encoding: br and 22% smaller JS bundles.
+
+June 17 -- 04:20 PM  
+Stress-tested. Used k6 to simulate 200 concurrent users across 3 regions hitting /dashboard (which loads HTML, CSS, JS, 8 images, and 3 API endpoints). Measured:  
+- Avg TTFB across regions: dropped from 980ms → 310ms  
+- Cache hit ratio in BunnyCDN dashboard: 82%  
+- Origin bandwidth (via DO monitoring): down 41%  
+
+Not enough. Digged deeper. Found our Express server was sending Set-Cookie on *every* HTML response -- even for non-auth routes -- breaking cacheability. Fixed: only set cookies on /login, /logout, and /api/auth. Also added Vary: Cookie to those responses, and removed Vary: Cookie from static routes.
+
+June 18 -- 11:07 AM  
+Final tweaks:  
+- Enabled HTTP/2 on BunnyCDN (was default, but verified)  
+- Set cache TTL for HTML to 60s (with ETag) -- safe because our dashboard layout rarely changes mid-day  
+- Added Cache-Control: no-store to all /api/auth/* and /api/v1/user/* endpoints  
+- Configured BunnyCDN to strip sensitive headers: X-Real-IP, X-Forwarded-For, Cookie (except for auth paths)  
+
+Ran full Lighthouse from Frankfurt again.
+
+June 18 -- 05:58 PM  
+Results.
+
+TTFB: 180ms (down from 980ms -- 800ms shaved off. Exactly what the title promised.)  
+LCP: 1.2s (down from 4.8s)  
+Cache Hit Ratio (7-day avg): 94%  
+Bandwidth served from origin: reduced by 62% -- from 4.1TB/mo → 1.5TB/mo  
+Brotli compression saved 19.3% average payload size vs gzip  
+Time-to-first-byte for /static/main.js: 12ms (vs 210ms direct to VPS)  
+WebP images load 3.1x faster on 3G throttling  
+
+Most satisfying: our EU churn rate flatlined yesterday. No more "slow dashboard" support tickets.
+
+What didn't work:  
+- Trying to cache /api/v1/metrics without the X-Cache-Key header -- caused cross-user data leaks. Scary.  
+- Enabling AVIF fallback *before* testing Safari -- broke image rendering for 12% of users until we rolled back to WebP-only.  
+- Forgetting to update our health check endpoint (/health) to return cache headers -- BunnyCDN was caching 200 OKs for 1hr, masking real downtime. Fixed with Cache-Control: no-store.
+
+What I'd do differently next time:  
+- Start with cache logging. BunnyCDN's real-time log streaming (to our ELK stack) would've revealed the cookie leakage in hours, not days.  
+- Automate cache rule validation. We now have a CI step that runs curl against /static/, /api/v1/docs/, and /api/v1/metrics with varied headers -- asserting correct x-bunny-cache and cache-control values.  
+- Add synthetic monitoring: pingdom-like checks every 5 minutes from 5 global locations, alerting if TTFB > 250ms or cache hit ratio < 90%.
+
+This wasn't magic. It was methodical: measure, isolate, configure, validate, repeat. No vendor lock-in -- BunnyCDN sits cleanly in front of our VPS. If we outgrow it, swapping to Cloudflare or Fastly is just DNS and cache rule migration.
+
+Our VPS is still humming at 18% CPU. Nginx logs show 73% fewer requests. And for the first time in months, I opened our app in an incognito window from Berlin -- and felt zero impatience.
+
+That's the win. Not the metrics. The feeling.
+
+-- Alex R., DevOps Engineer  
+June 18, 2024`,
+    author: "Alex R.",
+    authorRole: "DevOps Engineer",
+    date: "2026-07-21",
+    category: "CDN and DNS",
+    readTime: 10,
+    tags: ["CDN", "Performance", "VPS", "BunnyCDN", "Image Optimization", "Brotli", "Cache Strategy", "DevOps"],
+  }
 ];
