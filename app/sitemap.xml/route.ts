@@ -43,7 +43,8 @@ const BLOG_SLUGS = [
   "vps-security-solutions-2026-modsecurity-fail2ban-cloudflare-waf-ossec",
   "vps-vs-dedicated-server-comparison-2026",
   "cloud-server-vps-bare-metal-comparison-2026",
-] as const;
+
+  "vps-performance-benchmarking-guide-2026",] as const;
 
 const TOOL_SLUGS = [
   "aws",
