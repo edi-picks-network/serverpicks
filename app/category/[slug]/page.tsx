@@ -19,22 +19,10 @@ const CATEGORY_DESCRIPTIONS: Record<string, string> = {
   Marketing: "Marketing automation platforms enable businesses to create, execute, and analyze multi-channel campaigns. Find the right tools to attract, engage, and convert your audience.",
   Communication: "Team communication and collaboration platforms keep your organization connected. From messaging to video conferencing, discover tools that streamline internal communication.",
   Management: "Project and work management software helps teams plan, track, and execute work efficiently. Compare the best platforms for task management, resource planning, and portfolio oversight.",
-  Finance: "Financial software solutions for payment processing, accounting, expense management, and billing. Find the right tools to manage your company's financial operations.",
-  Legal: "Legal software solutions including contract lifecycle management, e-signature, and compliance tools. Streamline your legal operations with enterprise-grade platforms.",
-  Support: "Customer support and service desk platforms help teams manage tickets, provide self-service options, and deliver exceptional customer experiences at scale.",
-  HR: "Human Resources software for recruitment, onboarding, performance management, payroll, and employee engagement. Find the best HR tools for your growing team.",
   DevOps: "DevOps and development tools including CI/CD, monitoring, container orchestration, and infrastructure management. Compare platforms to streamline your software delivery pipeline.",
-  Productivity: "Productivity software helps individuals and teams work smarter with document management, note-taking, knowledge bases, and workflow automation tools.",
-  Security: "Security software solutions for identity management, endpoint protection, network security, and compliance monitoring. Protect your enterprise with top-rated security platforms.",
+  Security: "Security software solutions for identity management, endpoint protection, network security, and compliance monitoring.",
   Analytics: "Business intelligence and analytics platforms help organizations visualize data, create dashboards, and derive actionable insights from their business data.",
-  Design: "Design and creative software for UI/UX design, graphic design, prototyping, and digital asset management. Find the best tools for your creative team.",
-  Sales: "Sales engagement and enablement platforms help revenue teams automate outreach, manage pipelines, and close deals faster with data-driven selling tools.",
-  Data: "Data management and integration platforms for ETL, data warehousing, data quality, and master data management. Compare solutions for your data infrastructure needs.",
-  "E-Commerce": "E-commerce platforms and tools for building online stores, managing product catalogs, processing payments, and optimizing conversion rates.",
   Infrastructure: "Cloud infrastructure and hosting platforms for compute, storage, networking, and serverless computing. Compare providers for your cloud architecture needs.",
-  "E-Signature": "Electronic signature solutions for legally binding digital signatures, document workflows, and contract automation. Streamline your agreement processes.",
-  "A/B Testing": "A/B testing and experimentation platforms for optimizing websites, mobile apps, and marketing campaigns through data-driven testing and personalization.",
-  FinTech: "Financial technology solutions including payment gateways, lending platforms, investment tools, and banking APIs for modern financial services.",
 };
 
 const CATEGORY_STATS = ALL_CATEGORIES.reduce(
@@ -68,10 +56,10 @@ export function generateMetadata({
   }
   const stats = CATEGORY_STATS[category];
   return {
-    title: `Best ${category} Software in 2026 — ${stats.count} Tools Compared`,
+    title: `Best ${category} Providers in 2026 — ${stats.count} Tools Compared`,
     description:
       CATEGORY_DESCRIPTIONS[category] ||
-      `Compare the best ${category} software solutions. Browse ${stats.count} tools with reviews, ratings, and pricing.`,
+      `Browse and compare ${stats.count} ${category.toLowerCase()} tools. Expert analysis, pricing, and feature comparisons for cloud infrastructure providers.`,
     keywords: [
       `best ${category.toLowerCase()} software`,
       `${category.toLowerCase()} tools`,
@@ -80,8 +68,8 @@ export function generateMetadata({
       `enterprise ${category.toLowerCase()}`,
     ],
     openGraph: {
-      title: `Best ${category} Software in 2026 — ${stats.count} Tools Compared`,
-      description: `Compare ${stats.count} top-rated ${category} software solutions. Read verified reviews, compare pricing, and find the perfect tool for your business.`,
+      title: `Best ${category} Tools in 2026 — ${stats.count} Providers Compared`,
+      description: `Compare ${stats.count} top-rated ${category.toLowerCase()} tools with expert analysis and pricing. Find the right infrastructure for your workloads.`,
     },
   };
 }
@@ -107,7 +95,7 @@ export default function CategoryPage({
   const stats = CATEGORY_STATS[category];
   const description =
     CATEGORY_DESCRIPTIONS[category] ||
-    `Compare top ${category.toLowerCase()} software solutions for your business needs.`;
+    `Compare top ${category.toLowerCase()} hosting and infrastructure providers for your workloads.`;
 
   return (
     <div className="relative pt-28 pb-20 px-6">
@@ -117,7 +105,7 @@ export default function CategoryPage({
             Home
           </Link>
           <ChevronRight className="w-3.5 h-3.5" />
-          <span className="text-[#839BBE]">{category} Software</span>
+          <span className="text-[#839BBE]">{category} Providers</span>
         </nav>
 
         <header className="mb-10">
@@ -127,7 +115,7 @@ export default function CategoryPage({
             </div>
             <div>
               <h1 className="text-4xl md:text-5xl font-extrabold text-[#F0F2FE] tracking-tight">
-                Best {category} Software
+                Best {category} Providers
               </h1>
               <p className="text-[#839BBE] mt-1 text-base">
                 {stats.count} tool{stats.count !== 1 ? "s" : ""} ·{" "}
@@ -148,7 +136,7 @@ export default function CategoryPage({
             href={`/best/${params.slug}`}
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-sm font-medium rounded-full transition-colors"
           >
-            View Best {category} Software 2026 <ArrowRight className="w-4 h-4" />
+            View Best {category} Providers 2026 <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 

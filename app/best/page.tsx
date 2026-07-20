@@ -25,7 +25,7 @@ export default function BestPage() {
             Best Cloud Hosting <span className="text-[#60A5FA]">2026</span>
           </h1>
           <p className="text-[#94A3B8] mt-3 max-w-2xl mx-auto text-sm">
-            Discover the best cloud hosting platforms and services in 2026. Expert comparisons, verified user reviews, transparent pricing &mdash; all in one place.
+            Discover the best cloud hosting platforms and services in 2026. Expert comparisons, editor scores, transparent pricing &mdash; all in one place.
           </p>
         </div>
       </section>

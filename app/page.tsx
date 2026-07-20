@@ -134,7 +134,7 @@ export default function HomePage() {
       <section className="py-16 bg-ever-800">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-2xl font-bold text-white mb-2">Top Providers Comparison</h2>
-          <p className="text-ever-400 mb-8">Highest-rated cloud hosts ranked by community feedback</p>
+          <p className="text-ever-400 mb-8">Highest-rated cloud hosts compared side by side</p>
           <div className="overflow-x-auto rounded-xl border border-ever-600">
             <table className="w-full text-left">
               <thead>
@@ -142,7 +142,7 @@ export default function HomePage() {
                   <th className="px-5 py-4 text-sm font-semibold text-ever-300">Provider</th>
                   <th className="px-5 py-4 text-sm font-semibold text-ever-300">Category</th>
                   <th className="px-5 py-4 text-sm font-semibold text-ever-300 text-center">Rating</th>
-                  <th className="px-5 py-4 text-sm font-semibold text-ever-300 text-center">Reviews</th>
+                  <th className="px-5 py-4 text-sm font-semibold text-ever-300 text-center">Score</th>
                   <th className="px-5 py-4 text-sm font-semibold text-ever-300 text-center">Features</th>
                   <th className="px-5 py-4 text-sm font-semibold text-ever-300 text-center">Popularity</th>
                   <th className="px-5 py-4 text-sm font-semibold text-ever-300"></th>

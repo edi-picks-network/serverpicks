@@ -55,11 +55,11 @@ export default function AboutPage() {
           <h2 className="text-2xl font-bold text-white mb-6">Our Story</h2>
           <div className="space-y-4 text-ever-400 leading-relaxed">
             <p>
-              ServerPicks started in a shared workspace in Somerville, MA, back in 2023. 
-              Our founding team of four infrastructure engineers kept running into the same 
-              problem: cloud hosting recommendations were built for web developers, not 
-              for people processing satellite imagery, running real-time GIS services, 
-              or ingesting LiDAR point clouds at scale.
+            ServerPicks started in a shared workspace in Somerville, MA. 
+            Our founding team of four infrastructure engineers kept running into the same 
+            problem: cloud hosting recommendations were built for web developers, not 
+            for people processing satellite imagery, running real-time GIS services, 
+            or ingesting LiDAR point clouds at scale.
             </p>
             <p>
               We needed to know: which cloud provider delivers the fastest GDAL raster 
