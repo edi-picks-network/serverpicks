@@ -15,7 +15,7 @@ import { ALL_TOOLS } from "@/data/tools";
 const ALL_CATEGORIES = Array.from(new Set(ALL_TOOLS.map((t) => t.category))).filter(Boolean) as string[];
 
 function slugify(category: string) {
-  return (category || "").toLowerCase().replace(/\s+/g, "-");
+  return (category || "").toLowerCase().replace(/\s+/g, "-").replace(/&/g, "and");
 }
 
 function deslugify(slug: string): string | undefined {

@@ -207,7 +207,7 @@ export default function HomePage() {
             {categories.slice(0, 8).map((cat) => (
               <Link
                 key={cat.name}
-                href={`/category/${cat.name.toLowerCase().replace(/\s+/g, "-")}`}
+                href={`/category/${cat.name.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "and")}`}
                 className="group bg-ever-800 border border-ever-700 rounded-xl p-5 hover:border-geospatial hover:shadow-lg transition-all"
               >
                 <h3 className="font-semibold text-white group-hover:text-geospatial-light transition-colors">{cat.name}</h3>
