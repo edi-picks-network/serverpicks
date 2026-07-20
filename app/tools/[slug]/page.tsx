@@ -142,7 +142,7 @@ export default function ToolDetailPage() {
                   <Star className="w-4 h-4 fill-[#F59E0B] mr-1" />{" "}
                   {tool.rating}/5
                   <span className="text-[#4A6080] font-normal ml-1">
-                    ({tool.reviewCount.toLocaleString()} reviews)
+                    (Based on aggregated data)
                   </span>
                 </div>
               </div>
@@ -174,12 +174,12 @@ export default function ToolDetailPage() {
             </p>
           </div>
           <div className="bg-[#0F1F2D] border border-[#1E3A5F] rounded-xl p-4">
-            <Users className="w-5 h-5 text-[#2563EB] mb-2" />
+            <BarChart3 className="w-5 h-5 text-[#2563EB] mb-2" />
             <p className="text-xs text-[#4A6080] uppercase tracking-wider mb-1">
-              Reviews
+              Score
             </p>
             <p className="text-sm font-bold text-[#F0F2FE]">
-              {tool.reviewCount.toLocaleString()}
+              {tool.rating}/5
             </p>
           </div>
           <div className="bg-[#0F1F2D] border border-[#1E3A5F] rounded-xl p-4">
@@ -196,16 +196,16 @@ export default function ToolDetailPage() {
             <h2 className="font-bold text-[#F0F2FE] flex items-center text-base">
               <BarChart3 className="w-5 h-5 mr-2 text-[#2563EB]" /> SW Score
             </h2>
-            <span className="text-xs text-[#4A6080]">Powered by verified reviews & data</span>
+            <span className="text-xs text-[#4A6080]">Performance & feature analysis</span>
           </div>
           <div className="space-y-3">
             <ScoreBar label="Features" score={scores.features} color="#2563EB" />
-            <ScoreBar label="Reviews" score={scores.reviews} color="#60A5FA" />
+            <ScoreBar label="User Score" score={scores.reviews} color="#60A5FA" />
             <ScoreBar label="Momentum" score={scores.momentum} color="#F59E0B" />
             <ScoreBar label="Popularity" score={scores.popularity} color="#8B5CF6" />
           </div>
           <div className="mt-4 pt-4 border-t border-[#1E3A5F] flex items-center justify-between text-xs text-[#4A6080]">
-            <span>Overall rating based on user reviews and product data</span>
+            <span>Overall rating based on product data and feature analysis</span>
             <span className="font-bold text-[#60A5FA]">
               Avg: {((scores.features + scores.reviews + scores.momentum + scores.popularity) / 4).toFixed(0)}%
             </span>

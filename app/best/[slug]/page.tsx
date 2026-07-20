@@ -139,6 +139,7 @@ export function generateMetadata({
       `top ${category.toLowerCase()} tools`,
       `${category.toLowerCase()} comparison`,
       `${category.toLowerCase()} reviews`,
+      `${category.toLowerCase()} ratings`,
       `best ${category.toLowerCase()} platforms`,
     ],
     openGraph: {
@@ -234,7 +235,7 @@ export default function BestCategoryPage({
                     Pricing
                   </th>
                   <th className="text-left py-3 px-4 text-[#839BBE] font-semibold hidden lg:table-cell">
-                    Reviews
+                    Score
                   </th>
                   <th className="text-right py-3 px-4 text-[#839BBE] font-semibold">
                     Details
@@ -283,7 +284,7 @@ export default function BestCategoryPage({
                         </div>
                       </td>
                       <td className="py-4 px-4 text-[#4A6080] hidden lg:table-cell">
-                        {tool.reviewCount.toLocaleString()}
+                        {tool.rating}/5
                       </td>
                       <td className="py-4 px-4 text-right">
                         <Link
@@ -333,7 +334,7 @@ export default function BestCategoryPage({
                           {tool.rating}
                         </span>
                         <span className="text-xs text-[#4A6080]">
-                          ({tool.reviewCount.toLocaleString()})
+                          /5
                         </span>
                       </div>
                     </div>
@@ -398,7 +399,7 @@ export default function BestCategoryPage({
               Ready to find your perfect {category.toLowerCase()} tool?
             </h2>
             <p className="text-[#839BBE] text-sm">
-              Browse all {tools.length} {category.toLowerCase()} solutions or dive into detailed reviews.
+              Browse all {tools.length} {category.toLowerCase()} solutions or dive into detailed comparisons.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">

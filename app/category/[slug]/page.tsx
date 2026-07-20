@@ -165,7 +165,7 @@ export default function CategoryPage({
                           {tool.rating}
                         </span>
                         <span className="text-xs text-[#4A6080]">
-                          ({tool.reviewCount.toLocaleString()} reviews)
+                          ({tool.rating}/5)
                         </span>
                       </div>
                     </div>

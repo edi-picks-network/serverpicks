@@ -8,7 +8,6 @@ interface Tool {
   name: string;
   category: string;
   rating: number;
-  reviews: number;
   description: string;
   icon: LucideIcon;
   pricing: string;
@@ -20,7 +19,6 @@ const FEATURED_TOOLS: Tool[] = [
     name: 'DataMetrics Pro',
     category: 'Analytics',
     rating: 4.9,
-    reviews: 128,
     description: 'Advanced enterprise analytics platform with real-time predictive modeling.',
     icon: BarChart3,
     pricing: 'From $99/mo',
@@ -30,7 +28,6 @@ const FEATURED_TOOLS: Tool[] = [
     name: 'SecureGuard CRM',
     category: 'CRM & Sales',
     rating: 4.8,
-    reviews: 342,
     description: 'End-to-end encrypted customer relationship management for finance teams.',
     icon: ShieldCheck,
     pricing: 'Contact Sales',
@@ -40,7 +37,6 @@ const FEATURED_TOOLS: Tool[] = [
     name: 'TeamSync Hub',
     category: 'Collaboration',
     rating: 4.7,
-    reviews: 89,
     description: 'Unified communication and project management suite for remote teams.',
     icon: MessageSquare,
     pricing: 'Freemium',
@@ -50,7 +46,6 @@ const FEATURED_TOOLS: Tool[] = [
     name: 'HR TalentFlow',
     category: 'Human Resources',
     rating: 4.6,
-    reviews: 215,
     description: 'Automated recruitment, onboarding, and payroll management system.',
     icon: Users,
     pricing: 'From $49/mo',
@@ -60,7 +55,6 @@ const FEATURED_TOOLS: Tool[] = [
     name: 'PayStream API',
     category: 'Finance',
     rating: 4.9,
-    reviews: 512,
     description: 'Global business payment gateway API with built-in fraud prevention.',
     icon: CreditCard,
     pricing: 'Pay-as-you-go',
@@ -70,7 +64,6 @@ const FEATURED_TOOLS: Tool[] = [
     name: 'BizOps Flow',
     category: 'Operations',
     rating: 4.5,
-    reviews: 76,
     description: 'No-code workflow automation specifically designed for operational efficiency.',
     icon: Briefcase,
     pricing: 'From $199/mo',

@@ -84,7 +84,7 @@ export default function BestPage() {
                       <div className="flex items-center gap-3 mt-2">
                         <Star className="w-3 h-3 text-[#F59E0B] fill-[#F59E0B]" />
                         <span className="text-xs text-[#94A3B8]">{tool.rating}</span>
-                        <span className="text-xs text-[#475569]">{tool.reviews || tool.reviewCount || 0} reviews</span>
+                        <span className="text-xs text-[#475569]">{tool.rating}/5</span>
                       </div>
                     </div>
                   </div>
