@@ -47,18 +47,15 @@ export default function TermsPage() {
           <section>
             <h2 className="text-xl font-bold text-[#F0F2FE] mb-3">3. User Accounts and Registration</h2>
             <p className="mb-3">
-              Certain features of the Site may require account registration. When creating an
-              account, you agree to:
+              ServerPicks is a directory and comparison platform that does not currently
+              require user registration or account creation to access its core features.
+              All provider listings, benchmarks, and comparison tools are available without
+              signing up.
             </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Provide accurate, current, and complete registration information</li>
-              <li>Maintain and promptly update your account information</li>
-              <li>Keep your password secure and confidential</li>
-              <li>Notify us immediately of any unauthorized use of your account</li>
-              <li>Accept responsibility for all activities under your account</li>
-            </ul>
-            <p className="mt-3">
-              We reserve the right to suspend or terminate accounts that violate these Terms.
+            <p className="mb-3">
+              If we introduce user accounts, newsletter subscriptions, or personalized
+              features in the future, this section will be updated and users will be
+              asked to provide only the information necessary for those features.
             </p>
           </section>
 

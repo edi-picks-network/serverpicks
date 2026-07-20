@@ -15,14 +15,12 @@ function deslugify(slug: string): string | undefined {
 }
 
 const CATEGORY_DESCRIPTIONS: Record<string, string> = {
-  CRM: "Customer Relationship Management (CRM) software helps businesses manage customer interactions, track leads, and automate sales processes. Compare the best CRM platforms for your enterprise.",
-  Marketing: "Marketing automation platforms enable businesses to create, execute, and analyze multi-channel campaigns. Find the right tools to attract, engage, and convert your audience.",
-  Communication: "Team communication and collaboration platforms keep your organization connected. From messaging to video conferencing, discover tools that streamline internal communication.",
-  Management: "Project and work management software helps teams plan, track, and execute work efficiently. Compare the best platforms for task management, resource planning, and portfolio oversight.",
-  DevOps: "DevOps and development tools including CI/CD, monitoring, container orchestration, and infrastructure management. Compare platforms to streamline your software delivery pipeline.",
-  Security: "Security software solutions for identity management, endpoint protection, network security, and compliance monitoring.",
-  Analytics: "Business intelligence and analytics platforms help organizations visualize data, create dashboards, and derive actionable insights from their business data.",
-  Infrastructure: "Cloud infrastructure and hosting platforms for compute, storage, networking, and serverless computing. Compare providers for your cloud architecture needs.",
+  "VPS & Dedicated Servers": "Compare virtual private servers and dedicated hosting providers. Find the best VPS plans, bare metal servers, and cloud instances for your workloads with detailed benchmarks and pricing analysis.",
+  "Cloud Platforms": "Cloud platform providers offering scalable compute, storage, and networking infrastructure. Compare AWS, Google Cloud, Azure, and other leading cloud platforms for your enterprise needs.",
+  "CDN and DNS": "Content delivery networks and DNS services for fast content distribution, low-latency global routing, and DDoS protection. Compare providers across performance, coverage, and pricing.",
+  "Domain & SSL": "Domain registration and SSL certificate providers. Compare pricing, management features, and security options for your web properties.",
+  "Monitoring & Databases": "Infrastructure monitoring, observability, and managed database services. Compare tools for tracking performance, uptime, and managing your data layer.",
+  "Server Management & DevOps": "Server management panels, control dashboards, and DevOps tooling for infrastructure automation, deployment, and orchestration.",
 };
 
 const CATEGORY_STATS = ALL_CATEGORIES.reduce(

@@ -151,6 +151,42 @@ export default function AboutPage() {
               </div>
               <p className="text-xs text-ever-400">Performance data analysis, statistical modeling, benchmark methodology. PhD in Geospatial Science.</p>
             </div>
+            <div className="bg-ever-800 border border-ever-700 rounded-xl p-5">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-10 h-10 rounded-full bg-geospatial/20 flex items-center justify-center text-geospatial-light font-bold">
+                  W
+                </div>
+                <div>
+                  <p className="font-semibold text-white text-sm">Marcus Wei</p>
+                  <p className="text-xs text-ever-500">Full-Stack Engineer</p>
+                </div>
+              </div>
+              <p className="text-xs text-ever-400">Frontend architecture, Next.js development, and benchmark visualization. Builds the user-facing comparison tools.</p>
+            </div>
+            <div className="bg-ever-800 border border-ever-700 rounded-xl p-5">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-10 h-10 rounded-full bg-geospatial/20 flex items-center justify-center text-geospatial-light font-bold">
+                  C
+                </div>
+                <div>
+                  <p className="font-semibold text-white text-sm">Alex Chen</p>
+                  <p className="text-xs text-ever-500">Technical Writer & Analyst</p>
+                </div>
+              </div>
+              <p className="text-xs text-ever-400">Cloud infrastructure research, technical writing, and benchmark reporting. Author of in-depth provider comparisons.</p>
+            </div>
+            <div className="bg-ever-800 border border-ever-700 rounded-xl p-5">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-10 h-10 rounded-full bg-geospatial/20 flex items-center justify-center text-geospatial-light font-bold">
+                  R
+                </div>
+                <div>
+                  <p className="font-semibold text-white text-sm">Alex Rivera</p>
+                  <p className="text-xs text-ever-500">Network Engineer</p>
+                </div>
+              </div>
+              <p className="text-xs text-ever-400">Global network latency testing, CDN performance analysis, and multi-region benchmark coordination.</p>
+            </div>
           </div>
         </div>
 
