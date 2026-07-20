@@ -4679,7 +4679,7 @@ Some outdated advice persists -- avoid these pitfalls:
 
 Start simple: enable BBRv2, increase rmem_max, and deploy a lightweight CDN (BunnyCDN or Cloudflare Pro) with origin shielding. Measure for 48 hours. Then layer in CPU isolation and IRQ tuning -- but only if you observe >15ms p99 latency in 'tcpping' results.
 
-Remember: optimisation is iterative, not一次性. Re-audit every 6 months -- kernel updates, provider network changes, and traffic patterns shift constantly. At ServerPicks.net, we re-test all recommended configurations quarterly using our open-source 'vps-bench' toolkit (available on GitHub).
+Remember: optimisation is iterative, not a one-shot effort. Re-audit every 6 months -- kernel updates, provider network changes, and traffic patterns shift constantly. At ServerPicks.net, we re-test all recommended configurations quarterly using our open-source 'vps-bench' toolkit (available on GitHub).
 
 Network performance isn't magic -- it's methodical engineering. And in 2026, the difference between 'fast enough' and 'unbeatable' lies in deliberate, evidence-based tuning -- not guesswork.
 
