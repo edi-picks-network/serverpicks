@@ -45,3 +45,5 @@ package-lock.json
 vercel.json
 components.json
 tsconfig.tsbuildinfo
+.next_old
+tmp
