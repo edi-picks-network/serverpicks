@@ -45,7 +45,9 @@ const BLOG_SLUGS = [
   "cloud-server-vps-bare-metal-comparison-2026",
 
   "vps-performance-benchmarking-guide-2026",
-  "cdn-performance-optimization-vps-diary-2026",] as const;
+  "cdn-performance-optimization-vps-diary-2026",
+  "hetzner-vs-ovhcloud-vs-contabo-2026",
+] as const;
 
 const TOOL_SLUGS = [
   "aws",
