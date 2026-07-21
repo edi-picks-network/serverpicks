@@ -476,7 +476,7 @@ export const ALL_TOOLS: ToolData[] = [
       "No managed services: OS updates, security hardening, backups, and app config are entirely DIY.",
       "Basic control panel lacks one-click app installers, real-time metrics dashboards, and advanced API automation.",
       "No built-in automated backups or snapshots -- optional backup add-on costs €1.99/month per server.",
-      "Limited global reach: only Germany (Munich, Nuremberg) and Finland (Helsinki) data centers; no US West, Asia, or Oceania locations.",
+      "Limited global reach: only Germany (Munich, Nuremberg) and USA (Dallas) data centers; no US West, Asia, or Oceania locations.",
       "No auto-scaling, load balancers, or managed Kubernetes -- not suitable for elastic cloud-native architectures."
     ],
     pricing: "VPS starts at €3.99/month; flat-rate renewals with no price hikes",

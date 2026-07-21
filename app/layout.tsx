@@ -67,7 +67,7 @@ export default function RootLayout({
                 <ul className="space-y-2 text-sm">
                   <li><Link href="/faq" className="hover:text-geospatial-light transition-colors">FAQ</Link></li>
                   <li><Link href="/category/cloud-platforms" className="hover:text-geospatial-light transition-colors">Cloud Platforms</Link></li>
-                  <li><Link href="/category/vps" className="hover:text-geospatial-light transition-colors">VPS Hosting</Link></li>
+                  <li><Link href="/category/vps-and-dedicated-servers" className="hover:text-geospatial-light transition-colors">VPS Hosting</Link></li>
                 </ul>
               </div>
               <div>

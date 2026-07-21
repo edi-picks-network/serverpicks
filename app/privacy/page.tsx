@@ -213,7 +213,7 @@ export default function PrivacyPage() {
             <div className="mt-4 p-5 bg-[#0F1F2D] border border-[#1E3A5F] rounded-xl">
               <p className="mb-2"><strong className="text-[#F0F2FE]">Email:</strong> host@serverpicks.net</p>
               <p className="mb-2"><strong className="text-[#F0F2FE]">Support:</strong> host@serverpicks.net</p>
-              <p><strong className="text-[#F0F2FE]">Address:</strong> 1200 Independence Way, Boston, MA 02109</p>
+              <p><strong className="text-[#F0F2FE]">Address:</strong> 100 Cambridge Innovation Center, Boston, MA 02142</p>
             </div>
           </section>
         </div>
