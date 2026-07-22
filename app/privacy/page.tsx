@@ -148,7 +148,7 @@ export default function PrivacyPage() {
               <li><strong>Right to Opt Out (CCPA):</strong> California residents may opt out of the sale of their personal information. We do not sell personal information.</li>
             </ul>
             <p className="mt-3">
-              To exercise any of these rights, please contact us at host@serverpicks.net. We
+              To exercise any of these rights, please contact us at info@serverpicks.net. We
               will respond to your request within 30 days.
             </p>
           </section>
@@ -181,7 +181,7 @@ export default function PrivacyPage() {
               knowingly collect personal information from children. If we become aware that a
               child has provided us with personal data, we will delete it immediately. Parents
               or guardians who believe their child has submitted information to us should contact
-              us at host@serverpicks.net.
+              us at info@serverpicks.net.
             </p>
           </section>
 
@@ -211,8 +211,8 @@ export default function PrivacyPage() {
               contact us:
             </p>
             <div className="mt-4 p-5 bg-[#0F1F2D] border border-[#1E3A5F] rounded-xl">
-              <p className="mb-2"><strong className="text-[#F0F2FE]">Email:</strong> host@serverpicks.net</p>
-              <p className="mb-2"><strong className="text-[#F0F2FE]">Support:</strong> host@serverpicks.net</p>
+              <p className="mb-2"><strong className="text-[#F0F2FE]">Email:</strong> info@serverpicks.net</p>
+              <p className="mb-2"><strong className="text-[#F0F2FE]">Support:</strong> info@serverpicks.net</p>
               <p><strong className="text-[#F0F2FE]">Address:</strong> 100 Cambridge Innovation Center, Boston, MA 02142</p>
             </div>
           </section>

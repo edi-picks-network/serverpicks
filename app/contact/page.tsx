@@ -137,22 +137,22 @@ export default function ContactPage() {
                 <p className="text-sm text-ever-400">
                   <strong className="text-white">Team:</strong>
                   <br />
-                  <a href="mailto:host@serverpicks.net" className="text-geospatial-light hover:underline">
-                    host@serverpicks.net
+                  <a href="mailto:info@serverpicks.net" className="text-geospatial-light hover:underline">
+                    info@serverpicks.net
                   </a>
                 </p>
                 <p className="text-sm text-ever-400">
                   <strong className="text-white">Benchmarks:</strong>
                   <br />
-                  <a href="mailto:host@serverpicks.net" className="text-geospatial-light hover:underline">
-                    host@serverpicks.net
+                  <a href="mailto:info@serverpicks.net" className="text-geospatial-light hover:underline">
+                    info@serverpicks.net
                   </a>
                 </p>
                 <p className="text-sm text-ever-400">
                   <strong className="text-white">Press:</strong>
                   <br />
-                  <a href="mailto:host@serverpicks.net" className="text-geospatial-light hover:underline">
-                    host@serverpicks.net
+                  <a href="mailto:info@serverpicks.net" className="text-geospatial-light hover:underline">
+                    info@serverpicks.net
                   </a>
                 </p>
               </div>

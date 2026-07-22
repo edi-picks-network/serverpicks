@@ -238,10 +238,10 @@ export default function AboutPage() {
               Contact Us
             </Link>
             <a
-              href="mailto:host@serverpicks.net"
+              href="mailto:info@serverpicks.net"
               className="px-6 py-3 border border-ever-600 hover:border-geospatial text-ever-400 hover:text-white font-medium rounded-lg transition-all"
             >
-              host@serverpicks.net
+              info@serverpicks.net
             </a>
           </div>
         </div>

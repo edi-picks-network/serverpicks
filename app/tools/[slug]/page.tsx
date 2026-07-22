@@ -194,13 +194,13 @@ export default function ToolDetailPage() {
         <div className="bg-[#0F1F2D] border border-[#1E3A5F] rounded-xl p-6 mb-10">
           <div className="flex items-center justify-between mb-5">
             <h2 className="font-bold text-[#F0F2FE] flex items-center text-base">
-              <BarChart3 className="w-5 h-5 mr-2 text-[#2563EB]" /> SW Score
+              <BarChart3 className="w-5 h-5 mr-2 text-[#2563EB]" /> Score
             </h2>
             <span className="text-xs text-[#4A6080]">Performance & feature analysis</span>
           </div>
           <div className="space-y-3">
             <ScoreBar label="Features" score={scores.features} color="#2563EB" />
-            <ScoreBar label="User Score" score={scores.reviews} color="#60A5FA" />
+              <ScoreBar label="Reviews" score={scores.reviews} color="#60A5FA" />
             <ScoreBar label="Momentum" score={scores.momentum} color="#F59E0B" />
             <ScoreBar label="Popularity" score={scores.popularity} color="#8B5CF6" />
           </div>
@@ -388,7 +388,7 @@ export default function ToolDetailPage() {
 
         <div className="mt-6 text-center">
           <p className="text-xs text-[#4A6080]">
-            When you purchase through links on our site, we may earn an affiliate commission.{' '}
+            {/* Removed affiliate commission text — no affiliate program active */}
             <Link href="/disclosure" className="text-[#2563EB] hover:underline">
               Learn more
             </Link>
