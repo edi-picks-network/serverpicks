@@ -76,7 +76,7 @@ const FAQ_SCHEMA = {
       name: "How do hosting reviews and ratings work?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Hosting reviews are collected from verified customers on platforms like G2, Trustpilot, and specialized review sites. Users rate providers on criteria like uptime, speed, support quality, value for money, and ease of use. Always read recent reviews and look for patterns rather than outliers. Server Picks synthesizes reviews across multiple platforms to give you a balanced view of each provider's strengths and weaknesses.",
+        text: "Hosting reviews are collected from verified customers on specialized review sites. Users rate providers on criteria like uptime, speed, support quality, value for money, and ease of use. Always read recent reviews and look for patterns rather than outliers. Server Picks synthesizes reviews across multiple platforms to give you a balanced view of each provider's strengths and weaknesses.",
       },
     },
     {

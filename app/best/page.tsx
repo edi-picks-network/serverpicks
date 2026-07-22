@@ -7,7 +7,7 @@ import { Star, ArrowRight, Sparkles, ChevronRight, Search } from "lucide-react";
 const ALL_CATEGORIES = Array.from(new Set(ALL_TOOLS.map((t) => t.category))).sort();
 
 function slugify(category: string) {
-  return category.toLowerCase().replace(/\s+/g, "-");
+  return category.toLowerCase().replace(/&/g, "and").replace(/\s+/g, "-");
 }
 
 export default function BestPage() {

@@ -426,11 +426,7 @@ export const ALL_TOOLS: ToolData[] = [
       momentum: 82,
       popularity: 86
     },
-    userQuotes: [
-    {"role": "DevOps Lead", "company": "Munich, Germany", "quote": "Hetzner gives us dedicated server performance at VPS prices. Our CI/CD pipeline runs 40% faster on their AX41 than our previous provider at half the monthly cost"},
-    {"role": "Software Engineer", "company": "Vienna, Austria", "quote": "Their API and Terraform provider make infrastructure management a breeze. The CAX ARM instances are incredibly power-efficient for our container workloads on Kubernetes"},
-    {"role": "Founder", "company": "Amsterdam, Netherlands", "quote": "For bootstrapped startups in Europe, Hetzner is the secret weapon. We run our entire SaaS backend on two CX21 instances for under EUR30/month and latency is <3ms to our users in the Netherlands"}
-    ]
+    userQuotes: []
   },
   {
     id: "ovhcloud",
@@ -455,11 +451,7 @@ export const ALL_TOOLS: ToolData[] = [
       momentum: 78,
       popularity: 82
     },
-    userQuotes: [
-    {"role": "CTO", "company": "Paris, France", "quote": "We run our entire e-commerce infrastructure on OVHcloud dedicated servers for three years -- the built-in DDoS protection saved us twice during major attack campaigns"},
-    {"role": "DevOps Engineer", "company": "Berlin, Germany", "quote": "The API is comprehensive and the OpenStack integration gives us true hybrid cloud flexibility. Pricing is predictable and hardware specs are honest and transparent"},
-    {"role": "Founder", "company": "Brussels, Belgium", "quote": "For GDPR compliance without breaking the bank, OVHcloud is unmatched. Their French data centers give our clients the data sovereignty they require at half the cost of US hyperscalers"}
-    ]
+    userQuotes: []
   },
   {
     id: "contabo",
@@ -671,11 +663,7 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 74
     },
 
-    userQuotes: [
-    {"role": "CTO", "company": "Berlin, Germany", "quote": "We migrated our fintech API stack to UpCloud last year and saw immediate latency improvements\u2014especially with their Helsinki and Frankfurt nodes handling EU traffic"},
-    {"role": "DevOps Engineer", "company": "Toronto, Canada", "quote": "The API is rock-solid and their Terraform provider saved us weeks of infrastructure automation work\u2014documentation is clear and examples just work"},
-    {"role": "Founder", "company": "Paris, France", "quote": "I run a small SaaS app with spiky traffic and love how easily I can scale up/down with zero downtime\u2014plus the backup system saved us after a deployment error"},
-    ]
+    userQuotes: []
   },
   {
     id: "civo",
@@ -1072,11 +1060,7 @@ export const ALL_TOOLS: ToolData[] = [
     popularity: 71,
     },
 
-    userQuotes: [
-    {"role": "CTO", "company": "Sydney, Australia", "quote": "We cut our global page load time by 42% after switching to KeyCDN\u2014especially impressive in APAC where their Singapore and Tokyo nodes deliver sub-50ms TTFB"},
-    {"role": "DevOps Engineer", "company": "Lagos, Nigeria", "quote": "The real-time analytics and one-click purge saved us hours during urgent content updates\u2014no more waiting for TTLs or juggling third-party tools"},
-    {"role": "Frontend Architect", "company": "Paris, France", "quote": "Their API is rock solid and well-documented\u2014we automated cache invalidation, zone creation, and reporting in under two days"},
-    ]
+    userQuotes: []
   },
   {
     id: "bunnynet",
@@ -2184,11 +2168,7 @@ export const ALL_TOOLS: ToolData[] = [
       momentum: 96,
       popularity: 92
     },
-    userQuotes: [
-    {"role": "SRE Lead", "company": "Berlin, Germany", "quote": "Grafana transformed how we visualize infrastructure health across 20+ microservices the alerting and templating saved us hours weekly"},
-    {"role": "DevOps Engineer", "company": "Lagos, Nigeria", "quote": "We migrated from Kibana to Grafana for unified metrics and logs the plugin ecosystem and consistent UI made onboarding seamless"},
-    {"role": "Data Platform Manager", "company": "Montreal, Canada", "quote": "The learning curve was steep initially, but once our team mastered variables and transformations, dashboard reuse skyrocketed"},
-    ]
+    userQuotes: []
   },
   {
     id: "prometheus",
