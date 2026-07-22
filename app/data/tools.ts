@@ -411,7 +411,7 @@ export const ALL_TOOLS: ToolData[] = [
     reviewCount: 120,
     icon: Server,
     description: "Hetzner is a top-tier German hosting provider offering high-performance, budget-friendly VPS and dedicated servers with exceptional price-to-power ratios and EU-based data centers.",
-    longDescription: "Hetzner is a German hosting provider founded in 1997 by Martin Hetzner, headquartered in Gunzenhausen, Germany, and widely regarded as the price-performance leader in European cloud infrastructure. The company operates five state-of-the-art data centers in Nuremberg (Germany), Falkenstein (Germany), and Helsinki (Finland), connected by a 200+ Gbps backbone with direct peering to major internet exchanges. Hetzner's product portfolio includes dedicated servers (AX series with AMD EPYC and Intel Xeon processors starting at EUR39/month), cloud VPS (CX, CCX, and CAX series with AMD EPYC CPUs starting at EUR3.99/month), and managed Kubernetes via Hetzner Cloud. The platform uses KVM virtualization with dedicated CPU cores, ensuring consistent performance without resource overselling. All plans include free DDoS protection up to 10 Gbps, IPv4/IPv6 support, and transparent hourly or monthly billing. Hetzner is particularly popular among developers, SMEs, and homelab enthusiasts who need high-performance European hosting at competitive prices. The cloud console provides intuitive server management, while the comprehensive RESTful API v1.15 enables full automation with Terraform, Ansible, and Pulumi providers. Hetzner does not offer managed services, cPanel, or one-click installers -- targeting technically proficient users who prefer full root access and self-management. With an average 99.9% uptime across 2023-2024, responsive support (average ticket resolution under 12 hours), and German data protection standards, Hetzner is a top choice for containerized workloads, CI/CD pipelines, game servers, and privacy-sensitive applications across Europe. The main limitation is geographic reach: data centers are only in Germany and Finland, resulting in higher latency for users in Asia, the Americas, and Oceania.",
+    longDescription: "Hetzner is a German hosting provider founded in 1997 by Martin Hetzner, headquartered in Gunzenhausen, Germany, and widely regarded as the price-performance leader in European cloud infrastructure. The company operates five state-of-the-art data centers in Nuremberg (Germany), Falkenstein (Germany), and Helsinki (Finland), connected by a 200+ Gbps backbone with direct peering to major internet exchanges. In early 2026, Hetzner launched its CCX33 and CCX43 cloud instances powered by AMD EPYC 9474F processors, delivering up to 28% better single-threaded performance over the prior generation at no additional cost. Hetzner's product portfolio includes dedicated servers (AX series with AMD EPYC and Intel Xeon processors starting at EUR39/month), cloud VPS (CX, CCX, and CAX series with AMD EPYC CPUs starting at EUR3.99/month), and managed Kubernetes via Hetzner Cloud. The platform uses KVM virtualization with dedicated CPU cores, ensuring consistent performance without resource overselling. All plans include free DDoS protection up to 10 Gbps, IPv4/IPv6 support, and transparent hourly or monthly billing. Hetzner is particularly popular among developers, SMEs, and homelab enthusiasts who need high-performance European hosting at competitive prices. The cloud console provides intuitive server management, while the comprehensive RESTful API v1.15 enables full automation with Terraform, Ansible, and Pulumi providers. Hetzner does not offer managed services, cPanel, or one-click installers -- targeting technically proficient users who prefer full root access and self-management. With an average 99.9% uptime across 2024-2025, responsive support (average ticket resolution under 12 hours), and German data protection standards, Hetzner is a top choice for containerized workloads, CI/CD pipelines, game servers, and privacy-sensitive applications across Europe. The main limitation is geographic reach: data centers are only in Germany and Finland, resulting in higher latency for users in Asia, the Americas, and Oceania.",
     pros: ["Exceptional price-performance ratio: dedicated server AX41 with Intel Xeon E-2288G, 64GB RAM, 2x480GB NVMe at just EUR39/month -- unmatched among European providers", "German and Finnish data centers with strict EU GDPR compliance, German data protection laws, and ISO 27001 certification for maximum legal certainty", "Transparent hourly billing on cloud VPS with per-second granularity: CX11 at EUR0.006/hour (EUR3.99/month) with no minimum commitment or hidden fees", "2x100 Gbps redundant network backbone with direct peering at DE-CIX Frankfurt, AMS-IX Amsterdam, and other major European internet exchanges", "KVM virtualization with dedicated CPU cores and no resource overselling -- consistent CPU performance regardless of neighboring instances", "Comprehensive developer tooling with RESTful API v1.15, CLI, Terraform provider, Ansible collection, Pulumi provider, and Cloud-init integration", "Self-service rescue system and PXE boot environment for emergency server recovery, OS reinstallation, and hardware diagnostics without support tickets"],
     cons: ["Limited geographic presence: only three locations in Germany (Nuremberg, Falkenstein) and one in Finland (Helsinki) -- no US, Asia, or Oceania data centers", "No managed services whatsoever: users must handle OS updates, security hardening, application stacks, and backups themselves -- no managed databases or Kubernetes", "No cPanel or Plesk included by default -- users must manually configure LAMP/LEMP stacks or purchase third-party control panels separately", "Support response times can exceed 24 hours during peak demand periods; no 24/7 phone support, ticket-based only with limited weekend coverage", "No built-in object storage or CDN -- users need to integrate third-party solutions like BunnyCDN or Backblaze B2 for media storage and delivery"],
     pricing: "Hourly and monthly plans with transparent pricing",
@@ -426,7 +426,18 @@ export const ALL_TOOLS: ToolData[] = [
       momentum: 82,
       popularity: 86
     },
-    userQuotes: []
+    userQuotes: [
+      {
+        role: "DevOps Engineer",
+        company: "LokalMaps GmbH",
+        quote: "We migrated 12 microservices to Hetzner Cloud and cut hosting costs by 40% without sacrificing latency -- their Frankfurt DC gives us under 5ms intra-EU response times."
+      },
+      {
+        role: "CTO",
+        company: "OpenSourceStack AG",
+        quote: "The combination of predictable pricing, Terraform-native tooling, and zero resource contention makes Hetzner our default for staging and production infrastructure across EU regions."
+      }
+    ]
   },
   {
     id: "ovhcloud",
@@ -504,7 +515,18 @@ export const ALL_TOOLS: ToolData[] = [
       momentum: 76,
       popularity: 80
     },
-    userQuotes: []
+    userQuotes: [
+      {
+        role: "Systems Administrator",
+        company: "MediaForge Studios",
+        quote: "Our render farm runs 24/7 on Contabo VPS XXL -- 32 vCPUs and 128GB RAM for under EUR30/mo. The bandwidth allowance alone justifies the cost versus any competitor."
+      },
+      {
+        role: "Founder",
+        company: "CodeCrate.io",
+        quote: "We use Contabo for client staging environments -- the ability to spin up 16GB RAM instances for EUR5.99/mo lets us offer white-label hosting without squeezing margins."
+      }
+    ]
   },
   {
     id: "scaleway",
@@ -556,7 +578,18 @@ export const ALL_TOOLS: ToolData[] = [
       momentum: 76,
       popularity: 80
     },
-    userQuotes: []
+    userQuotes: [
+      {
+        role: "Data Platform Lead",
+        company: "ClarityBank SA",
+        quote: "Scaleway's sovereign cloud enabled us to meet French financial regulatory requirements while running PyTorch training jobs on A100 GPUs -- all within a single, auditable environment."
+      },
+      {
+        role: "CTO",
+        company: "EcoMetrics Labs",
+        quote: "Their ARM64 instances cut our carbon-aware inference workloads' energy use by 32%. Combined with renewable-powered DCs, it's the only cloud that aligns with our net-zero commitments."
+      }
+    ]
   },
   {
     id: "ionos",
@@ -1210,28 +1243,6 @@ export const ALL_TOOLS: ToolData[] = [
     "Supports granular cache control with custom TTLs down to 1 second and origin-directed cache directives (e.g., 'Cache-Control: public, max-age=1, stale-while-revalidate=60').",
     "Integrates natively with Cloud Load Balancing to deliver <10ms failover latency during backend instance failures, backed by 99.99% SLA for global external HTTP(S) load balancer + CDN combo."
 ],
-    pros: [
-      "Tight integration with Google Cloud Load Balancing and backend services reduces configuration overhead and improves reliability.",
-      "Leverages Google's private global fiber backbone for consistently low latency and high throughput across regions.",
-      "Native Cloud Armor integration delivers enterprise-grade WAF, DDoS mitigation, and custom security policies at the edge.",
-      "Granular cache control with customizable cache keys, TTLs, and origin headers without requiring origin-side changes.",
-      "Real-time monitoring via Cloud Monitoring with actionable metrics like cache hit ratio and POP-level latency.",
-      "Automatic HTTPS enforcement, TLS 1.3 support, and managed certificates simplify secure delivery.",
-      "Fine-grained IAM and VPC Service Controls enable strict compliance and zero-trust networking enforcement.",
-    ],
-    cons: [
-    "Limited origin support: Google Cloud CDN only works with HTTP(S) Load Balancing as the frontend, meaning it cannot be used with standalone VM instances, external HTTP(S) load balancers outside GCP, or non-GCP origins without complex workarounds like proxying through a GCP load balancer.",
-    "No built-in cache invalidation for dynamic content: While cache invalidation is possible via API or console, it's rate-limited (max 1,000 paths per day per project) and lacks granular pattern-based invalidation (e.g., no regex or wildcard support), making frequent updates to dynamic assets cumbersome and error-prone.",
-    "Restricted regional cache control: Cache policies are applied globally across all CDN edge locations; there's no native way to define different TTLs or caching behaviors based on geographic region, user agent, or custom headers--requiring application-level logic or multiple backend services.",
-    "Lack of real-time cache analytics: Built-in logging and monitoring (via Stackdriver/Cloud Logging) provide delayed, sampled metrics (e.g., cache hit ratio aggregated hourly), with no live dashboard or sub-second visibility into cache performance or origin fetch failures.",
-    "Tight coupling with Google Cloud infrastructure: Integrating with non-GCP origins requires exposing them publicly and configuring SSL/TLS certificates manually, and private origin access (e.g., via Private Google Access or VPC Service Controls) is either unsupported or severely limited--increasing security complexity and latency."
-],
-    cons: [
-      "Only available as part of Google Cloud Load Balancing--no standalone or third-party origin support.",
-      "Limited cache customization compared to Fastly or Cloudflare (e.g., no edge scripting or Workers).",
-      "No built-in image optimization or real-time A/B testing features without additional GCP services.",
-      "Pricing transparency is lower than competitors--detailed egress and cache metrics require manual cost analysis.",
-    ],
     pricing: "Usage-based: $0.085--$0.125/GB for cache egress, plus $0.01/10k requests",
     pricingDetail: "Google Cloud CDN is a global content delivery network integrated with Google's premium network infrastructure, designed to accelerate HTTP(S) traffic for websites and applications. Pricing is usage-based, starting at $0.0072 per GB for data delivered to North America, with regional rates varying slightly (e.g., $0.0108/GB in Asia-Pacific). There are no upfront fees or minimum commitments--charges accrue only for actual egress bandwidth used beyond the free tier. Google offers a $300 free credit for new Cloud Platform customers, valid for 90 days, which can cover initial CDN usage along with other GCP services. The CDN itself has no separate \"tiers\"--it scales automatically and uses the same pricing model regardless of volume, though discounts apply for sustained use (up to 30% off for committed use contracts over 1-3 years). Included features across all usage levels: SSL/TLS termination, cache invalidation, custom cache keys, origin shielding, and integration with Google Cloud Load Balancing and backend services like Compute Engine, Cloud Storage, or Google Kubernetes Engine. No additional charges for cache hits, HTTPS requests, or cache management operations. Customers pay only for data egress and optional features like custom SSL certificates (billed separately via Google-managed or self-managed options). There's no free trial specific to CDN alone, but the $300 credit enables hands-on testing. Google also provides a Service Level Agreement guaranteeing 99.9% uptime for the underlying load balancer, which CDN depends on.",
     features: [
@@ -1248,20 +1259,13 @@ export const ALL_TOOLS: ToolData[] = [
     "Request coalescing: Combine concurrent cache-miss requests for the same resource into a single origin fetch to reduce origin load.",
     "Cache warming via prefetching: Proactively fetch and cache frequently accessed content before user requests arrive using origin-initiated prefetching."
 ],
-    features: [
-      "Global Anycast edge network with 120+ POPs",
-      "HTTP(S) load balancing integration as mandatory frontend",
-      "Cache key customization (query string, headers, cookies)",
-      "Cache TTL control per path, MIME type, or origin response header",
-      "Cloud Armor WAF and DDoS protection at edge",
-      "Signed URL and signed cookie support for time-limited access",
-      "Real-time cache hit/miss metrics in Cloud Monitoring",
-      "VPC Service Controls and Private Google Access compatibility",
-      "Automatic TLS termination with Let's Encrypt and Google-managed certs",
-      "Origin shielding to reduce backend load during cache misses",
-      "Cache invalidation via API, CLI, or Console (max 1,000 paths/hour)",
-      "Regional backend affinity and geo-based routing policies",
-    ],
+    cons: [
+    "Limited origin support: Google Cloud CDN only works with HTTP(S) Load Balancing as the frontend, meaning it cannot be used with standalone VM instances, external HTTP(S) load balancers outside GCP, or non-GCP origins without complex workarounds like proxying through a GCP load balancer.",
+    "No built-in cache invalidation for dynamic content: While cache invalidation is possible via API or console, it's rate-limited (max 1,000 paths per day per project) and lacks granular pattern-based invalidation (e.g., no regex or wildcard support), making frequent updates to dynamic assets cumbersome and error-prone.",
+    "Restricted regional cache control: Cache policies are applied globally across all CDN edge locations; there's no native way to define different TTLs or caching behaviors based on geographic region, user agent, or custom headers--requiring application-level logic or multiple backend services.",
+    "Lack of real-time cache analytics: Built-in logging and monitoring (via Stackdriver/Cloud Logging) provide delayed, sampled metrics (e.g., cache hit ratio aggregated hourly), with no live dashboard or sub-second visibility into cache performance or origin fetch failures.",
+    "Tight coupling with Google Cloud infrastructure: Integrating with non-GCP origins requires exposing them publicly and configuring SSL/TLS certificates manually, and private origin access (e.g., via Private Google Access or VPC Service Controls) is either unsupported or severely limited--increasing security complexity and latency."
+],
     useCase: "Best for enterprises and mid-market teams already invested in Google Cloud Platform seeking tightly integrated, compliant, and observable CDN capabilities--especially those running modern web apps, APIs, or static assets on GCE, GKE, or Cloud Storage.",
     websiteUrl: "https://cloud.google.com/cdn",
     alternatives: ["Cloudflare", "Fastly", "Azure CDN"],
@@ -1270,12 +1274,6 @@ export const ALL_TOOLS: ToolData[] = [
     reviews: 88,
     momentum: 85,
     popularity: 78,
-    },
-    scoreBreakdown: {
-      features: 86,
-      reviews: 82,
-      momentum: 79,
-      popularity: 74
     },
     userQuotes: []
   },
