@@ -165,7 +165,7 @@ export default function HomePage() {
                         ★ {tool.rating}
                       </span>
                     </td>
-                    <td className="px-5 py-4 text-center text-sm text-ever-400">{tool.reviewCount.toLocaleString()}</td>
+                    <td className="px-5 py-4 text-center text-sm text-ever-400">{(tool.scoreBreakdown ? ((tool.scoreBreakdown.features + tool.scoreBreakdown.reviews + tool.scoreBreakdown.momentum + tool.scoreBreakdown.popularity) / 4).toFixed(1) : tool.rating.toFixed(1))}</td>
                     <td className="px-5 py-4 text-center text-sm text-ever-400">
                       <div className="inline-block w-16 bg-ever-700 rounded-full h-2">
                         <div

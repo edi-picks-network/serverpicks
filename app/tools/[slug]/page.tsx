@@ -353,7 +353,6 @@ export default function ToolDetailPage() {
                         <div className="flex items-center gap-1 mt-1.5">
                           <Star className="w-3 h-3 text-[#F59E0B] fill-[#F59E0B]" />
                           <span className="text-xs text-[#F59E0B] font-semibold">{rt.rating}</span>
-                          <span className="text-xs text-[#4A6080]">({rt.reviewCount.toLocaleString()} reviews)</span>
                         </div>
                       </div>
                     </div>

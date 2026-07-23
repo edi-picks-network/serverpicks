@@ -426,18 +426,7 @@ export const ALL_TOOLS: ToolData[] = [
       momentum: 82,
       popularity: 86
     },
-    userQuotes: [
-      {
-        role: "DevOps Engineer",
-        company: "LokalMaps GmbH",
-        quote: "We migrated 12 microservices to Hetzner Cloud and cut hosting costs by 40% without sacrificing latency -- their Frankfurt DC gives us under 5ms intra-EU response times."
-      },
-      {
-        role: "CTO",
-        company: "OpenSourceStack AG",
-        quote: "The combination of predictable pricing, Terraform-native tooling, and zero resource contention makes Hetzner our default for staging and production infrastructure across EU regions."
-      }
-    ]
+    userQuotes: []
   },
   {
     id: "ovhcloud",
@@ -515,18 +504,7 @@ export const ALL_TOOLS: ToolData[] = [
       momentum: 76,
       popularity: 80
     },
-    userQuotes: [
-      {
-        role: "Systems Administrator",
-        company: "MediaForge Studios",
-        quote: "Our render farm runs 24/7 on Contabo VPS XXL -- 32 vCPUs and 128GB RAM for under EUR30/mo. The bandwidth allowance alone justifies the cost versus any competitor."
-      },
-      {
-        role: "Founder",
-        company: "CodeCrate.io",
-        quote: "We use Contabo for client staging environments -- the ability to spin up 16GB RAM instances for EUR5.99/mo lets us offer white-label hosting without squeezing margins."
-      }
-    ]
+    userQuotes: []
   },
   {
     id: "scaleway",
@@ -578,18 +556,7 @@ export const ALL_TOOLS: ToolData[] = [
       momentum: 76,
       popularity: 80
     },
-    userQuotes: [
-      {
-        role: "Data Platform Lead",
-        company: "ClarityBank SA",
-        quote: "Scaleway's sovereign cloud enabled us to meet French financial regulatory requirements while running PyTorch training jobs on A100 GPUs -- all within a single, auditable environment."
-      },
-      {
-        role: "CTO",
-        company: "EcoMetrics Labs",
-        quote: "Their ARM64 instances cut our carbon-aware inference workloads' energy use by 32%. Combined with renewable-powered DCs, it's the only cloud that aligns with our net-zero commitments."
-      }
-    ]
+    userQuotes: []
   },
   {
     id: "ionos",
@@ -687,7 +654,7 @@ export const ALL_TOOLS: ToolData[] = [
 ],
 
     useCase: "Ideal for developers and small-to-midsize engineering teams deploying containerized apps, CI/CD runners, or high-traffic WordPress sites where consistent I/O speed and low-latency networking are critical--and where managed services complexity is unnecessary.",
-    websiteUrl: "https://example.com",
+    websiteUrl: "https://www.upcloud.com",
     alternatives: ["digitalocean", "linode", "vultr"],
     scoreBreakdown: {
     features: 92,
@@ -739,7 +706,7 @@ export const ALL_TOOLS: ToolData[] = [
       "Free tier: $10 monthly credit + 1 free small Kubernetes cluster",
     ],
     useCase: "Civo is ideal for startups, indie developers, and DevOps teams building cloud-native applications who value rapid Kubernetes iteration, infrastructure-as-code workflows, and minimal operational overhead. It shines for CI/CD pipelines, staging environments, microservices architectures, and learning Kubernetes--not for legacy monoliths or enterprises needing managed databases or global CDNs.",
-    websiteUrl: "https://example.com",
+    websiteUrl: "https://www.civo.com",
     alternatives: ["digitalocean", "linode", "vultr"],
     scoreBreakdown: {
       features: 89,
@@ -937,7 +904,7 @@ export const ALL_TOOLS: ToolData[] = [
         "Bot Management (behavioral fingerprinting and rate limiting)"
       ],
     useCase: "Ideal for high-traffic SaaS platforms, media publishers, and e-commerce sites needing global low-latency delivery, built-in security, and developer-friendly edge compute--especially those prioritizing zero-trust architecture and cost-efficient scaling over traditional infrastructure management.",
-    websiteUrl: "https://example.com",
+    websiteUrl: "https://www.cloudflare.com",
     alternatives: ["akamai", "fastly", "amazoncloudfront"],
     scoreBreakdown: {
       features: 94, reviews: 91, momentum: 96, popularity: 97
