@@ -193,7 +193,7 @@ export default function TermsPage() {
             <div className="mt-4 p-5 bg-[#0F1F2D] border border-[#1E3A5F] rounded-xl">
               <p className="mb-2"><strong className="text-[#F0F2FE]">Email:</strong> info@serverpicks.net</p>
               <p className="mb-2"><strong className="text-[#F0F2FE]">Support:</strong> info@serverpicks.net</p>
-              <p><strong className="text-[#F0F2FE]">Address:</strong> 201 Mission Street, 25th Floor, San Francisco, CA 94105</p>
+              <p><strong className="text-[#F0F2FE]">Address:</strong> ServerPicks LLC, 222 W Merchandise Mart Plaza, Suite 1212, Chicago, IL 60654</p>
             </div>
           </section>
         </div>

@@ -5675,7 +5675,7 @@ Would I do it again? Absolutely — but with a checklist. I'm drafting one now: 
 Conclusion  
 Migrating from DigitalOcean to Hetzner wasn't magic — it was methodical, occasionally frustrating, and ultimately worth every minute. We saved $231/year, cut latency nearly in half for European users, and got significantly snappier disk and CPU performance. The hiccups weren't dealbreakers — they were reminders that infrastructure is never truly abstract. If you're running a small-to-mid SaaS app and your provider feels expensive or sluggish, benchmark first, document every config change, and don't skip the SMTP test. Your users — and your bottom line — will thank you.`,
     author: "Alex Chen",
-    authorRole: "云基础设施分析师",
+    authorRole: "Cloud Infrastructure Analyst",
     date: "2026-07-23",
     category: "VPS & Cloud",
     readTime: 8,
