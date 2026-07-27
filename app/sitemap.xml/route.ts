@@ -46,4 +46,5 @@ const BLOG_SLUGS = ["digitalocean-vs-linode-vs-vultr-2026",
   "hetzner-vs-ovhcloud-vs-contabo-2026",
   "digitalocean-to-hetzner-migration-diary-2026",
   "vps-auto-scaling-strategies-for-2026-from-manual-to-event-driven-architecture",
-  "ab-testing-vps-hetzner-digitalocean-linode-2026"] as const
+  "ab-testing-vps-hetzner-digitalocean-linode-2026",
+  "vps-performance-comparison-hetzner-digitalocean-linode-vultr"] as const
