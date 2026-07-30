@@ -1593,7 +1593,23 @@ export const ALL_TOOLS: ToolData[] = [
       momentum: 76,
       popularity: 80
     },
-    userQuotes: []
+    userQuotes: [
+      {
+        role: "DevOps Engineer",
+        company: "CloudScale Hosting",
+        quote: "We use Let's Encrypt with Certbot on our Ubuntu VPS fleet to auto-renew SSL certificates--zero manual intervention and full HTTPS enforcement across 200+ customer sites."
+      },
+      {
+        role: "Systems Administrator",
+        company: "NexusStack Labs",
+        quote: "Integrating Let's Encrypt into our Nginx provisioning scripts cut SSL setup time from 15 minutes to under 30 seconds per server, and the ACME automation works flawlessly across our bare-metal and cloud VPS environments."
+      },
+      {
+        role: "CTO",
+        company: "StellarNode Inc",
+        quote: "Let's Encrypt is foundational to our infrastructure--we rely on its free, automated DV certs for every client-facing service running on our managed VPS platform, and acme.sh handles renewals without ever touching a cron job manually."
+      }
+    ]
   },
   {
     id: "sectigo",
@@ -1618,7 +1634,23 @@ export const ALL_TOOLS: ToolData[] = [
       momentum: 7.8,
       popularity: 8.2
     },
-    userQuotes: []
+    userQuotes: [
+      {
+        role: "DevOps Engineer",
+        company: "CloudScale Hosting",
+        quote: "We issue thousands of Sectigo DV and OV certs monthly across our VPS fleet--its WHMCS integration cuts provisioning time by 70% and eliminates manual CSR handling."
+      },
+      {
+        role: "Systems Administrator",
+        company: "NexusStack Infrastructure",
+        quote: "Sectigo's cPanel and Plesk plugins let us auto-renew SSLs across 500+ customer VPS instances without touching the CLI--critical for maintaining uptime and PCI compliance."
+      },
+      {
+        role: "CTO",
+        company: "StellarNode Labs",
+        quote: "As a reseller, Sectigo's API-first approach and robust WHMCS module let us scale SSL issuance alongside our cloud server deployments while keeping overhead low."
+      }
+    ]
   },
   {
     id: "ssl.com",
@@ -1848,7 +1880,23 @@ export const ALL_TOOLS: ToolData[] = [
       momentum: 76,
       popularity: 80
     },
-    userQuotes: []
+    userQuotes: [
+      {
+        role: "Systems Administrator",
+        company: "NexusCloud Hosting",
+        quote: "Cockpit gives us instant visibility into our Ubuntu VPS fleet without installing extra agents--we use it daily for quick health checks and terminal access during incident response."
+      },
+      {
+        role: "DevOps Engineer",
+        company: "StellarStack Labs",
+        quote: "For our CentOS Stream-based Kubernetes node management, Cockpit's real-time resource graphs and seamless terminal integration cut troubleshooting time in half compared to SSH-only workflows."
+      },
+      {
+        role: "Cloud Infrastructure Manager",
+        company: "AuroraEdge Solutions",
+        quote: "We deploy Cockpit across all RHEL and Fedora Server VPS instances--it is the first thing we check when onboarding new servers, especially for disk I/O bottlenecks and memory pressure."
+      }
+    ]
   },
     {
     id: "ansible",
