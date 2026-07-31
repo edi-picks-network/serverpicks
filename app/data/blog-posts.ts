@@ -6385,4 +6385,50 @@ Choose the monitoring stack that fits your scale. Netdata wins on speed and simp
     readTime: 7,
     tags: ["grafana", "prometheus", "netdata", "vps-monitoring", "server-monitoring", "observability", "hetzner", "digitalocean", "vultr"],
   },
+{
+    slug: "cdn-vs-vps-only-architecture-2026",
+    title: "Should You Put a CDN in Front of Your VPS? CDN vs VPS-Only Architecture in 2026",
+    excerpt: "A practical 2026 decision guide for when a bare VPS is enough and when adding a CDN (Cloudflare, Bunny, Fastly, KeyCDN) is essential infrastructure -- covering latency, egress costs, DDoS resilience, real pricing, and a simple checklist.",
+    content: `You’ve just deployed a lean, high-performance VPS—maybe Ubuntu 24.04 with Nginx and Redis—and your site loads fast locally. But users in Tokyo report 3-second delays. Your egress bill spiked 40% last month. And that small DDoS hit? It took your VPS offline for 18 minutes. Sound familiar? In 2026, the question isn’t *if* CDNs exist—it’s whether slapping one in front of your VPS is overengineering or essential infrastructure. Let’s cut through the noise.
+
+## When a bare VPS is enough  
+A standalone VPS shines when you control every layer: low-latency database queries, real-time WebSocket traffic, or strict compliance needs (e.g., HIPAA-bound apps where edge caching is prohibited). If your audience is hyper-local—say, a regional law firm serving only Chicago—or your app serves dynamic, user-specific JSON payloads on every request, adding a CDN introduces complexity without payoff. Also, if your traffic is under ~500 GB/month and mostly from one geographic cluster, egress savings won’t offset setup time or cache-invalidation headaches.
+
+## The case for adding a CDN  
+Latency drops aren’t theoretical: a well-configured CDN can slash Time-to-First-Byte by 30–60% for global users—not by speeding up your VPS, but by serving static assets (JS, CSS, images) from points of presence near visitors. Egress costs matter more now: major cloud providers charge $0.01–$0.02/GB outbound, while CDNs like Bunny charge $0.01/GB *or less*—and often include free tiers. DDoS resilience is non-negotiable: Cloudflare’s free plan absorbs most Layer 7 attacks; your VPS alone offers zero mitigation. Finally, TLS termination at the edge simplifies cert management (no Let’s Encrypt cron jobs), improves handshake speed via session resumption, and enables HTTP/3 by default—none of which your VPS handles natively without heavy tuning.
+
+## Popular options: real pricing, real trade-offs  
+Cloudflare remains the pragmatic starter: free tier covers most small sites (unlimited bandwidth, basic DDoS, auto-minify), Pro ($20/mo) adds custom SSL, faster cache purges, and priority support. Bunny CDN stands out for price transparency: $0.009/GB + $0.01/10k requests—no hidden fees, no forced plans. Fastly excels for developers needing granular control (real-time logging, VCL scripting), but starts at $50/mo and demands expertise. KeyCDN offers predictable flat-rate pricing ($0.02/GB, $0.002/request) and strong EU performance—but fewer built-in security features than Cloudflare. All integrate cleanly with common VPS stacks via CNAME or reverse proxy.
+
+## A simple decision checklist  
+✅ Your site serves >30% static assets (images, fonts, bundled JS/CSS)  
+✅ Visitors span 3+ continents—or you expect growth beyond your VPS region  
+✅ Monthly egress exceeds $25, or you’re hitting bandwidth caps  
+✅ You lack time or skill to harden your VPS against brute-force or Layer 7 floods  
+✅ You don’t require full control over every HTTP header or cache directive  
+If ≥4 apply, a CDN isn’t optional—it’s operational hygiene.
+
+## FAQ  
+**Q: Will a CDN break my dynamic login flow or API endpoints?**  
+A: No—if configured correctly. Restrict caching to static paths (/static/, /images/) and bypass cache for /api/ or /auth/. Most CDNs let you set per-path rules in seconds.
+
+**Q: Do I still need a firewall or WAF on my VPS after adding Cloudflare?**  
+A: Yes. Cloudflare sits *in front* of your VPS—but misconfigured origin rules (e.g., exposing your VPS IP directly) or unpatched services (like SSH or Redis) remain vulnerable. Treat your VPS as if it’s public-facing.
+
+**Q: Can I use a CDN without changing DNS?**  
+A: Technically yes (via reverse proxy mode), but you lose DDoS protection and optimal routing. Real benefits kick in only with DNS-based routing—so yes, plan for a DNS cutover.
+
+**Q: Does “free CDN” mean “free forever”?**  
+A: Not always. Cloudflare’s free tier stays free, but some providers throttle requests or limit concurrent connections. Always check usage limits—not just bandwidth—before scaling.
+
+## Conclusion  
+In 2026, running a VPS without a CDN isn’t wrong—it’s situational. For local tools, internal dashboards, or tightly controlled environments, your VPS is the hero. But for any public-facing site, app, or service aiming for speed, scale, or uptime, the CDN isn’t an add-on—it’s your first line of defense and your fastest delivery channel. Start simple: route static assets through Cloudflare’s free tier, monitor latency and egress, then upgrade only when your data says so. Your users won’t thank you for the architecture diagram—they’ll thank you for the 1.2s load time. That’s the real ROI.
+`,
+    author: "Maya Rodriguez",
+    authorRole: "Senior Edge Computing Consultant",
+    date: "2026-08-01",
+    category: "CDN and Performance",
+    readTime: 8,
+    tags: ['cdn', 'vps', 'edge-network', 'cloudflare', 'bunny-net', 'fastly', 'keycdn', 'site-performance', 'ddos-protection'],
+  },
 ];
