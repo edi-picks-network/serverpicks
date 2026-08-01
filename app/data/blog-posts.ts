@@ -6431,4 +6431,135 @@ In 2026, running a VPS without a CDN isn’t wrong—it’s situational. For loc
     readTime: 8,
     tags: ['cdn', 'vps', 'edge-network', 'cloudflare', 'bunny-net', 'fastly', 'keycdn', 'site-performance', 'ddos-protection'],
   },
+{
+    slug: "vps-ipv6-deployment-guide-2026",
+    title: "IPv6 on Your VPS in 2026: A Practical Deployment Guide",
+    excerpt: "IPv6 exhaustion is no longer theoretical---most leading cloud providers now route a growing share of new connections over the next-generation protocol. This practical guide walks through enabling IPv6 on DigitalOcean, Hetzner, Linode, and Vultr, configuring dual-stack networking, hardening the new attack surface, and preparing your stack for an IPv6-only future.",
+    content: `IPv6 has been "five years away" for twenty years. But in 2026 the math has finally caught up with the hype. Global IPv6 adoption now sits above 48%---and above 60% in markets like India, Belgium, and the United States. And while most VPS providers still hand every droplet a free /64 subnet, the way you configure, secure, and route that space determines whether you get a clean win or a security headache.
+
+This guide covers the practical side of IPv6 on a VPS: how each major cloud provider allocates address space, how to enable dual-stack safely, the firewall and NDP (Neighbor Discovery Protocol) gotchas most tutorials ignore, and how to make your servers IPv6-ready without breaking IPv4-only clients.
+
+## Why IPv6 Matters for VPS Owners in 2026
+
+The argument for IPv6 used to be academic. Now it is operational. Three shifts changed the conversation:
+
+1. **Address scarcity is binding.** The IANA IPv4 free pool ran out years ago; the remaining regional registries are either exhausted or rationing. RIPE allocations are now effectively limited to existing holders, which means new cloud regions increasingly require IPv6 for greenfield infrastructure.
+2. **Carrier-grade NAT is degrading app behavior.** Mobile networks in Asia and parts of Europe have pushed huge user bases behind CGNAT. Those users cannot open direct peer-to-peer connections, game servers, or WebRTC sessions to an IPv4-only VPS without brittle relay hacks.
+3. **Providers are defaulting differently.** Hetzner and Vultr now ship IPv6 by default on many plans; DigitalOcean and Linode make it a one-click enable. AWS Lightsail and Google Cloud treat IPv6 as a first-class citizen. The friction of "turning on" IPv6 is lower than ever.
+
+For a VPS administrator, the cost of ignoring IPv6 is a slowly growing slice of your user base that cannot reach you over a direct, low-latency path.
+
+## How the Major Providers Allocate IPv6
+
+Every provider assigns roughly a /64 subnet, which is 18 quintillion addresses. The real differences are in control-plane behavior and pricing.
+
+| Provider | Default? | IPv6 allocation | Extra cost | Static assignment | Firewall integration |
+|----------|----------|-----------------|------------|-------------------|----------------------|
+| DigitalOcean | Auto (droplets) | /64 per droplet | Free | Yes (persistent) | Cloud Firewall rules per-IP |
+| Hetzner Cloud | Auto | /64 per server | Free | Yes | Per-IP inbound rules |
+| Linode (Akamai) | Optional | /64 per Linode | Free | Yes | Cloud Firewall (IPv6 ranges) |
+| Vultr | Auto | /64 per instance | Free | Yes | Firewall group supports v6 |
+| AWS Lightsail | Optional | /56 per VPC | Free | Yes | Instance firewall has v6 rules |
+
+A key nuance: most providers give you a **static** /64, but some (notably older Vultr instances or any provider using DHCPv6-PD) may reassign the prefix on rebuild. Always script your configuration so addresses are derived from the prefix rather than hardcoded absolutes where possible.
+
+## Enabling Dual-Stack on a Fresh VPS
+
+The cleanest path is to enable IPv6 at instance creation. Once you have the prefix, here is the minimal dual-stack configuration that works across DigitalOcean, Hetzner, Linode, and Vultr.
+
+First, confirm your interface accepts the auto-configured SLAAC address. On Ubuntu 24.04 you would run:
+
+<pre><code>
+sysctl net.ipv6.conf.all.accept_ra=2
+ip -6 addr show
+</code></pre>
+
+You should see a global address derived from your /64 prefix (for example a 2a01:4f8:c17 style address). If the interface already has it, you are dual-stack at L3. Now make sure your networking daemon persists it. With netplan (the default on modern Ubuntu):
+
+<pre><code>
+network:
+  version: 2
+  ethernets:
+    eth0:
+      dhcp4: true
+      dhcp6: false
+      accept-ra: true
+</code></pre>
+
+If accept-ra is true and you do not run your own RA daemon, SLAAC keeps working after reboot. For Hetzner specifically, verify your Cloud Console networking panel has IPv6 toggled on for the server; it is off by default on some older images.
+
+## The Firewall: IPv6 Is a New Attack Surface
+
+Here is the mistake almost everyone makes: they harden iptables for IPv4, then leave IPv6 wide open. If you run iptables without an ip6tables counterpart, your /64 becomes a target-rich environment for scanning.
+
+- **Scanners are everywhere.** IPv6 address space is sparse, so naive port-scanning is impractical---but providers and threat feeds publish your address, and tools like masscan with supplied ranges find you quickly. Do not assume obscurity.
+- **Use ip6tables or a UFW rule set.** Mirror your IPv4 policy. A minimal inbound policy:
+
+<pre><code>
+ip6tables -P INPUT DROP
+ip6tables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+ip6tables -A INPUT -p icmpv6 --icmpv6-type destination-unreachable -j ACCEPT
+ip6tables -A INPUT -p icmpv6 --icmpv6-type echo-request -j ACCEPT
+ip6tables -A INPUT -p tcp --dport 22 -j ACCEPT
+</code></pre>
+
+- **ICMPv6 is obligatory.** Unlike IPv4, ICMPv6 carries Neighbor Discovery (NDP) and Router Advertisement. Blocking all ICMPv6 breaks SLAAC, duplicate-address detection, and path MTU discovery. You must allow icmpv6 types selectively---do not blanket-drop it.
+
+## Neighbor Discovery and Proxy NDP Gotchas
+
+If you run containers, Docker bridges, or LXD containers on a VPS, you will hit NDP issues. A common symptom: the host answers on IPv6 but containers are unreachable, or you get "Neighbour discovery timeout" errors in routing logs.
+
+The fix on Linux is to enable forwarding and proxy NDP:
+
+<pre><code>
+sysctl -w net.ipv6.conf.all.forwarding=1
+sysctl -w net.ipv6.conf.all.proxy_ndp=1
+ip -6 neigh add proxy 2a01:4f8:c17:xxxx::10 dev eth0
+</code></pre>
+
+This advertises proxy NDP for your container addresses so the router knows they live behind your host. Docker 26+ handles this more gracefully, but if you are on an older engine, budget time for this exact step.
+
+## Dual-Stack vs IPv6-Only Services
+
+You do not have to go all-in. The pragmatic 2026 strategy is **dual-stack for the network, IPv6-preferred for egress where it helps**:
+
+- Keep an AAAA record in addition to A for your public services so both audiences connect.
+- Force outbound IPv6 preference for IPv6-capable upstreams to reduce CGNAT latency for your own outbound connections.
+- Only go IPv6-only for internal services or when a provider offers a dedicated IPv6-only tier at lower cost (Hetzner IPv6-only plans remain an excellent value for job runners and CI agents).
+
+## DNS and TLS Considerations
+
+Once dual-stack is live, make sure your DNS and HTTPS front-end handles both addresses cleanly:
+
+- Publish AAAA records for every hostname that has an A record; a missing AAAA breaks happy-eyeballs clients that optimistically query it.
+- Terminate TLS on both stacks with the same certificate (Let's Encrypt certs are address-agnostic). Your reverse proxy (Caddy, Nginx, Traefik) must listen on both the v6 catch-all and the IPv4 address.
+- Run a quick check from a v6-capable client with curl using the -6 flag and confirm the connection uses your global address.
+
+## Verification Checklist
+
+Before you call an IPv6 enablement complete, run:
+
+<pre><code>
+# 1. Global address present
+ip -6 addr show scope global
+
+# 2. Gateway reachable
+ping6 -c 2 (your v6 default gateway)
+
+# 3. Inbound v6 works (from another host)
+curl -6 -I https://your-vps.example.com
+</code></pre>
+
+Confirm your firewall permits essential ICMPv6 but blocks everything else, and that container/proxy NDP neighbors resolve correctly.
+
+## The Bottom Line
+
+IPv6 on a modern VPS is no longer an optional science project. Every major provider supports it at no cost, the configuration is a few sysctl and netplan lines, and the security posture just requires mirroring your IPv4 firewall rules plus respecting ICMPv6. Start with dual-stack on one non-production droplet, verify the checklist above, then roll out to your fleet. The IPv4-only era is ending---and the VPS owners who embraced IPv6 early are the ones who will have zero-migration projects when the rest of the industry is forced to catch up.`,
+    author: "Henry Nielsen",
+    authorRole: "Senior Cloud Infrastructure Engineer",
+    date: "2026-08-02",
+    category: "Cloud & Servers",
+    readTime: 9,
+    tags: ["ipv6", "vps", "dual-stack", "networking", "cloud-servers"]
+  },
 ];
