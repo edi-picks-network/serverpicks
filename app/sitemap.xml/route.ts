@@ -54,7 +54,8 @@ const BLOG_SLUGS = [
   "vps-wordpress-hosting-optimization-guide-2026",
   "vps-monitoring-stack-2026-grafana-prometheus-netdata",
   "cdn-vs-vps-only-architecture-2026",
-  "vps-ipv6-deployment-guide-2026"] as const;
+  "vps-ipv6-deployment-guide-2026",
+  "edge-ai-inference-vps-2026"] as const;
 
 const TOOL_SLUGS = [
   "aws",
