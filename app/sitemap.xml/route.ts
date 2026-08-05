@@ -57,6 +57,7 @@ const BLOG_SLUGS = [
   "vps-ipv6-deployment-guide-2026",
   "edge-ai-inference-vps-2026",
   "vps-docker-resource-limits-cost-2026",
+  "saas-migration-to-vps-fleet-2026-0806",
   "how-to-choose-a-budget-vps-host-in-2026-value-renewal-pricing-and-hidden-costs"] as const;
 
 const TOOL_SLUGS = [
