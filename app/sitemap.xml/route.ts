@@ -59,7 +59,8 @@ const BLOG_SLUGS = [
   "vps-docker-resource-limits-cost-2026",
   "saas-migration-to-vps-fleet-2026-0806",
   "how-to-choose-a-budget-vps-host-in-2026-value-renewal-pricing-and-hidden-costs",
-  "vps-centralized-logging-loki-elasticsearch-vector-2026"] as const;
+  "vps-centralized-logging-loki-elasticsearch-vector-2026",
+  "vps-ssl-tls-certificate-automation-2026"] as const;
 
 const TOOL_SLUGS = [
   "aws",
