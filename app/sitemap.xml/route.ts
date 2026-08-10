@@ -63,6 +63,7 @@ const BLOG_SLUGS = [
     "vps-vs-dedicated-server-comparison-2026",
     "vps-wordpress-hosting-optimization-guide-2026",
     "arm-vps-vs-x86-vps-2026",
+    "vps-security-hardening-checklist-2026",
   ] as const;
 
 const TOOL_SLUGS = [
