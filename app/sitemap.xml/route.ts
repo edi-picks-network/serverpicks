@@ -66,6 +66,7 @@ const BLOG_SLUGS = [
     "vps-security-hardening-checklist-2026",
     "ansible-vps-automation-playbooks-2026",
     "serverless-vs-vps-2026",
+    "website-to-vps-migration-guide-2026",
   ] as const;
 
 const TOOL_SLUGS = [

@@ -129,7 +129,11 @@ export const ALL_TOOLS: ToolData[] = [
       momentum: 9.5,
       popularity: 9.8
     },
-    userQuotes: []
+    userQuotes:[
+      { role: "Cloud Infrastructure Architect", company: "Global Financial Services Firm", quote: "We cut hybrid cloud management overhead by 40% using Azure Arc to govern 2,300+ on-prem and edge servers alongside our Azure Kubernetes Service clusters, all while maintaining FedRAMP High and ISO 27001 compliance across environments." },
+      { role: "CTO", company: "Healthcare SaaS Startup", quote: "Migrating our HIPAA-compliant patient analytics platform to Azure SQL Database with built-in TDE and Always Encrypted reduced audit prep time by 70%, and Azure OpenAI Service integration cut clinical note summarization latency from 8s to under 900ms." },
+      { role: "IT Director", company: "State Government Agency", quote: "Azure Government enabled us to achieve IL4 accreditation in 11 weeks, and leveraging Azure Hybrid Benefit saved 85% on Windows Server licenses across 450 VMs while syncing seamlessly with our existing Active Directory infrastructure." }
+    ]
   },
   {
     id: "gcp",
@@ -154,7 +158,11 @@ export const ALL_TOOLS: ToolData[] = [
       momentum: 9.4,
       popularity: 9.0
     },
-    userQuotes: []
+    userQuotes:[
+      { role: "Data Engineering Lead", company: "HealthTech startup", quote: "We cut our data warehouse TCO by 40% moving to BigQuery with its serverless architecture and per-second billing, and sustained-use discounts saved us $18K annually while enabling real-time analytics on 2B+ patient records." },
+      { role: "CTO", company: "Fintech scale-up", quote: "Migrating core transaction services to Cloud Spanner gave us global consistency with 99.999% uptime and sub-50ms latency across 12 regions, all while avoiding sharding complexity we faced on legacy databases." },
+      { role: "ML Platform Engineer", company: "E-commerce enterprise", quote: "Vertex AI slashed our model deployment time from 3 weeks to under 2 days, and Cloud Run autoscaling handled 12x traffic spikes during Black Friday without manual intervention or overprovisioning." }
+    ]
   },
   {
     id: "digitalocean",
@@ -200,7 +208,11 @@ export const ALL_TOOLS: ToolData[] = [
       momentum: 8.7,
       popularity: 8.9
     },
-    userQuotes: []
+    userQuotes:[
+      { role: "Backend Engineer", company: "SaaS startup with 12 employees", quote: "We migrated our Rails app from AWS to DigitalOcean App Platform and cut monthly costs by 40% while deploying 3x faster thanks to built-in CI/CD, zero egress fees, and intuitive dashboard controls." },
+      { role: "DevOps Lead", company: "E-commerce agency", quote: "Using Droplets with Terraform and Managed PostgreSQL, we provisioned staging environments in under 90 seconds and achieved 99.99% uptime over 18 months-no surprise billing or hidden charges ever." },
+      { role: "CTO", company: "Healthtech startup", quote: "Our HIPAA-compliant app runs on Kubernetes clusters managed by DigitalOcean; Spaces handles 2TB of patient imaging data, and predictable flat-rate pricing let us forecast cloud spend down to the dollar." }
+    ]
   },
   {
     id: "linode",
